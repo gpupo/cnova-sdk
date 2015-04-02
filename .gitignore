@@ -1,0 +1,4 @@
+*.swp
+vendor
+phpunit.xml
+Resources/logs/*
