@@ -25,7 +25,8 @@
             
     <!-- Customize your parameters ! -->
     <php>
-        <const name="API_TOKEN" value=""/>
-        <const name="VERBOSE" value="false"/>
+        <const name="CLIENT_ID" value=""/>
+        <const name="CLIENT_SECRET" value=""/>
+        <const name="VERBOSE" value="true"/>
     </php>
 </phpunit>
