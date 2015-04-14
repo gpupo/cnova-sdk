@@ -17,15 +17,4 @@ Personalize a configuração do ``phpunit``:
 
     cp phpunit.xml.dist phpunit.xml;
 
-Insira sua Token de Sandbox em ``phpunit.xml``:
-
-```XML
-    <!-- Customize your parameters ! -->
-    <php>
-        <const name="API_TOKEN" value=""/>
-        <const name="VERBOSE" value="false"/>
-    </php>
-```
-
-Rode os testes, desenvolva, rode os testes...
-
+Personalize os parâmetros!
