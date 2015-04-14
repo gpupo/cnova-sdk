@@ -11,8 +11,8 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
 
-use Gpupo\Common\Entity\CollectionInterface;
 use Gpupo\CnovaSdk\Entity\Order\Order;
+use Gpupo\Common\Entity\CollectionInterface;
 
 class OrderTest extends OrderTestCaseAbstract
 {

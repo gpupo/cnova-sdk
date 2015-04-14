@@ -37,12 +37,12 @@ class Client extends ClientAbstract implements ClientInterface
         if (empty($client_id)) {
             throw new \InvalidArgumentException('client_id nao informado');
         }
-        
+
         $client_secret = $this->getOptions()->get('client_id');
-        
+
         $string = $client_id.':'.$client_secret;
         $transport->setOption(CURLOPT_HTTPHEADER, array(
-            'X-Authorization: Basic '.base64_encode($string),            
+            'X-Authorization: Basic '.base64_encode($string),
             'Content-Type: application/json;charset=UTF-8',
         ));
 

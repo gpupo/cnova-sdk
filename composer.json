@@ -9,12 +9,12 @@
         "gpupo/common-sdk": "~1.4"        
     },
     "suggest": {
-        "monolog/monolog": "Write Log messages"
+        "monolog/monolog": "Write Log messages",
+        "mockery/mockery": "0.9.*@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
-        "monolog/monolog": "~1.12",
-        "mockery/mockery": "0.9.*@dev"
+        "monolog/monolog": "~1.12"
     },
     "autoload": {
         "psr-4": {

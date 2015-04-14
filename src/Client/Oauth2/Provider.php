@@ -18,9 +18,9 @@ class Provider extends ProviderAbstract
     public function getDefaultOptions()
     {
         return [
-            'clientId'     => '',
-            'clientSecret' => '',
-            'redirectUri'  => 'none',
+            'clientId'      => '',
+            'clientSecret'  => '',
+            'redirectUri'   => 'none',
             'authorize'     => 'http://lojista.ehub.com.br/oauth-api/authorize?client_id={clientId}',
             'accessToken'   => 'https://api.cnova.com/oauth/access_token',
         ];

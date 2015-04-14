@@ -11,8 +11,8 @@
 
 namespace Gpupo\Tests\CnovaSdk\Client\Oauth2;
 
-use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 use Gpupo\CnovaSdk\Client\Oauth2\Provider;
+use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class ProviderTest extends TestCaseAbstract
 {
@@ -29,34 +29,30 @@ class ProviderTest extends TestCaseAbstract
     public function testAccessToken()
     {
         return $this->markTestIncomplete();
-        
+
         $client = $this->factoryClient();
- 
+
         $client->post([
             'url'   => 'https://api.cnova.com/oauth/access_token',
         ], json_encode([
-            "grant_type" => "authorization_code",
-            "code" => "U2VKqVLesgPFs",
-            
+            'grant_type' => 'authorization_code',
+            'code'       => 'U2VKqVLesgPFs',
+
             ]));
-        
     }
-    
+
     public function testFoo()
     {
         return $this->markTestIncomplete();
-        
+
         $client = $this->factoryClient();
- 
+
         $client->post([
             'url'   => 'http://lojista.ehub.com.br/oauth-api/authorize?client_id={clientId}',
         ], json_encode([
-            "grant_type" => "authorization_code",
-            "code" => "U2VKqVLegPFs",
-            
+            'grant_type' => 'authorization_code',
+            'code'       => 'U2VKqVLegPFs',
+
             ]));
-        
     }
-    
-    
 }
