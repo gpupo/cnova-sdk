@@ -13,24 +13,8 @@
 
 namespace Gpupo\CnovaSdk\Entity\Order\Shipping;
 
-use Gpupo\CommonSdk\Entity\EntityAbstract;
-use Gpupo\CommonSdk\Entity\EntityInterface;
+use Gpupo\CnovaSdk\Entity\Order\AddressAbstract;
 
-class Shipping extends EntityAbstract implements EntityInterface
+class Shipping extends AddressAbstract
 {
-    public function getSchema()
-    {
-        return  [
-            'address'       => 'string',
-            'number'        => 'string',
-            'complement'    => 'string',
-            'quarter'       => 'string',
-            'reference'     => 'string',
-            'city'          => 'string',
-            'state'         => 'string',
-            'countryId'     => 'string',
-            'zipCode'       => 'string',
-            'recipientName' => 'string',
-        ];
-    }
 }

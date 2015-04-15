@@ -21,9 +21,9 @@ class Item extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'skuSellerId' =>  'string',
-            'quantity'    =>  'integer',
-            'href'        =>  'string',
+            'skuSellerId' => 'string',
+            'quantity'    => 'integer',
+            'href'        => 'string',
         ];
     }
 }

@@ -13,24 +13,8 @@
 
 namespace Gpupo\CnovaSdk\Entity\Order\Billing;
 
-use Gpupo\CommonSdk\Entity\EntityAbstract;
-use Gpupo\CommonSdk\Entity\EntityInterface;
+use Gpupo\CnovaSdk\Entity\Order\AddressAbstract;
 
-class Billing extends EntityAbstract implements EntityInterface
+class Billing extends AddressAbstract
 {
-    public function getSchema()
-    {
-        return  [
-            'address'       => 'string',
-            'number'        => 'string',
-            'complement'    => 'string',
-            'quarter'       => 'string',
-            'reference'     => 'string',
-            'city'          => 'string',
-            'state'         => 'string',
-            'countryId'     => 'string',
-            'zipCode'       => 'string',
-            'recipientName' => 'string',
-        ];
-    }
 }

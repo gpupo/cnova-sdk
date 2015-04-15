@@ -21,13 +21,13 @@ abstract class InvoiceAbstract extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'cnpj'      =>  'string',
-            'number'    =>  'string',
-            'serie'     =>  'string',
-            'issuedAt'  =>  'date-time',
-            'accessKey' =>  'string',
-            'linkXML'   =>  'string',
-            'linkDanfe' =>  'string'
+            'cnpj'      => 'string',
+            'number'    => 'string',
+            'serie'     => 'string',
+            'issuedAt'  => 'string',
+            'accessKey' => 'string',
+            'linkXML'   => 'string',
+            'linkDanfe' => 'string',
         ];
     }
 }
