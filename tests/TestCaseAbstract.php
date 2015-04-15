@@ -22,7 +22,9 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
     {
         $client = Client::getInstance()
             ->setOptions([
-                'verbose'   => $this->getConstant('VERBOSE'),
+                'client_id'     => $this->getConstant('CLIENT_ID'),
+                'client_secret' => $this->getConstant('CLIENT_SECRET'),
+                'verbose'       => $this->getConstant('VERBOSE'),
             ]);
 
         $client->setLogger($this->getLogger());

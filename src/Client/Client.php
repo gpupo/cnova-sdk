@@ -40,11 +40,19 @@ class Client extends ClientAbstract implements ClientInterface
             throw new \InvalidArgumentException('client_id nao informado');
         }
 
-        $client_secret = $this->getOptions()->get('client_id');
-
+        $client_secret = $this->getOptions()->get('client_secret');
         $string = $client_id.':'.$client_secret;
+        $authorization = 'X-Authorization: Basic '.base64_encode($string);
+        
+        $this->debug('AUTENTICACAO', [
+            'client_id'     => $client_id,
+            'client_secret' => $client_secret,
+            'string_raw'    => $string,
+            'authorization' => $authorization,
+        ]);
+            
         $transport->setOption(CURLOPT_HTTPHEADER, [
-            'X-Authorization: Basic '.base64_encode($string),
+            $authorization,
             'Content-Type: application/json;charset=UTF-8',
         ]);
 
