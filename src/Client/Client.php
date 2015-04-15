@@ -7,6 +7,8 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @version 1
  */
 
 namespace Gpupo\CnovaSdk\Client;
@@ -41,10 +43,10 @@ class Client extends ClientAbstract implements ClientInterface
         $client_secret = $this->getOptions()->get('client_id');
 
         $string = $client_id.':'.$client_secret;
-        $transport->setOption(CURLOPT_HTTPHEADER, array(
+        $transport->setOption(CURLOPT_HTTPHEADER, [
             'X-Authorization: Basic '.base64_encode($string),
             'Content-Type: application/json;charset=UTF-8',
-        ));
+        ]);
 
         return $transport;
     }

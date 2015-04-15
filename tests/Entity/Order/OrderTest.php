@@ -7,6 +7,8 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @version 1
  */
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
@@ -29,6 +31,16 @@ class OrderTest extends OrderTestCaseAbstract
     /**
      * @depends testCadaItemDeUmaListaEUmObjeto
      */
+    public function testCadaPedidoPossuiObjetoBilling(CollectionInterface $list)
+    {
+        foreach ($list as $item) {
+            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Billing\Billing', $item->getBilling());
+        }
+    }
+
+    /**
+     * @depends testCadaItemDeUmaListaEUmObjeto
+     */
     public function testCadaPedidoPossuiObjetoCliente(CollectionInterface $list)
     {
         foreach ($list as $item) {
@@ -42,12 +54,12 @@ class OrderTest extends OrderTestCaseAbstract
     public function testCadaPedidoPossuiColecaoDeProdutos(CollectionInterface $list)
     {
         foreach ($list as $item) {
-            $collection = $item->getProducts();
+            $collection = $item->getItens();
 
-            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Products\Products', $collection);
+            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Itens\Itens', $collection);
 
             foreach ($collection as $product) {
-                $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Products\Product\Product', $product);
+                $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Itens\Product\Product', $product);
             }
         }
     }

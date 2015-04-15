@@ -11,10 +11,13 @@
  * @version 1
  */
 
-namespace Gpupo\CnovaSdk\Client\Oauth2;
+namespace Gpupo\CnovaSdk\Entity\Order\Itens\Product\Freight;
 
-use Gpupo\CommonSdk\Client\Oauth2\AccessTokenAbstract;
+use Gpupo\CnovaSdk\Entity\Order\Freight\Freight as FreightAbstract;
 
-class AccessToken extends AccessTokenAbstract
+/**
+ *  Informações de frete do item.
+ */
+class Freight extends FreightAbstract
 {
 }
