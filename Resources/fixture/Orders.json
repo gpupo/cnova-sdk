@@ -30,8 +30,12 @@
     "email": "string",
     "phones": [
       {
-        "number": "string",
-        "type": "string"
+        "number": "4133448853",
+        "type": "HOME"
+      },
+      {
+        "number": "4188448853",
+        "type": "CELLPHONE"
       }
     ]
   },

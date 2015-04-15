@@ -13,16 +13,18 @@
 
 namespace Gpupo\CnovaSdk\Entity\Order\Customer\Phones;
 
-use Gpupo\CommonSdk\Entity\EntityAbstract;
-use Gpupo\CommonSdk\Entity\EntityInterface;
+use Gpupo\Common\Entity\CollectionAbstract;
 
-class Phones extends EntityAbstract implements EntityInterface
+class Phones extends CollectionAbstract
 {
-    public function getSchema()
+    public function __construct(array $elements = [])
     {
-        return  [
-            'number'    => 'string',
-            'type'      => 'string',
-        ];
+        $list = [];
+
+        foreach ($elements as $item) {
+            $list[] = new Phone($item);
+        }
+
+        parent::__construct($list);
     }
 }

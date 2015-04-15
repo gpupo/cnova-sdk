@@ -51,6 +51,36 @@ class OrderTest extends OrderTestCaseAbstract
     /**
      * @depends testCadaItemDeUmaListaEUmObjeto
      */
+    public function testCadaPedidoPossuiObjetoFrete(CollectionInterface $list)
+    {
+        foreach ($list as $item) {
+            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Freight\Freight', $item->getFreight());
+        }
+    }
+    
+    /**
+     * @depends testCadaItemDeUmaListaEUmObjeto
+     */
+    public function testCadaPedidoPossuiObjetoContendoEnderecoDeEntrega(CollectionInterface $list)
+    {
+        foreach ($list as $item) {
+            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Shipping\Shipping', $item->getShipping());
+        }
+    }
+
+    /**
+     * @depends testCadaItemDeUmaListaEUmObjeto
+     */
+    public function testCadaPedidoPossuiColecaoDeRastreamentos(CollectionInterface $list)
+    {
+        foreach ($list as $item) {
+            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Trackings\Trackings', $item->getTrackings());
+        }
+    }
+
+    /**
+     * @depends testCadaItemDeUmaListaEUmObjeto
+     */
     public function testCadaPedidoPossuiColecaoDeProdutos(CollectionInterface $list)
     {
         foreach ($list as $item) {
