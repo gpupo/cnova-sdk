@@ -11,17 +11,12 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
 
-use Gpupo\CnovaSdk\Entity\Order\Order;
 use Gpupo\Common\Entity\CollectionInterface;
 
 class OrderTest extends OrderTestCaseAbstract
 {
     public function testCadaItemDeUmaListaEUmObjeto()
     {
-        if (!$this->hasToken()) {
-            return $this->markTestIncomplete('API Token ausente');
-        }
-
         $list = $this->getList();
 
         foreach ($list as $item) {

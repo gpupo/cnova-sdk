@@ -39,6 +39,7 @@ return Config::create()
         'phpdoc_var_to_type',
         'strict',
         'strict_param',
+        'short_array_syntax',
     ))
     ->level(FixerInterface::SYMFONY_LEVEL)
     ->setUsingCache(false)             
