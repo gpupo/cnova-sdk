@@ -36,7 +36,7 @@ class Client extends ClientAbstract implements ClientInterface
         $list = [];
 
         foreach(['client_id', 'access_token'] as $key) {
-            $value = $this->getOptions()->get('client_id');
+            $value = $this->getOptions()->get($key);
             if (empty($value)) {
                 throw new \InvalidArgumentException('['.$value.'] ausente!');
             }

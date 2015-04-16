@@ -15,6 +15,7 @@ namespace Gpupo\CnovaSdk\Entity;
 
 use Gpupo\CommonSdk\Entity\ManagerAbstract as CommonAbstract;
 use Gpupo\CommonSdk\Entity\ManagerInterface;
+use Gpupo\Common\Entity\EntityInterface;
 
 abstract class ManagerAbstract extends CommonAbstract implements ManagerInterface
 {
@@ -37,7 +38,7 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
     {
         $data = parent::findById($itemId);
 
-        if ($data) {
+        if ($data instanceof CollectionInterface) {
             return $this->factoryEntity($data->toArray());
         }
 
