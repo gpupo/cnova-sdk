@@ -21,7 +21,7 @@ class Manager extends ManagerAbstract
 
     protected $maps = [
         'findById'  => ['GET', '/orders/{itemId}'],
-        'fetch'     => ['GET', '/orders/{status}/?_offset={offset}&_limit={limit}'],
+        'fetch'     => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
     ];
 
     /**

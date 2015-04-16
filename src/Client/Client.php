@@ -22,7 +22,6 @@ class Client extends ClientAbstract implements ClientInterface
     {
         return [
             'client_id'     => false,
-            'client_secret' => false,
             'access_token'  => false,
             'base_url'      => 'https://{VERSION}.cnova.com/api/v2',
             'version'       => 'sandbox',
@@ -34,22 +33,18 @@ class Client extends ClientAbstract implements ClientInterface
 
     protected function renderAuthorization()
     {
-        $client_id = $this->getOptions()->get('client_id');
+        $list = [];
 
-        if (empty($client_id)) {
-            throw new \InvalidArgumentException('[client_id] ausente!');
+        foreach(['client_id', 'access_token'] as $key) {
+            $value = $this->getOptions()->get('client_id');
+            if (empty($value)) {
+                throw new \InvalidArgumentException('['.$value.'] ausente!');
+            }
+
+            $list[] = $key.':'. $value;
+
         }
 
-        $client_secret = $this->getOptions()->get('client_secret');
-        $string = $client_id.':'.$client_secret;
-
-        return '';
-
-        return 'X-Authorization: Basic '.base64_encode($string);
+        return $list;
     }
-
-    /**public function get($resource, $ttl = null)
-    {
-        return parent::get($this->fillPlaceholdersWithOptions($resource, ['client_id', 'access_token']), $ttl);
-    }*/
 }

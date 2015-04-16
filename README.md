@@ -3,12 +3,15 @@
 
 # SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace
 
+
+[Documentação Oficial da API V2](https://desenvolvedores.cnova.com/api-portal/docs/apilojista/main/getting-started.html)
+
 ## Desenvolvimento
 
     git clone --depth=1  git@github.com:gpupo/cnova-sdk.git
 
     cd cnova-sdk;
-    
+
     composer install;
 
     phpunit;

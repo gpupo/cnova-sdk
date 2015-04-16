@@ -26,8 +26,6 @@
     <!-- Customize your parameters ! -->
     <php>
         <const name="CLIENT_ID" value=""/>
-        <const name="CLIENT_SECRET" value=""/>
-        <const name="CLIENT_CODE" value=""/>
         <const name="ACCESS_TOKEN" value=""/>
         <const name="VERBOSE" value="true"/>
     </php>

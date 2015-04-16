@@ -23,6 +23,7 @@ class ClientTest extends TestCaseAbstract
         $this->assertEquals('https://sandbox.cnova.com/api/v2/sku',
             $client->getResourceUri('/sku'));
     }
+    
     /**
      * @requires extension curl
      */

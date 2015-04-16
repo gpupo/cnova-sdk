@@ -27,4 +27,19 @@ class Provider extends ProviderAbstract
             'accessToken'   => 'https://api.cnova.com/oauth/access_token',
         ];
     }
+
+    protected function renderAuthorization()
+    {
+        $client_id = $this->getOptions()->get('client_id');
+
+        if (empty($client_id)) {
+            throw new \InvalidArgumentException('[client_id] ausente!');
+        }
+
+        $client_secret = $this->getOptions()->get('client_secret');
+        $string = $client_id.':'.$client_secret;
+
+        return 'X-Authorization: Basic '.base64_encode($string);
+    }
+
 }
