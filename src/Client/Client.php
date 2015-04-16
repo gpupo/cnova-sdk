@@ -31,7 +31,7 @@ class Client extends ClientAbstract implements ClientInterface
             'cacheTTL'      => 3600,
         ];
     }
-    
+
     protected function renderAuthorization()
     {
         $client_id = $this->getOptions()->get('client_id');
@@ -42,7 +42,9 @@ class Client extends ClientAbstract implements ClientInterface
 
         $client_secret = $this->getOptions()->get('client_secret');
         $string = $client_id.':'.$client_secret;
+
         return '';
+
         return 'X-Authorization: Basic '.base64_encode($string);
     }
 

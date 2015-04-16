@@ -23,7 +23,7 @@ class ManagerTest extends OrderTestCaseAbstract
 
         return $list;
     }
-    
+
     /**
      * @depends testObtemListaPedidos
      */
@@ -41,5 +41,4 @@ class ManagerTest extends OrderTestCaseAbstract
             $this->assertEquals($order->getStatus(), $info->getStatus());
         }
     }
-
 }

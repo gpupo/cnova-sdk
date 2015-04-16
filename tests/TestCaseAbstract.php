@@ -32,7 +32,7 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 
         return $client;
     }
-    
+
     protected function hasToken()
     {
         $token = $this->getConstant('ACCESS_TOKEN');

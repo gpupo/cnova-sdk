@@ -44,15 +44,15 @@ class ProviderTest extends TestCaseAbstract
 
             ]));
     }
-    
+
     public function testAuthorize()
     {
         if (!$this->hasToken()) {
             return $this->markTestIncomplete();
         }
-        
+
         $client = $this->factoryClient();
-        
+
         $client->post([
             'url'   => 'http://lojista.ehub.com.br/oauth-api/authorize?client_id={clientId}',
         ], json_encode([

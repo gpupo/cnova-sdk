@@ -57,7 +57,7 @@ class OrderTest extends OrderTestCaseAbstract
             $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Freight\Freight', $item->getFreight());
         }
     }
-    
+
     /**
      * @depends testCadaItemDeUmaListaEUmObjeto
      */

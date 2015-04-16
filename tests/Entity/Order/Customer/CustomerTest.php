@@ -7,6 +7,8 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @version 1
  */
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order\Customer;
@@ -19,13 +21,13 @@ class CustomerTest extends OrderTestCaseAbstract
     {
         foreach ($this->getList() as $order) {
             $phones = $order->getCustomer()->getPhones();
-            
-            $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionAbstract',$phones);
-            
-            foreach($phones as $phone) {
-                $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionAbstract',$phone);
-                $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Customer\Phones\Phone',$phone);
-                $this->assertTrue(in_array($phone->getType(), ['HOME', 'CELLPHONE', 'BUSINESS']));
+
+            $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionAbstract', $phones);
+
+            foreach ($phones as $phone) {
+                $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionAbstract', $phone);
+                $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Customer\Phones\Phone', $phone);
+                $this->assertTrue(in_array($phone->getType(), ['HOME', 'CELLPHONE', 'BUSINESS'], true));
             }
         }
     }
