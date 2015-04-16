@@ -23,7 +23,7 @@ class Dimensions extends EntityAbstract implements EntityInterface
         return  [
             'weight' => 'number',
             'length' => 'number',
-            'width' => 'number',
+            'width'  => 'number',
             'height' => 'number',
         ];
     }

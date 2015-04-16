@@ -20,22 +20,22 @@ class Product extends EntityAbstract implements EntityInterface
 {
     public function getSchema()
     {
-        return  [
-            'skuSellerId' => 'string',
-            'skuId' => 'string',
+        return [
+            'skuSellerId'     => 'string',
+            'skuId'           => 'string',
             'productSellerId' => 'string',
-            'title' => 'string',
-            'description' => 'string',
-            'brand' => 'string',
-            'gtin' => 'array',
-            'categories' => 'array',
-            'images' => 'array',
-            'videos' => 'array',
-                'price' => 'object',
-                'stock' => 'object',
-                'dimensions' => 'object',
-                'giftWrap' => 'object',
-                'attributes' => 'object',
+            'title'           => 'string',
+            'description'     => 'string',
+            'brand'           => 'string',
+            'gtin'            => 'array',
+            'categories'      => 'array',
+            'images'          => 'array',
+            'videos'          => 'array',
+            'price'           => 'object',
+            'stock'           => 'object',
+            'dimensions'      => 'object',
+            'giftWrap'        => 'object',
+            'attributes'      => 'object',
         ];
     }
 }

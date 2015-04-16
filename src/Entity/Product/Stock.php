@@ -21,7 +21,7 @@ class Stock extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'quantity' => 'integer',
+            'quantity'         => 'integer',
             'crossDockingTime' => 'integer',
         ];
     }

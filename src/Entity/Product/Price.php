@@ -22,7 +22,7 @@ class Price extends EntityAbstract implements EntityInterface
     {
         return  [
             'default' => 'number',
-            'offer' => 'number',
+            'offer'   => 'number',
         ];
     }
 }
