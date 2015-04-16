@@ -23,6 +23,7 @@ class Client extends ClientAbstract implements ClientInterface
         return [
             'client_id'     => false,
             'client_secret' => false,
+            'access_token'  => false,
             'base_url'      => 'https://{VERSION}.cnova.com/api/v2',
             'version'       => 'sandbox',
             'verbose'       => false,
@@ -30,32 +31,23 @@ class Client extends ClientAbstract implements ClientInterface
             'cacheTTL'      => 3600,
         ];
     }
-
-    protected function factoryTransport()
+    
+    protected function renderAuthorization()
     {
-        $transport = parent::factoryTransport();
         $client_id = $this->getOptions()->get('client_id');
 
         if (empty($client_id)) {
-            throw new \InvalidArgumentException('client_id nao informado');
+            throw new \InvalidArgumentException('[client_id] ausente!');
         }
 
         $client_secret = $this->getOptions()->get('client_secret');
         $string = $client_id.':'.$client_secret;
-        $authorization = 'X-Authorization: Basic '.base64_encode($string);
-        
-        $this->debug('AUTENTICACAO', [
-            'client_id'     => $client_id,
-            'client_secret' => $client_secret,
-            'string_raw'    => $string,
-            'authorization' => $authorization,
-        ]);
-            
-        $transport->setOption(CURLOPT_HTTPHEADER, [
-            $authorization,
-            'Content-Type: application/json;charset=UTF-8',
-        ]);
-
-        return $transport;
+        return '';
+        return 'X-Authorization: Basic '.base64_encode($string);
     }
+
+    /**public function get($resource, $ttl = null)
+    {
+        return parent::get($this->fillPlaceholdersWithOptions($resource, ['client_id', 'access_token']), $ttl);
+    }*/
 }

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "50d4f3aee6e70503658dc7719a0be4b0",
+    "hash": "f55ff624c952e66f39e314bf9d4fe809",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -500,16 +500,16 @@
         },
         {
             "name": "gpupo/common-sdk",
-            "version": "1.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gpupo/common-sdk.git",
-                "reference": "77366d6038a762b7a726d6a9c51cd44b8996010a"
+                "reference": "e41bdd0861a7ebe26e3f69ba665336df9401c0e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/77366d6038a762b7a726d6a9c51cd44b8996010a",
-                "reference": "77366d6038a762b7a726d6a9c51cd44b8996010a",
+                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/e41bdd0861a7ebe26e3f69ba665336df9401c0e6",
+                "reference": "e41bdd0861a7ebe26e3f69ba665336df9401c0e6",
                 "shasum": ""
             },
             "require": {
@@ -541,7 +541,7 @@
             "keywords": [
                 "sdk"
             ],
-            "time": "2015-04-14 14:38:50"
+            "time": "2015-04-15 19:59:23"
         },
         {
             "name": "psr/log",
@@ -1725,9 +1725,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
-        "mockery/mockery": 20
+        "gpupo/common-sdk": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

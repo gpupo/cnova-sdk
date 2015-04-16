@@ -30,7 +30,9 @@ class ProviderTest extends TestCaseAbstract
 
     public function testAccessToken()
     {
-        //return $this->markTestIncomplete();
+        if (!$this->hasToken()) {
+            return $this->markTestIncomplete();
+        }
 
         $client = $this->factoryClient();
 
@@ -43,9 +45,11 @@ class ProviderTest extends TestCaseAbstract
             ]));
     }
     
-    public function testFoo()
+    public function testAuthorize()
     {
-        return $this->markTestIncomplete();
+        if (!$this->hasToken()) {
+            return $this->markTestIncomplete();
+        }
         
         $client = $this->factoryClient();
         
@@ -54,7 +58,6 @@ class ProviderTest extends TestCaseAbstract
         ], json_encode([
             'grant_type' => 'authorization_code',
             'code'       => $this->getConstant('CLIENT_CODE'),
-
-            ]));
+        ]));
     }
 }

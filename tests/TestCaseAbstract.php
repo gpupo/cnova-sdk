@@ -24,12 +24,20 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
             ->setOptions([
                 'client_id'     => $this->getConstant('CLIENT_ID'),
                 'client_secret' => $this->getConstant('CLIENT_SECRET'),
+                'access_token'  => $this->getConstant('ACCESS_TOKEN'),
                 'verbose'       => $this->getConstant('VERBOSE'),
             ]);
 
         $client->setLogger($this->getLogger());
 
         return $client;
+    }
+    
+    protected function hasToken()
+    {
+        $token = $this->getConstant('ACCESS_TOKEN');
+
+        return empty($token) ? false : true;
     }
 
     public function dataProviderProducts()
