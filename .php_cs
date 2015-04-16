@@ -44,5 +44,5 @@ return Config::create()
         'short_array_syntax',
     ))
     ->level(FixerInterface::SYMFONY_LEVEL)
-    ->setUsingCache(false)             
+    ->setUsingCache(false)
     ->finder($finder);

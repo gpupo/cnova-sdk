@@ -1,0 +1,39 @@
+[
+  {
+    "skuSellerId": "101",
+    "skuId": "101",
+    "productSellerId": "string",
+    "title": "string",
+    "description": "string",
+    "brand": "string",
+    "gtin": "Array[string]",
+    "categories": "Array[string]",
+    "images": "Array[string]",
+    "videos": "Array[string]",
+    "price": {
+      "default": "number",
+      "offer": "number"
+    },
+    "stock": {
+      "quantity": "integer",
+      "crossDockingTime": "integer"
+    },
+    "dimensions": {
+      "weight": "number",
+      "length": "number",
+      "width": "number",
+      "height": "number"
+    },
+    "giftWrap": {
+      "available": "boolean",
+      "value": "number",
+      "messageSupport": "boolean"
+    },
+    "attributes": [
+      {
+        "name": "string",
+        "value": "string"
+      }
+    ]
+  }
+]
