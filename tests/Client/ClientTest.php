@@ -42,7 +42,7 @@ class ClientTest extends TestCaseAbstract
         if (!$this->hasToken()) {
             return $this->markTestIncomplete('API Token ausente');
         }
-        
+
         $header = implode(';', $client->factoryRequest('/')->getHeader());
 
         foreach(['client_id', 'access_token'] as $key) {
@@ -58,6 +58,9 @@ class ClientTest extends TestCaseAbstract
         if (!$this->hasToken()) {
             return $this->markTestIncomplete('API Token ausente');
         }
+
+        $response = $this->factoryClient()->get('/orders/status/new/?_offset=0&_limit=1');
+        $this->assertEquals('200', $response->getHttpStatusCode());
     }
 
     /**
@@ -65,6 +68,11 @@ class ClientTest extends TestCaseAbstract
      */
     public function testAcessoAListaDeProdutos()
     {
-        return $this->markTestIncomplete();
+        if (!$this->hasToken()) {
+            return $this->markTestIncomplete('API Token ausente');
+        }
+
+        $response = $this->factoryClient()->get('/sellerItems/status/selling/?_offset=0&_limit=1');
+        $this->assertEquals('200', $response->getHttpStatusCode());
     }
 }

@@ -1,7 +1,7 @@
 [![Build Status](https://secure.travis-ci.org/gpupo/cnova-sdk.png?branch=master)](http://travis-ci.org/gpupo/cnova-sdk)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gpupo/cnova-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gpupo/cnova-sdk/?branch=master)
 
-# SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace (Extra.com.br, Pontofrio.com.br, Casasbahia.com.br")
+# SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace (Extra.com.br, Pontofrio.com.br, Casasbahia.com.br)
 
 
 [Documentação Oficial da API V2](https://desenvolvedores.cnova.com/api-portal/docs/apilojista/main/getting-started.html)
@@ -15,7 +15,7 @@ MIT, veja LICENSE.
 ## Contributors
 
 - [@gpupo](https://github.com/gpupo)
-- [All Contributors](https://github.com/gpupo/submarino-sdk/contributors)
+- [All Contributors](https://github.com/gpupo/cnova-sdk/contributors)
 
 ---
 
@@ -59,12 +59,11 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 
 ### Client\Client
 
-
 - [x] Sucesso ao definir options
 - [x] Gerencia uri de recurso
-- [ ] Objeto request possui header
-- [ ] Acesso a lista de pedidos
-- [ ] Acesso a lista de produtos
+- [x] Objeto request possui header
+- [x] Acesso a lista de pedidos
+- [x] Acesso a lista de produtos
 
 ### Entity\Order\Customer\Customer
 
