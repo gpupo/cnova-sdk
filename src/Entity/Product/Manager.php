@@ -22,7 +22,7 @@ class Manager extends ManagerAbstract
 
     protected $maps = [
         'findById'  => ['GET', '/sellerItems/{itemId}'],
-        'fetch'     => ['GET', '/sellerItems?offset={offset}&limit={limit}'],
+        'fetch'     => ['GET', '/sellerItems?_offset={offset}&_limit={limit}'],
     ];
 
     public function update(EntityInterface $entity, EntityInterface $existent)

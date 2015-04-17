@@ -13,14 +13,13 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Product;
 
-use Gpupo\CnovaSdk\Factory;
 use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class ProductTest extends TestCaseAbstract
 {
     protected function factory($data)
     {
-        return Factory::getInstance()->createProduct($data);
+        return $this->getFactory()->createProduct($data);
     }
 
     protected function assertIsObject($name)
