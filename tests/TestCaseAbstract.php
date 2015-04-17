@@ -21,12 +21,12 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
     public function factoryClient()
     {
         return Client::getInstance()
+            ->setLogger($this->getLogger())
             ->setOptions([
                 'client_id'     => $this->getConstant('CLIENT_ID'),
                 'access_token'  => $this->getConstant('ACCESS_TOKEN'),
                 'verbose'       => $this->getConstant('VERBOSE'),
-            ])
-            ->setLogger($this->getLogger());
+            ]);
     }
 
     protected function hasToken()

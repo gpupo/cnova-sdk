@@ -17,13 +17,39 @@ use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class ClientTest extends TestCaseAbstract
 {
-    public function testGerenciaUriDeRecurso()
+    public function testSucessoAoDefinirOptions()
     {
         $client = $this->factoryClient();
+        $this->assertInstanceOf('\Gpupo\CommonSdk\Client\ClientInterface', $client);
+
+        return $client;
+    }
+
+    /**
+     * @depends testSucessoAoDefinirOptions
+     */
+    public function testGerenciaUriDeRecurso($client)
+    {
         $this->assertEquals('https://sandbox.cnova.com/api/v2/sku',
             $client->getResourceUri('/sku'));
     }
-    
+
+    /**
+     * @depends testSucessoAoDefinirOptions
+     */
+    public function testObjetoRequestPossuiHeader($client)
+    {
+        if (!$this->hasToken()) {
+            return $this->markTestIncomplete('API Token ausente');
+        }
+        
+        $header = implode(';', $client->factoryRequest('/')->getHeader());
+
+        foreach(['client_id', 'access_token'] as $key) {
+            $this->assertContains($key, $header);
+        }
+    }
+
     /**
      * @requires extension curl
      */
