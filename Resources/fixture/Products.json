@@ -1,39 +1,41 @@
 [
-  {
-    "skuSellerId": "101",
-    "skuId": "101",
-    "productSellerId": "string",
-    "title": "string",
-    "description": "string",
-    "brand": "string",
-    "gtin": "Array[string]",
-    "categories": "Array[string]",
-    "images": "Array[string]",
-    "videos": "Array[string]",
-    "price": {
-      "default": "number",
-      "offer": "number"
-    },
-    "stock": {
-      "quantity": "integer",
-      "crossDockingTime": "integer"
-    },
-    "dimensions": {
-      "weight": "number",
-      "length": "number",
-      "width": "number",
-      "height": "number"
-    },
-    "giftWrap": {
-      "available": "boolean",
-      "value": "number",
-      "messageSupport": "boolean"
-    },
-    "attributes": [
+    [
       {
-        "name": "string",
-        "value": "string"
+        "skuSellerId": "101",
+        "skuId": "101",
+        "productSellerId": "101",
+        "title": "Hello",
+        "description": "Hello World",
+        "brand": "Foo",
+        "gtin": ["2001200000003"],
+        "categories": ["Test", "Sandbox"],
+        "images": ["http://foo/bar.jpg"],
+        "videos": ["http://foo/bar.avi"],
+        "price": {
+          "default": 1,
+          "offer": 1
+        },
+        "stock": {
+          "quantity": 1,
+          "crossDockingTime": 1
+        },
+        "dimensions": {
+          "weight": 1,
+          "length": 1,
+          "width": 1,
+          "height": 1
+        },
+        "giftWrap": {
+          "available": true,
+          "value": 1,
+          "messageSupport": true
+        },
+        "attributes": [
+          {
+            "name": "type",
+            "value": "Test"
+          }
+        ]
       }
     ]
-  }
 ]
