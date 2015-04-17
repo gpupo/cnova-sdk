@@ -45,7 +45,7 @@ class ClientTest extends TestCaseAbstract
 
         $header = implode(';', $client->factoryRequest('/')->getHeader());
 
-        foreach(['client_id', 'access_token'] as $key) {
+        foreach (['client_id', 'access_token'] as $key) {
             $this->assertContains($key, $header);
         }
     }

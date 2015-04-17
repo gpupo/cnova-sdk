@@ -15,7 +15,6 @@ namespace Gpupo\CnovaSdk\Entity;
 
 use Gpupo\CommonSdk\Entity\ManagerAbstract as CommonAbstract;
 use Gpupo\CommonSdk\Entity\ManagerInterface;
-use Gpupo\Common\Entity\EntityInterface;
 
 abstract class ManagerAbstract extends CommonAbstract implements ManagerInterface
 {

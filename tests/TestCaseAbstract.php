@@ -14,19 +14,34 @@
 namespace Gpupo\Tests\CnovaSdk;
 
 use Gpupo\CnovaSdk\Client\Client;
+use Gpupo\CnovaSdk\Factory;
 use Gpupo\Tests\CommonSdk\TestCaseAbstract as CommonSdkTestCaseAbstract;
 
 abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 {
+    private $factory;
+
     public function factoryClient()
     {
-        return Client::getInstance()
-            ->setLogger($this->getLogger())
-            ->setOptions([
-                'client_id'     => $this->getConstant('CLIENT_ID'),
-                'access_token'  => $this->getConstant('ACCESS_TOKEN'),
-                'verbose'       => $this->getConstant('VERBOSE'),
-            ]);
+        return $this->getFactory()->getClient();
+    }
+
+    protected function getOptions()
+    {
+        return [
+            'client_id'     => $this->getConstant('CLIENT_ID'),
+            'access_token'  => $this->getConstant('ACCESS_TOKEN'),
+            'verbose'       => $this->getConstant('VERBOSE'),
+        ];
+    }
+
+    protected function getFactory()
+    {
+        if (!$this->factory) {
+            $this->factory = new Factory($this->getOptions());
+        }
+
+        return $this->factory;
     }
 
     protected function hasToken()

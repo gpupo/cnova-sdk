@@ -7,12 +7,14 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @version 1
  */
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Product;
 
-use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 use Gpupo\CnovaSdk\Factory;
+use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class ProductTest extends TestCaseAbstract
 {
@@ -24,7 +26,7 @@ class ProductTest extends TestCaseAbstract
     protected function assertIsObject($name)
     {
         $method = 'get'.$name;
-        $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\\' . $name,
+        $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\\'.$name,
             $this->factorySingleProduct()->$method());
     }
 
@@ -46,10 +48,10 @@ class ProductTest extends TestCaseAbstract
         $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\Product', $product);
 
         foreach ([
-        'skuSellerId','skuId', 'productSellerId',
-        'title','description','brand'] as $key) {
+        'skuSellerId', 'skuId', 'productSellerId',
+        'title', 'description', 'brand', ] as $key) {
             $this->assertEquals($data[$key], $product->get($key), 'Simples');
-            $method = 'get' . ucfirst($key);
+            $method = 'get'.ucfirst($key);
             $this->assertEquals($data[$key], $product->$method(), 'Magic');
         }
 
@@ -88,7 +90,8 @@ class ProductTest extends TestCaseAbstract
         return $this->assertIsObject('Dimensions');
     }
 
-    public function testPossuiObjetoGiftWrap() {
+    public function testPossuiObjetoGiftWrap()
+    {
         return $this->assertIsObject('GiftWrap');
     }
 
@@ -102,8 +105,8 @@ class ProductTest extends TestCaseAbstract
         $array = json_decode($json, true);
 
         foreach ([
-        'skuSellerId','skuId', 'productSellerId',
-        'title','description','brand'] as $key) {
+        'skuSellerId', 'skuId', 'productSellerId',
+        'title', 'description', 'brand', ] as $key) {
             $this->assertArrayHasKey($key, $array);
         }
     }
