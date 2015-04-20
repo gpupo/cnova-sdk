@@ -50,4 +50,10 @@ class Manager extends ManagerAbstract
 
         return $this->getPool()->add($entity);
     }
+
+    public function commit()
+    {
+        return $this->execute($this->factoryMap('save'), $this->getPool()->toJson());
+    }
+
 }

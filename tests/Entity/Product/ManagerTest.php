@@ -53,13 +53,13 @@ class ManagerTest extends TestCaseAbstract
     public function testObtemListaDeProdutosCadastrados($manager)
     {
         if (!$this->hasToken()) {
-            return $this->markTestSkipped('API Token ausente');
+            return $this->markSkipped('API Token ausente');
         }
 
         $list = $manager->fetch();
 
         if (empty($list)) {
-            return $this->markTestSkipped('Nenhum produto encontrado');
+            return $this->markSkipped('Nenhum produto encontrado');
         }
 
         $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionInterface', $list);
@@ -73,11 +73,11 @@ class ManagerTest extends TestCaseAbstract
     public function testRecuperaInformacoesDeUmProdutoEspecifico($list)
     {
         if (!$this->hasToken()) {
-            return $this->markTestSkipped('API Token ausente');
+            return $this->markSkipped('API Token ausente');
         }
 
         if (empty($list)) {
-            return $this->markTestSkipped('Nenhum produto cadastrado');
+            return $this->markSkipped('Nenhum produto cadastrado');
         }
 
         $manager = $this->getManager();
@@ -116,18 +116,28 @@ class ManagerTest extends TestCaseAbstract
         }
     }
 
-    public function testGerenciaUpdate()
+    public function testGerenciaGravacaoDeProdutosEmLote()
     {
         if (!$this->hasToken()) {
-            return $this->markTestSkipped('API Token ausente');
+            return $this->markSkipped('API Token ausente');
         }
 
         $manager = $this->getManager();
+        $list = $this->dataProviderProducts();
 
-        foreach ($this->dataProviderProducts() as $array) {
-            $data = current($array);
-            $product = $this->getFactory()->createProduct($data);
-            $this->assertTrue($manager->save($product), $product);
+        $i = 0;
+        foreach ($list as $data) {
+            $product = $this->getFactory()->createProduct(current($data));
+            //if (!$manager->findById($product->getId())) {
+                $i++;
+                $this->assertTrue($manager->save($product));
+            //}
         }
+
+        if ($i < 1) {
+            return $this->markSkipped('Sem produtos para cadastrar');
+        }
+
+        $this->assertTrue($manager->commit(), 'Gravacao de lote');
     }
 }

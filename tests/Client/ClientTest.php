@@ -40,7 +40,7 @@ class ClientTest extends TestCaseAbstract
     public function testObjetoRequestPossuiHeader($client)
     {
         if (!$this->hasToken()) {
-            return $this->markTestSkipped('API Token ausente');
+            return $this->markSkipped('API Token ausente');
         }
 
         $header = implode(';', $client->factoryRequest('/')->getHeader());
@@ -56,7 +56,7 @@ class ClientTest extends TestCaseAbstract
     public function testAcessoAListaDePedidos()
     {
         if (!$this->hasToken()) {
-            return $this->markTestSkipped('API Token ausente');
+            return $this->markSkipped('API Token ausente');
         }
 
         $response = $this->factoryClient()->get('/orders/status/new/?_offset=0&_limit=1');
@@ -69,7 +69,7 @@ class ClientTest extends TestCaseAbstract
     public function testAcessoAListaDeProdutos()
     {
         if (!$this->hasToken()) {
-            return $this->markTestSkipped('API Token ausente');
+            return $this->markSkipped('API Token ausente');
         }
 
         $response = $this->factoryClient()->get('/sellerItems/status/selling/?_offset=0&_limit=1');

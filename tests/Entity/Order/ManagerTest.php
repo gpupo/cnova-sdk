@@ -29,7 +29,7 @@ class ManagerTest extends OrderTestCaseAbstract
      */
     public function testRecuperaInformacoesDeUmPedidoEspecifico($list)
     {
-        return $this->markTestSkipped('API Token ausente');
+        return $this->markSkipped('API Token ausente');
 
         foreach ($list as $order) {
             $info = $this->factoryManager()->findById($order->getId());
