@@ -92,11 +92,35 @@ class ManagerTest extends TestCaseAbstract
         }
     }
 
+    public function testGuardaProdutosNaoCadastradosEmUmaFilaParaGravacaoEmLote()
+    {
+        $manager = $this->getManager();
+        $list = $this->dataProviderProducts();
+
+        foreach ($list as $data) {
+            $product = $this->getFactory()->createProduct(current($data));
+            $this->assertTrue($manager->save($product));
+        }
+
+        $poolItens = json_decode($manager->getPool()->toJson(), true);
+
+        foreach($list as $data) {
+            $item = current($data);
+            $poolItem = current($poolItens);
+
+            foreach (['skuSellerId', 'skuId', 'productSellerId',
+                'title', 'description', 'brand', ] as $key) {
+                $this->assertEquals($item[$key], $poolItem[$key]);
+            }
+            next($poolItens);
+        }
+    }
+
     public function testGerenciaUpdate()
     {
-        //if (!$this->hasToken()) {
+        if (!$this->hasToken()) {
             return $this->markTestSkipped('API Token ausente');
-        //}
+        }
 
         $manager = $this->getManager();
 

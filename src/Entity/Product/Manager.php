@@ -40,4 +40,14 @@ class Manager extends ManagerAbstract
     public function update(EntityInterface $entity, EntityInterface $existent)
     {
     }
+
+    public function save(EntityInterface $entity, $route = 'save')
+    {
+        $existent = $entity->getPrevious();
+        if ($existent) {
+            return $this->update($entity, $existent);
+        }
+
+        return $this->getPool()->add($entity);
+    }
 }
