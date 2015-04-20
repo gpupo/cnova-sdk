@@ -38,7 +38,7 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
     protected function getFactory()
     {
         if (!$this->factory) {
-            $this->factory = new Factory($this->getOptions());
+            $this->factory = new Factory($this->getOptions(), $this->getLogger());
         }
 
         return $this->factory;

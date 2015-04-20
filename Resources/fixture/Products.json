@@ -2,7 +2,7 @@
     [
       {
         "skuSellerId": "101",
-        "skuId": "101",
+        "skuId": null,
         "productSellerId": "101",
         "title": "Hello",
         "description": "Hello World",

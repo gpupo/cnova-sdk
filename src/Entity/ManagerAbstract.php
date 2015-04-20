@@ -32,15 +32,4 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
 
         return;
     }
-
-    public function findById($itemId)
-    {
-        $data = parent::findById($itemId);
-
-        if ($data instanceof CollectionInterface) {
-            return $this->factoryEntity($data->toArray());
-        }
-
-        return false;
-    }
 }

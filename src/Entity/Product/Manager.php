@@ -24,7 +24,7 @@ class Manager extends ManagerAbstract
 
     protected $maps = [
         'save'      => ['POST', '/loads/products'],
-        'findById'  => ['GET', '/sellerItems/{itemId}'],
+        'findById'  => ['GET', '/loads/products/{itemId}'],
         'fetch'     => ['GET', '/sellerItems?_offset={offset}&_limit={limit}'],
     ];
 

@@ -59,10 +59,14 @@ class ManagerTest extends TestCaseAbstract
         $list = $manager->fetch();
 
         if (empty($list)) {
-            return $this->markSkipped('Nenhum produto encontrado');
+            return $this->markSkipped('Nenhum produto encontrado no Marketplace');
         }
 
         $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionInterface', $list);
+
+        $this->log('info', 'Produtos cadastrados', [
+                'count' => $list->count(),
+        ]);
 
         return $list;
     }
@@ -77,13 +81,13 @@ class ManagerTest extends TestCaseAbstract
         }
 
         if (empty($list)) {
-            return $this->markSkipped('Nenhum produto cadastrado');
+            return $this->markSkipped('Nenhum produto cadastrado no Marketplace');
         }
 
         $manager = $this->getManager();
 
         foreach ($list as $product) {
-            $info = $manager->findById($product->getId());
+            $info = $manager->findById($product->getSkuSellerId());
 
             $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Product',
             $info);
@@ -128,10 +132,20 @@ class ManagerTest extends TestCaseAbstract
         $i = 0;
         foreach ($list as $data) {
             $product = $this->getFactory()->createProduct(current($data));
-            //if (!$manager->findById($product->getId())) {
+
+            $exist = $manager->findById($product->getSkuSellerId());
+            
+            if (!$exist) {
                 $i++;
                 $this->assertTrue($manager->save($product));
-            //}
+                $this->log('debug', 'Produto enviado para lote', [
+                        'skuSellerId'    => $product->getSkuSellerId(),
+                ]);
+            } else {
+                $this->log('debug', 'Produto existente', [
+                        'skuSellerId'    => $product->getSkuSellerId(),
+                        ]);
+            }
         }
 
         if ($i < 1) {
