@@ -59,6 +59,7 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 
 ### Client\Client
 
+
 - [x] Sucesso ao definir options
 - [x] Gerencia uri de recurso
 - [x] Objeto request possui header
@@ -86,3 +87,30 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 - [x] Cada pedido possui objeto contendo endereco de entrega
 - [x] Cada pedido possui colecao de rastreamentos
 - [x] Cada pedido possui colecao de produtos
+
+### Entity\Product\Manager
+
+
+- [x] Acesso ao administrador de produtos
+- [x] Possui objeto pool
+- [x] Possui objeto client
+- [ ] Obtem lista de produtos cadastrados
+- [x] Guarda produtos nao cadastrados em uma fila para gravacao em lote
+- [x] Gerencia gravacao de produtos em lote
+
+### Entity\Product\Product
+
+
+- [x] Possui propriedades e objetos
+- [x] Possui uma colecao attributes
+- [x] Possui objeto price
+- [x] Possui objeto stock
+- [x] Possui objeto dimensions
+- [x] Possui objeto gift wrap
+- [x] Entrega json
+
+### Factory
+
+
+- [x] Centraliza acesso a managers
+- [x] Centraliza criacao de objetos
