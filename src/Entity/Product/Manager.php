@@ -55,5 +55,4 @@ class Manager extends ManagerAbstract
     {
         return $this->execute($this->factoryMap('save'), $this->getPool()->toJson());
     }
-
 }

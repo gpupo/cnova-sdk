@@ -37,5 +37,44 @@
           }
         ]
       }
+    ],
+    [
+      {
+      "skuSellerId": "102",
+      "skuId": null,
+      "productSellerId": "102",
+      "title": "Test Feliz",
+      "description": "Caminho feliz",
+      "brand": "Acme",
+      "gtin": ["2001200000004"],
+      "categories": ["Test", "Sandbox"],
+      "images": ["http://foo/bar.jpg"],
+      "videos": ["http://foo/bar.avi"],
+      "price": {
+        "default": 200,
+        "offer": 179
+      },
+      "stock": {
+        "quantity": 1,
+        "crossDockingTime": 0
+      },
+      "dimensions": {
+        "weight": 0.1,
+        "length": 0.1,
+        "width": 0.1,
+        "height": 0.1
+      },
+      "giftWrap": {
+        "available": true,
+        "value": 1,
+        "messageSupport": true
+      },
+      "attributes": [
+        {
+          "name": "type",
+          "value": "Test"
+        }
+      ]
+    }
     ]
 ]

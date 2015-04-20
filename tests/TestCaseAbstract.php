@@ -13,7 +13,6 @@
 
 namespace Gpupo\Tests\CnovaSdk;
 
-use Gpupo\CnovaSdk\Client\Client;
 use Gpupo\CnovaSdk\Factory;
 use Gpupo\Tests\CommonSdk\TestCaseAbstract as CommonSdkTestCaseAbstract;
 

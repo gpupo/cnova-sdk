@@ -14,7 +14,6 @@
 namespace Gpupo\Tests\CnovaSdk\Entity\Product;
 
 use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
-use Gpupo\CnovaSdk\Factory;
 
 class ManagerTest extends TestCaseAbstract
 {
@@ -108,7 +107,7 @@ class ManagerTest extends TestCaseAbstract
 
         $poolItens = json_decode($manager->getPool()->toJson(), true);
 
-        foreach($list as $data) {
+        foreach ($list as $data) {
             $item = current($data);
             $poolItem = current($poolItens);
 
@@ -134,7 +133,7 @@ class ManagerTest extends TestCaseAbstract
             $product = $this->getFactory()->createProduct(current($data));
 
             $exist = $manager->findById($product->getSkuSellerId());
-            
+
             if (!$exist) {
                 $i++;
                 $this->assertTrue($manager->save($product));
