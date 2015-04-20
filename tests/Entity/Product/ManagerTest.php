@@ -34,6 +34,14 @@ class ManagerTest extends TestCaseAbstract
     /**
      * @depends testAcessoAoAdministradorDeProdutos
      */
+    public function testPossuiObjetoPool($manager)
+    {
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Pool', $manager->getPool());
+    }
+
+    /**
+     * @depends testAcessoAoAdministradorDeProdutos
+     */
     public function testPossuiObjetoClient($manager)
     {
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Client\Client', $manager->getClient());
@@ -86,9 +94,9 @@ class ManagerTest extends TestCaseAbstract
 
     public function testGerenciaUpdate()
     {
-        if (!$this->hasToken()) {
+        //if (!$this->hasToken()) {
             return $this->markTestSkipped('API Token ausente');
-        }
+        //}
 
         $manager = $this->getManager();
 

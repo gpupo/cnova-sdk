@@ -20,10 +20,22 @@ class Manager extends ManagerAbstract
 {
     protected $entity = 'Product';
 
+    protected $pool;
+
     protected $maps = [
+        'save'      => ['POST', '/loads/products'],
         'findById'  => ['GET', '/sellerItems/{itemId}'],
         'fetch'     => ['GET', '/sellerItems?_offset={offset}&_limit={limit}'],
     ];
+
+    public function getPool()
+    {
+        if (!$this->pool) {
+            $this->pool = new Pool();
+        }
+
+        return $this->pool;
+    }
 
     public function update(EntityInterface $entity, EntityInterface $existent)
     {
