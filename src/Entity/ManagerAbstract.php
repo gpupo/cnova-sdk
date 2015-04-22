@@ -36,7 +36,7 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
     /**
      * {@inheritDoc}
      *
-     * Faz uma pausa de 1 minuto em caso de "maximum allowed rate"
+     * Faz pausa de 1 minuto em caso de "maximum allowed rate"
      */
     protected function retry(\Exception $exception, $i)
     {
