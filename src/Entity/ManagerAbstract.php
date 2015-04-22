@@ -32,4 +32,24 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
 
         return;
     }
+
+    /**
+     * {@inheritDoc}
+     *
+     * Faz uma pausa de 1 minuto em caso de "maximum allowed rate"
+     */
+    protected function retry(\Exception $exception, $i)
+    {
+        if ($i <= 2 && $exception->getCode() >= 500){
+            if (strpos('maximum allowed rate', $exception->getMessage())) {
+                sleep(60);
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 }
