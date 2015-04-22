@@ -8,7 +8,7 @@
         "description": "Hello World",
         "brand": "Foo",
         "gtin": ["2001200000003"],
-        "categories": ["Test", "Sandbox"],
+        "categories": ["Teste>API"],
         "images": ["http://foo/bar.jpg"],
         "videos": ["http://foo/bar.avi"],
         "price": {
@@ -47,7 +47,7 @@
       "description": "Caminho feliz",
       "brand": "Acme",
       "gtin": ["2001200000004"],
-      "categories": ["Test", "Sandbox"],
+      "categories": ["Teste>API"],
       "images": ["http://foo/bar.jpg"],
       "videos": ["http://foo/bar.avi"],
       "price": {
