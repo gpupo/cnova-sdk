@@ -38,7 +38,7 @@ class FactoryTest extends FactoryTestAbstract
     {
         return [
             [$this->namespace.'Entity\Product\Product', 'product', null],
-            //[$this->namespace.'Entity\Order\Order', 'order', null],
+            [$this->namespace.'Entity\Order\Order', 'order', null],
         ];
     }
 
@@ -46,7 +46,7 @@ class FactoryTest extends FactoryTestAbstract
     {
         return [
             [$this->namespace.'Entity\Product\Manager', 'product'],
-            //[$this->namespace.'Entity\Order\Manager', 'order'],
+            [$this->namespace.'Entity\Order\Manager', 'order'],
         ];
     }
 }
