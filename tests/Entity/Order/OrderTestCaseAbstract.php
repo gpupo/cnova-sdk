@@ -20,9 +20,9 @@ use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 abstract class OrderTestCaseAbstract extends TestCaseAbstract
 {
-    protected function factoryManager()
+    protected function getManager()
     {
-        return new Manager($this->factoryClient());
+        return $this->getFactory()->factoryManager('order');
     }
 
     protected function getList()

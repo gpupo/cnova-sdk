@@ -29,16 +29,37 @@ class ManagerTest extends OrderTestCaseAbstract
      */
     public function testRecuperaInformacoesDeUmPedidoEspecifico($list)
     {
-        return $this->markSkipped('API Token ausente');
+        return $this->markIncomplete();
+    }
 
+    /**
+     * @depends testObtemListaPedidos
+     */
+    public function testAtualizaStatusDeUmPedido($list)
+    {
+        if (!$this->hasToken()) {
+            return $this->markSkipped('API Token ausente');
+        }
+
+        $flux = ['approved' => 'sent'];
+
+        $i = 0;
         foreach ($list as $order) {
-            $info = $this->factoryManager()->findById($order->getId());
+            $i++;
+            $manager = $this->getManager();
+            $currentStatus = $order->getStatus();
+            if (array_key_exists($currentStatus, $flux)) {
+                $newStatus = $flux[$currentStatus];
+                $order->getStatus()->setStatus($newStatus);
+                $this->assertTrue($manager->saveStatus($order));
+                $orderUpdated = $manager->findById($order->getId());
+                $this->assertEquals($newStatus, $orderUpdated->getStatus());
+            }
+        }
 
-            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Order',
-            $info);
-
-            $this->assertEquals($order->getId(), $info->getId());
-            $this->assertEquals($order->getStatus(), $info->getStatus());
+        if ($i < 1) {
+            $this->markSkipped('Sem Pedidos para atualizar');
         }
     }
+
 }

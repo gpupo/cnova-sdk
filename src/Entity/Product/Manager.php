@@ -33,7 +33,9 @@ class Manager extends ManagerAbstract
         'fetch'         => ['GET', '/sellerItems?_offset={offset}&_limit={limit}'],
     ];
 
-
+    /**
+     * @todo Implementar atualização de status
+     */
     public function update(EntityInterface $product, EntityInterface $existent)
     {
         $updated = [];
@@ -76,16 +78,6 @@ class Manager extends ManagerAbstract
     protected function getMap($route, Product $product)
     {
         return $this->factoryMap($route, ['itemId' => $product->getId()]);
-    }
-
-    /**
-     * @todo Implementar atualização de status
-     */
-    protected function updateStatus(Product $product)
-    {
-        //$map = $this->getMap('updateStatus', $product);
-
-        return false;
     }
 
     protected function updatePrice(Product $product)

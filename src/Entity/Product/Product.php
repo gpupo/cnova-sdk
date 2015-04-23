@@ -16,6 +16,10 @@ namespace Gpupo\CnovaSdk\Entity\Product;
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
+/**
+ * @method object getPrice()
+ * @method object getStock()
+ */
 class Product extends EntityAbstract implements EntityInterface
 {
     protected $primaryKey = 'skuSellerId';

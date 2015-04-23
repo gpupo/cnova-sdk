@@ -1,9 +1,9 @@
 [
     [
       {
-        "skuSellerId": "101",
+        "skuSellerId": "2101",
         "skuId": null,
-        "productSellerId": "101",
+        "productSellerId": "2101",
         "title": "Hello",
         "description": "Hello World",
         "brand": "Foo",
@@ -40,9 +40,9 @@
     ],
     [
       {
-      "skuSellerId": "102",
+      "skuSellerId": "2102",
       "skuId": null,
-      "productSellerId": "102",
+      "productSellerId": "2102",
       "title": "Test Feliz",
       "description": "Caminho feliz",
       "brand": "Acme",
