@@ -38,4 +38,12 @@ class Product extends EntityAbstract implements EntityInterface
             'attributes'      => 'object',
         ];
     }
+
+    /**
+    * Alias
+    */
+    public function getId()
+    {
+        return $this->getSkuSellerId();
+    }
 }

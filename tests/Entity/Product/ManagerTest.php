@@ -142,8 +142,8 @@ class ManagerTest extends TestCaseAbstract
                 ]);
             } else {
                 $this->log('debug', 'Produto existente', [
-                        'skuSellerId'    => $product->getSkuSellerId(),
-                        ]);
+                    'skuSellerId'    => $product->getSkuSellerId(),
+                ]);
             }
         }
 
@@ -152,5 +152,34 @@ class ManagerTest extends TestCaseAbstract
         }
 
         $this->assertTrue($manager->commit(), 'Gravacao de lote');
+    }
+
+    public function testNaoExecutaOperacaoEmProdutoInalterado()
+    {
+        $manager = $this->getManager()->setDryRun();
+        $list = $this->dataProviderProducts();
+
+        foreach($list as $data) {
+            $entityA = $this->getFactory()->createProduct(current($data));
+            $entityB = $this->getFactory()->createProduct(current($data));
+            $entityA->setPrevious($entityB);
+            $this->assertFalse($manager->attributesDiff($entityA, $entityB));
+            $this->assertFalse($manager->save($entityA));
+        }
+    }
+
+    public function testAtualizaApenasEstoqueEmCasoDeSerOUnicoAtributoAlterado()
+    {
+        $manager = $this->getManager()->setDryRun();
+        $list = $this->dataProviderProducts();
+
+        foreach($list as $data) {
+            $entityA = $this->getFactory()->createProduct(current($data));
+            $entityB = $this->getFactory()->createProduct(current($data));
+            $entityB->getStock()->setQuantity(8);
+            $this->assertEquals(['quantity'],$manager->attributesDiff($entityA->getStock(), $entityB->getStock()), 'Diff');
+            $entityA->setPrevious($entityB);
+            $this->assertTrue($manager->save($entityA), 'Save');
+        }
     }
 }
