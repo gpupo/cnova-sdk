@@ -18,6 +18,8 @@ use Gpupo\CommonSdk\Entity\EntityInterface;
 
 class Product extends EntityAbstract implements EntityInterface
 {
+    protected $primaryKey = 'skuSellerId';
+
     public function getSchema()
     {
         return [
@@ -37,13 +39,5 @@ class Product extends EntityAbstract implements EntityInterface
             'giftWrap'        => 'object',
             'attributes'      => 'object',
         ];
-    }
-
-    /**
-    * Alias
-    */
-    public function getId()
-    {
-        return $this->getSkuSellerId();
     }
 }
