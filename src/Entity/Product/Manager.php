@@ -15,30 +15,37 @@ namespace Gpupo\CnovaSdk\Entity\Product;
 
 use Gpupo\CnovaSdk\Entity\ManagerAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
+use Gpupo\CommonSdk\Traits\PoolTrait;
 
 class Manager extends ManagerAbstract
 {
+    use PoolTrait;
+
     protected $entity = 'Product';
 
-    protected $pool;
-
     protected $maps = [
-        'save'      => ['POST', '/loads/products'],
-        'findById'  => ['GET', '/loads/products/{itemId}'],
-        'fetch'     => ['GET', '/sellerItems?_offset={offset}&_limit={limit}'],
+        'save'          => ['POST', '/loads/products'],
+        'updateStatus'  => ['PUT', '/sellerItems/{itemId}/status'],    //Ativação/Desativação de produto no Marketplace
+        'updateStock'   => ['PUT', '/sellerItems/{itemId}/stock'],     //Atualização do estoque do item
+        'updatePrice'   => ['PUT', '/sellerItems/{itemId}/prices'],    //Atualização do preço do item
+        'findById'      => ['GET', '/loads/products/{itemId}'],
+        'fetch'         => ['GET', '/sellerItems?_offset={offset}&_limit={limit}'],
     ];
 
-    public function getPool()
-    {
-        if (!$this->pool) {
-            $this->pool = new Pool();
-        }
-
-        return $this->pool;
-    }
 
     public function update(EntityInterface $entity, EntityInterface $existent)
     {
+        $updated = [];
+
+        foreach(['Stock', 'Price', 'Status'] as $key) {
+            $getter = 'get' . $key;
+            if ($this->attributesDiff($existent->$getter(), $existent->$getter())) {
+                $method = 'update'.$key;
+                $updated[$key] = $this->$method($entity);
+            }
+        }
+
+        return $updated;
     }
 
     public function save(EntityInterface $entity, $route = 'save')
@@ -51,8 +58,41 @@ class Manager extends ManagerAbstract
         return $this->getPool()->add($entity);
     }
 
+    protected function getMap($route, EntityInterface $entity)
+    {
+        return $this->factoryMap($route, ['itemId' => $entity->getSkuSellerId()]);
+    }
+
+    /**
+     * @todo Implementar atualização de status
+     */
+    protected function updateStatus(EntityInterface $entity)
+    {
+        //$map = $this->getMap('updateStatus', $entity);
+
+        return false;
+    }
+
+    protected function updatePrice(EntityInterface $entity)
+    {
+        $map = $this->getMap('updatePrice', $entity);
+
+        return $this->execute($map, $entity->getPrice()->toJson());
+    }
+
+    protected function updateStock(EntityInterface $entity)
+    {
+        $map = $this->getMap('updateStock', $entity);
+
+        return $this->execute($map, $entity->getStock()->toJson());
+    }
+
     public function commit()
     {
-        return $this->execute($this->factoryMap('save'), $this->getPool()->toJson());
+        if ($this->getPool()->count() > 0) {
+            return $this->execute($this->factoryMap('save'), $this->getPool()->toJson());
+        }
+
+        return false;
     }
 }

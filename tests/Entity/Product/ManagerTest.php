@@ -35,7 +35,7 @@ class ManagerTest extends TestCaseAbstract
      */
     public function testPossuiObjetoPool($manager)
     {
-        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Pool', $manager->getPool());
+        $this->assertInstanceOf('\Gpupo\CommonSdk\Pool', $manager->getPool());
     }
 
     /**
