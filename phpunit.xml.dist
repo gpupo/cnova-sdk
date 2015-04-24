@@ -28,5 +28,6 @@
         <const name="CLIENT_ID" value=""/>
         <const name="ACCESS_TOKEN" value=""/>
         <const name="VERBOSE" value="true"/>
+        <const name="REGISTER_PATH" value=""/>
     </php>
 </phpunit>
