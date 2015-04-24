@@ -46,9 +46,7 @@ class ProductTest extends TestCaseAbstract
 
         $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\Product', $product);
 
-        foreach ([
-        'skuSellerId', 'skuId', 'productSellerId',
-        'title', 'description', 'brand', ] as $key) {
+        foreach (['skuSellerId', 'title', 'description', 'brand'] as $key) {
             $this->assertEquals($data[$key], $product->get($key), 'Simples');
             $method = 'get'.ucfirst($key);
             $this->assertEquals($data[$key], $product->$method(), 'Magic');
@@ -103,9 +101,7 @@ class ProductTest extends TestCaseAbstract
         $json = $product->toJson();
         $array = json_decode($json, true);
 
-        foreach ([
-        'skuSellerId', 'skuId', 'productSellerId',
-        'title', 'description', 'brand', ] as $key) {
+        foreach (['skuSellerId', 'title', 'description', 'brand'] as $key) {
             $this->assertArrayHasKey($key, $array);
         }
     }

@@ -27,4 +27,9 @@ class Dimensions extends EntityAbstract implements EntityInterface
             'height' => 'number',
         ];
     }
+
+    protected function setUp()
+    {
+        $this->setOptionalSchema(['height', 'width', 'length']);
+    }
 }

@@ -111,10 +111,10 @@ class ManagerTest extends TestCaseAbstract
             $item = current($data);
             $poolItem = current($poolItens);
 
-            foreach (['skuSellerId', 'skuId', 'productSellerId',
-                'title', 'description', 'brand', ] as $key) {
+            foreach (['skuSellerId', 'title', 'description', 'brand'] as $key) {
                 $this->assertEquals($item[$key], $poolItem[$key]);
             }
+
             next($poolItens);
         }
     }
