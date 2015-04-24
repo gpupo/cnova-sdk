@@ -159,7 +159,7 @@ class ManagerTest extends TestCaseAbstract
         $manager = $this->getManager()->setDryRun();
         $list = $this->dataProviderProducts();
 
-        foreach($list as $data) {
+        foreach ($list as $data) {
             $entityA = $this->getFactory()->createProduct(current($data));
             $entityB = $this->getFactory()->createProduct(current($data));
             $entityA->setPrevious($entityB);
@@ -173,11 +173,11 @@ class ManagerTest extends TestCaseAbstract
         $manager = $this->getManager()->setDryRun();
         $list = $this->dataProviderProducts();
 
-        foreach($list as $data) {
+        foreach ($list as $data) {
             $entityA = $this->getFactory()->createProduct(current($data));
             $entityB = $this->getFactory()->createProduct(current($data));
             $entityB->getStock()->setQuantity(8);
-            $this->assertEquals(['quantity'],$manager->attributesDiff($entityA->getStock(), $entityB->getStock()), 'Diff');
+            $this->assertEquals(['quantity'], $manager->attributesDiff($entityA->getStock(), $entityB->getStock()), 'Diff');
             $entityA->setPrevious($entityB);
             $this->assertTrue($manager->save($entityA), 'Save');
         }

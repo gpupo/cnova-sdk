@@ -14,7 +14,6 @@
 namespace Gpupo\CnovaSdk\Entity\Product;
 
 use Gpupo\CnovaSdk\Entity\ManagerAbstract;
-use Gpupo\CnovaSdk\Entity\Product\Product;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 use Gpupo\CommonSdk\Traits\PoolTrait;
 
@@ -40,12 +39,12 @@ class Manager extends ManagerAbstract
     {
         $updated = [];
 
-        foreach([
+        foreach ([
             'Stock',
             'Price',
             //'Status'
         ] as $key) {
-            $getter = 'get' . $key;
+            $getter = 'get'.$key;
             if ($this->attributesDiff($product->$getter(), $existent->$getter())) {
                 $method = 'update'.$key;
                 $updated[$key] = $this->$method($product);
@@ -55,9 +54,9 @@ class Manager extends ManagerAbstract
         $atualizado = !empty($updated);
 
         $context = [
-            'id'            =>  $product->getSkuSellerId(),
-            'atualizado'    =>  $atualizado,
-            'atributos'     =>  $updated,
+            'id'            => $product->getId(),
+            'atualizado'    => $atualizado,
+            'atributos'     => $updated,
         ];
 
         $this->log('info', 'Atualização de produto', $context);

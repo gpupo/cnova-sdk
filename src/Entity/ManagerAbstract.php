@@ -37,19 +37,20 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
      * {@inheritDoc}
      *
      * Faz pausa de 1 minuto em caso de "maximum allowed rate"
+     *
+     * Ao ultrapassar o limite de requests por minutos a API retorna
+     * mensagem com http status code 429, com a mensagem
+     * "Your requests have exceeded the maximum allowed rate (X)",
+     * onde X representa o número máximo de request que você deve respeitar.
      */
     protected function retry(\Exception $exception, $i)
     {
-        if ($i <= 2 && $exception->getCode() >= 500){
-            if (strpos('maximum allowed rate', $exception->getMessage())) {
-                sleep(60);
+        if ($i <= 2 && $exception->getCode() === 429) {
+            sleep(60);
 
-                return true;
-            }
+            return true;
         }
 
         return false;
     }
-
-
 }

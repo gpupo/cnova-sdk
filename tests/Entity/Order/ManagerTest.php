@@ -61,5 +61,4 @@ class ManagerTest extends OrderTestCaseAbstract
             $this->markSkipped('Sem Pedidos para atualizar');
         }
     }
-
 }
