@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "804ca803a821d393f153bd743a753a47",
+    "hash": "60f14d325e300c8104d616f31ec5409a",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -498,16 +498,16 @@
         },
         {
             "name": "gpupo/common-sdk",
-            "version": "1.7.4",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gpupo/common-sdk.git",
-                "reference": "e02fda8a61728e9d1f3261a40f7615724e19af6a"
+                "reference": "9ecb2fc7ff732c329a150cf9e6c8c9f38fca3085"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/e02fda8a61728e9d1f3261a40f7615724e19af6a",
-                "reference": "e02fda8a61728e9d1f3261a40f7615724e19af6a",
+                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/9ecb2fc7ff732c329a150cf9e6c8c9f38fca3085",
+                "reference": "9ecb2fc7ff732c329a150cf9e6c8c9f38fca3085",
                 "shasum": ""
             },
             "require": {
@@ -534,7 +534,7 @@
             "keywords": [
                 "sdk"
             ],
-            "time": "2015-04-24 18:42:01"
+            "time": "2015-04-28 14:36:56"
         },
         {
             "name": "psr/log",
@@ -754,16 +754,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5"
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
                 "shasum": ""
             },
             "require": {
@@ -810,7 +810,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-03-27 19:31:25"
+            "time": "2015-04-27 22:15:08"
         },
         {
             "name": "phpunit/php-code-coverage",

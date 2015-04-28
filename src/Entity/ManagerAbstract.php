@@ -15,6 +15,7 @@ namespace Gpupo\CnovaSdk\Entity;
 
 use Gpupo\CommonSdk\Entity\ManagerAbstract as CommonAbstract;
 use Gpupo\CommonSdk\Entity\ManagerInterface;
+use Gpupo\CommonSdk\Entity\EntityInterface;
 
 abstract class ManagerAbstract extends CommonAbstract implements ManagerInterface
 {
@@ -31,6 +32,19 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
         }
 
         return;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function update(EntityInterface $entity, EntityInterface $existent)
+    {
+        $text = 'Chamada a Atualização de entity '. $this->entity;
+        
+        return $this->log('debug', $text, [
+            'entity'    => $entity,
+            'existent'  => $existent,
+        ]);
     }
 
     /**

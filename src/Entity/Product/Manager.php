@@ -33,10 +33,14 @@ class Manager extends ManagerAbstract
     ];
 
     /**
+     * {@inheritDoc}
+     *
      * @todo Implementar atualização de status
      */
-    public function update(EntityInterface $product, EntityInterface $existent)
+    public function update(EntityInterface $entity, EntityInterface $existent)
     {
+        parent::update($entity, $existent);
+
         $updated = [];
 
         foreach ([
@@ -45,21 +49,22 @@ class Manager extends ManagerAbstract
             //'Status'
         ] as $key) {
             $getter = 'get'.$key;
-            if ($this->attributesDiff($product->$getter(), $existent->$getter())) {
+            if ($this->attributesDiff($entity->$getter(), $existent->$getter())) {
                 $method = 'update'.$key;
-                $updated[$key] = $this->$method($product);
+                $updated[$key] = $this->$method($entity);
             }
         }
 
         $atualizado = !empty($updated);
 
         $context = [
-            'id'            => $product->getId(),
+            'id'            => $entity->getId(),
             'atualizado'    => $atualizado,
             'atributos'     => $updated,
         ];
 
-        $this->log('info', 'Atualização de produto', $context);
+        $this->log('info', 'Operação de Atualização de entity '
+            .$this->entity, $context);
 
         return $atualizado;
     }
