@@ -76,5 +76,42 @@
         }
       ]
     }
+    ],
+    [
+      {
+        "skuSellerId":"14080",
+        "title":"Esfoliante Facial Creme Doux Polissant Unissex 50ml Clarins",
+        "description":"É bom ter uma pele radiante!",
+        "brand":"Clarins",
+        "gtin":[
+          "3380811244105"
+        ],
+        "categories":[
+          "Teste>API"
+        ],
+    	"images": ["http://foo/bar.jpg"],
+        "videos": ["http://foo/bar.avi"],
+        "price":{
+          "default":139,
+          "offer":139
+        },
+        "stock":{
+          "quantity":0,
+          "crossDockingTime":0
+        },
+        "dimensions":{
+          "weight":1,
+          "length": 1,
+          "width": 1,
+          "height": 1
+        },
+        "attributes":[
+          {
+            "name":"Tamanho",
+            "value":"50ml"
+          }
+        ]
+      }
     ]
+
 ]
