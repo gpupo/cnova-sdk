@@ -14,7 +14,6 @@
 namespace Gpupo\Tests\CnovaSdk\Entity\Product\Loads;
 
 use Gpupo\CnovaSdk\Entity\Product\Loads\Loads;
-use Gpupo\CnovaSdk\Entity\Product\Loads\Metadata;
 
 class LoadsTest extends TestCaseAbstract
 {
@@ -26,6 +25,17 @@ class LoadsTest extends TestCaseAbstract
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\ProductExtended', $loads->first());
 
         return $loads;
+    }
+
+    /**
+     * @depends testPossuiColecaoDeProducts
+     */
+    public function testCadaProductPossuiStatus(Loads $loads)
+    {
+        foreach($loads as $product) {
+            $this->assertContains($product->getStatus(),
+                ['Available', 'Pending', 'Canceled']);
+        }
     }
 
     /**

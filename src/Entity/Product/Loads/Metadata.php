@@ -15,6 +15,15 @@ namespace Gpupo\CnovaSdk\Entity\Product\Loads;
 
 use Gpupo\Common\Entity\CollectionAbstract;
 
+/**
+ * @method integer getTotalRows()
+ * @method integer getOffset()
+ * @method integer getLimit()
+ * @method string getFirst()
+ * @method string getPrevious()
+ * @method string getNext()
+ * @method string getLast()
+*/
 class Metadata extends CollectionAbstract
 {
 }

@@ -13,7 +13,6 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Product\Loads;
 
-use Gpupo\CnovaSdk\Entity\Product\Loads\Loads;
 use Gpupo\CnovaSdk\Entity\Product\Loads\Metadata;
 
 class MetadataTest extends TestCaseAbstract

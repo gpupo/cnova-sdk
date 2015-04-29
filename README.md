@@ -62,9 +62,9 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 
 - [x] Sucesso ao definir options
 - [x] Gerencia uri de recurso
-- [x] Objeto request possui header
-- [x] Acesso a lista de pedidos
-- [x] Acesso a lista de produtos
+- [ ] Objeto request possui header
+- [ ] Acesso a lista de pedidos
+- [ ] Acesso a lista de produtos
 
 ### Entity\Order\Customer\Customer
 
@@ -76,6 +76,7 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 
 - [x] Obtem lista pedidos
 - [ ] Recupera informacoes de um pedido especifico
+- [ ] Atualiza status de um pedido
 
 ### Entity\Order\Order
 
@@ -88,6 +89,27 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 - [x] Cada pedido possui colecao de rastreamentos
 - [x] Cada pedido possui colecao de produtos
 
+### Entity\Product\Loads\Loads
+
+
+- [x] Possui colecao de products
+- [x] Cada product possui status
+- [x] Possui objeto metadata
+
+### Entity\Product\Loads\Manager
+
+
+- [x] Obtem lista de situacoes de produtos
+- [ ] Permite acesso a lista de produtos com erro
+
+### Entity\Product\Loads\Metadata
+
+
+- [x] É uma collection
+- [x] Metadata possui quantidade de objetos enviados
+- [x] Metadata possui informacao do offset atual
+- [x] Metadata possui informacao do limit atual
+
 ### Entity\Product\Manager
 
 
@@ -96,7 +118,9 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 - [x] Possui objeto client
 - [ ] Obtem lista de produtos cadastrados
 - [x] Guarda produtos nao cadastrados em uma fila para gravacao em lote
-- [x] Gerencia gravacao de produtos em lote
+- [ ] Gerencia gravacao de produtos em lote
+- [x] Nao executa operacao em produto inalterado
+- [x] Atualiza apenas estoque em caso de ser o unico atributo alterado
 
 ### Entity\Product\Product
 

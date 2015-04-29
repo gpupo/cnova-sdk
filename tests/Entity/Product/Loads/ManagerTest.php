@@ -28,4 +28,9 @@ class ManagerTest extends TestCaseAbstract
 
         return $loads;
     }
+
+    public function testPermiteAcessoAListaDeProdutosComErro()
+    {
+        return $this->markIncomplete();
+    }
 }
