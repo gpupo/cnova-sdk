@@ -31,6 +31,13 @@ class ManagerTest extends TestCaseAbstract
 
     public function testPermiteAcessoAListaDeProdutosComErro()
     {
-        return $this->markIncomplete();
+        $manager = $this->getManager();
+        $manager->setDryRun($this->factoryMockup('Errors.json'));
+        $loads = $manager->fetch(0, 20, ['status'=>'Error']);
+
+        foreach($loads as $product) {
+            $this->assertEquals('Error', $product->getStatus());
+        }
+
     }
 }

@@ -24,10 +24,15 @@ abstract class TestCaseAbstract extends TestCaseMain
         return $this->getFactory()->factoryManager('loads');
     }
 
+    protected function factoryMockup($filename)
+    {
+        return $this->factoryResponseFromFixture('fixture/Product/Loads/'.$filename);
+    }
+
     protected function getLoads()
     {
         $manager = $this->getManager();
-        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Loads.json'));
+        $manager->setDryRun($this->factoryMockup('Loads.json'));
 
         return $manager->fetch();
     }

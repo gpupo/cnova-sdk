@@ -20,12 +20,15 @@ class Manager extends ManagerAbstract
     protected $entity = 'Loads';
 
     protected $maps = [
-        'fetch' => ['GET', '/loads/products/?_offset={offset}&_limit={limit}&status={status}'],
+        'fetch' => ['GET', '/loads/products/?_offset={offset}&_limit={limit}&status={status}&createdAt={createdAt}'],
     ];
 
     public function fetch($offset = 0, $limit = 50, array $parameters = [])
     {
-        $data = parent::fetch($offset, $limit, $parameters);
+        $data = parent::fetch($offset, $limit, array_merge([
+            'status'    => '',
+            'createdAt' => '',
+        ], $parameters));
 
         return new Loads($data);
     }

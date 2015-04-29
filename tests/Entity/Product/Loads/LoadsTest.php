@@ -34,7 +34,7 @@ class LoadsTest extends TestCaseAbstract
     {
         foreach($loads as $product) {
             $this->assertContains($product->getStatus(),
-                ['Available', 'Pending', 'Canceled']);
+                ['Available', 'Pending', 'Canceled', 'Error']);
         }
     }
 
