@@ -21,7 +21,8 @@ abstract class OrderTestCaseAbstract extends TestCaseAbstract
 {
     protected function getManager()
     {
-        return $this->getFactory()->factoryManager('order');
+        return $this->getFactory()->factoryManager('order')
+            ->setDryRun($this->factoryResponseFromFixture('fixture/Orders.json'));
     }
 
     protected function getList()

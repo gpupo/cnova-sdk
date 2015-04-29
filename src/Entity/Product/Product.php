@@ -44,9 +44,4 @@ class Product extends EntityAbstract implements EntityInterface
             'attributes'      => 'object',
         ];
     }
-
-    protected function setUp()
-    {
-        $this->setOptionalSchema(['skuId', 'productSellerId', 'gtin', 'videos']);
-    }
 }

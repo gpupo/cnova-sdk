@@ -13,9 +13,9 @@
 
 namespace Gpupo\CnovaSdk\Entity;
 
+use Gpupo\CommonSdk\Entity\EntityInterface;
 use Gpupo\CommonSdk\Entity\ManagerAbstract as CommonAbstract;
 use Gpupo\CommonSdk\Entity\ManagerInterface;
-use Gpupo\CommonSdk\Entity\EntityInterface;
 
 abstract class ManagerAbstract extends CommonAbstract implements ManagerInterface
 {
@@ -31,7 +31,7 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
             return $this->factoryEntityCollection($data->$method());
         }
 
-        return;
+        return $data;
     }
 
     /**
@@ -39,8 +39,8 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
      */
     public function update(EntityInterface $entity, EntityInterface $existent)
     {
-        $text = 'Chamada a Atualização de entity '. $this->entity;
-        
+        $text = 'Chamada a Atualização de entity '.$this->entity;
+
         return $this->log('debug', $text, [
             'entity'    => $entity,
             'existent'  => $existent,
@@ -50,18 +50,11 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
     /**
      * {@inheritDoc}
      *
-     * Faz pausa de 1 minuto em caso de "maximum allowed rate"
-     *
-     * Ao ultrapassar o limite de requests por minutos a API retorna
-     * mensagem com http status code 429, com a mensagem
-     * "Your requests have exceeded the maximum allowed rate (X)",
-     * onde X representa o número máximo de request que você deve respeitar.
+     * Tenta 3 vezes em caso de erro do lado servidor.
      */
     protected function retry(\Exception $exception, $i)
     {
-        if ($i <= 2 && $exception->getCode() === 429) {
-            sleep(60);
-
+        if ($i <= 2 && $exception->getCode() >= 500) {
             return true;
         }
 

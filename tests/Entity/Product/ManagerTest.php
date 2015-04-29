@@ -25,6 +25,8 @@ class ManagerTest extends TestCaseAbstract
     public function testAcessoAoAdministradorDeProdutos()
     {
         $manager = $this->getManager();
+        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Products.json'));
+
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Manager', $manager);
 
         return $manager;
@@ -63,9 +65,7 @@ class ManagerTest extends TestCaseAbstract
 
         $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionInterface', $list);
 
-        $this->log('info', 'Produtos cadastrados', [
-                'count' => $list->count(),
-        ]);
+        $this->log('info', 'Produtos cadastrados', ['count' => $list->count()]);
 
         return $list;
     }

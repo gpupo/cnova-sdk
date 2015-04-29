@@ -1,0 +1,194 @@
+{
+    "skus": [
+        {
+            "skuSeller": {
+                "id": "10001",
+                "href": "/loads/products/10001"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T14:47:38.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10009",
+                "href": "/loads/products/10009"
+            },
+            "status": "Available",
+            "createdAt": "2015-04-27T11:03:55.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10049",
+                "href": "/loads/products/10049"
+            },
+            "status": "Available",
+            "createdAt": "2015-04-27T16:49:52.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "1006",
+                "href": "/loads/products/1006"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T14:44:40.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10068",
+                "href": "/loads/products/10068"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:01:57.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10069",
+                "href": "/loads/products/10069"
+            },
+            "status": "Available",
+            "createdAt": "2015-04-27T16:49:58.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "1007",
+                "href": "/loads/products/1007"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T14:44:40.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "101",
+                "href": "/loads/products/101"
+            },
+            "status": "Canceled",
+            "createdAt": "2015-04-20T11:41:57.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10107",
+                "href": "/loads/products/10107"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:22:05.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10108",
+                "href": "/loads/products/10108"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:22:05.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10109",
+                "href": "/loads/products/10109"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:22:05.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10110",
+                "href": "/loads/products/10110"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:22:05.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10119",
+                "href": "/loads/products/10119"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:23:56.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10120",
+                "href": "/loads/products/10120"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:23:56.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10121",
+                "href": "/loads/products/10121"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:23:56.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10122",
+                "href": "/loads/products/10122"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:23:56.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10123",
+                "href": "/loads/products/10123"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:23:56.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10124",
+                "href": "/loads/products/10124"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:23:56.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10128",
+                "href": "/loads/products/10128"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:23:56.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "10131",
+                "href": "/loads/products/10131"
+            },
+            "status": "Pending",
+            "createdAt": "2015-04-28T15:24:03.000-03:00"
+        }
+    ],
+    "metadata": [
+        {
+            "key": "totalRows",
+            "value": "6287"
+        },
+        {
+            "key": "offset",
+            "value": "0"
+        },
+        {
+            "key": "limit",
+            "value": "20"
+        },
+        {
+            "key": "first",
+            "value": "/loads/products?_offset=0&_limit=20"
+        },
+        {
+            "key": "previous",
+            "value": ""
+        },
+        {
+            "key": "next",
+            "value": "/loads/products?_offset=20&_limit=20"
+        },
+        {
+            "key": "last",
+            "value": "/loads/products?_offset=6280&_limit=20"
+        }
+    ]
+}
