@@ -13,8 +13,8 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Product;
 
-use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 use Gpupo\CnovaSdk\Entity\Product\Stock;
+use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class StockTest extends TestCaseAbstract
 {
@@ -26,7 +26,6 @@ class StockTest extends TestCaseAbstract
 
         $stock = $product->getStock();
         $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\Stock', $stock);
-
 
         return $stock;
     }
