@@ -96,34 +96,14 @@ class ManagerTest extends TestCaseAbstract
 
     public function testGerenciaGravacaoDeProdutosEmLote()
     {
-        if (!$this->hasToken()) {
-            return $this->markSkipped('API Token ausente');
-        }
+        $manager = $this->getFactory()->factoryManager('product')->setDryRun();
 
-        $manager = $this->getManager();
         $list = $this->dataProviderProducts();
 
         $i = 0;
         foreach ($list as $data) {
             $product = $this->getFactory()->createProduct(current($data));
-
-            $exist = $manager->findById($product->getSkuSellerId());
-
-            if (!$exist) {
-                $i++;
-                $this->assertTrue($manager->save($product));
-                $this->log('debug', 'Produto enviado para lote', [
-                        'skuSellerId'    => $product->getSkuSellerId(),
-                ]);
-            } else {
-                $this->log('debug', 'Produto existente', [
-                    'skuSellerId'    => $product->getSkuSellerId(),
-                ]);
-            }
-        }
-
-        if ($i < 1) {
-            return $this->markSkipped('Sem produtos para cadastrar');
+            $manager->save($product);
         }
 
         $this->assertTrue($manager->commit(), 'Gravacao de lote');
@@ -131,7 +111,7 @@ class ManagerTest extends TestCaseAbstract
 
     public function testNaoExecutaOperacaoEmProdutoInalterado()
     {
-        $manager = $this->getManager()->setDryRun();
+        $manager = $this->getFactory()->factoryManager('product')->setDryRun();
         $list = $this->dataProviderProducts();
 
         foreach ($list as $data) {
@@ -145,7 +125,7 @@ class ManagerTest extends TestCaseAbstract
 
     public function testAtualizaApenasEstoqueEmCasoDeSerOUnicoAtributoAlterado()
     {
-        $manager = $this->getManager()->setDryRun();
+        $manager = $this->getFactory()->factoryManager('product')->setDryRun();
         $list = $this->dataProviderProducts();
 
         foreach ($list as $data) {
