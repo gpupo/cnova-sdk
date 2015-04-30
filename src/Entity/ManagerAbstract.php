@@ -21,6 +21,9 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
 {
     protected $entity;
 
+    /**
+     * @return Gpupo\Common\Entity\CollectionAbstract|null
+     */
     protected function fetchPrepare($data)
     {
         if (!empty($data)) {
@@ -28,6 +31,9 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
         }
     }
 
+    /**
+     * @return Gpupo\Common\Entity\CollectionAbstract|null
+     */
     public function fetch($offset = 0, $limit = 50, array $parameters = [])
     {
         $data = parent::fetch($offset, $limit, $parameters);
@@ -35,6 +41,9 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
         return $this->fetchPrepare($data);
     }
 
+    /**
+     * @return Gpupo\Common\Entity\CollectionAbstract|null
+     */
     public function findById($itemId)
     {
         $data = parent::findById($itemId);
