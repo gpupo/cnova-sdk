@@ -41,28 +41,11 @@ class ManagerTest extends OrderTestCaseAbstract
      */
     public function testAtualizaStatusDeUmPedido($list)
     {
-        if (!$this->hasToken()) {
-            return $this->markSkipped('API Token ausente');
-        }
+        $manager = $this->getManager()->setDryRun();
 
-        $flux = ['approved' => 'sent'];
-
-        $i = 0;
         foreach ($list as $order) {
-            $i++;
-            $manager = $this->getManager();
-            $currentStatus = $order->getStatus();
-            if (array_key_exists($currentStatus, $flux)) {
-                $newStatus = $flux[$currentStatus];
-                $order->getStatus()->setStatus($newStatus);
-                $this->assertTrue($manager->saveStatus($order));
-                $orderUpdated = $manager->findById($order->getId());
-                $this->assertEquals($newStatus, $orderUpdated->getStatus());
-            }
-        }
-
-        if ($i < 1) {
-            $this->markSkipped('Sem Pedidos para atualizar');
+            $order->setStatus('sent');
+            $this->assertTrue($manager->saveStatus($order));
         }
     }
 }

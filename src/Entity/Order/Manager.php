@@ -14,13 +14,24 @@
 namespace Gpupo\CnovaSdk\Entity\Order;
 
 use Gpupo\CnovaSdk\Entity\ManagerAbstract;
+use Gpupo\CommonSdk\Entity\EntityInterface;
 
 class Manager extends ManagerAbstract
 {
     protected $entity = 'Order';
 
     protected $maps = [
+        'saveStatus'    => ['POST', '/order/{itemId}/trackings/{status}'],
         'findById'  => ['GET', '/orders/{itemId}'],
         'fetch'     => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
     ];
+
+    public function saveStatus(EntityInterface $order)
+    {
+        $status = $order->getStatus();
+
+        return $this->execute($this->factoryMap('saveStatus',
+            ['itemId' => $order->getId(),'status'=>$status]), $order->toJson());
+    }
+
 }
