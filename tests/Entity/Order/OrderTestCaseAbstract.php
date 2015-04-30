@@ -14,7 +14,6 @@
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
 
 use Gpupo\CnovaSdk\Entity\Order\Order;
-use Gpupo\Common\Entity\Collection;
 use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 abstract class OrderTestCaseAbstract extends TestCaseAbstract

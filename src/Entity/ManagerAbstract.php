@@ -40,7 +40,7 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
 
     protected function factoryEntityCollection($data)
     {
-        return $this->factoryNeighborObject($this->getEntityName() . 'Collection', $data);
+        return $this->factoryNeighborObject($this->getEntityName().'Collection', $data);
     }
 
     /**

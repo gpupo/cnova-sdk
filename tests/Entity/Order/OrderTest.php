@@ -13,7 +13,6 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
 
-use Gpupo\Common\Entity\CollectionInterface;
 use Gpupo\CnovaSdk\Entity\Order\OrderCollection;
 
 class OrderTest extends OrderTestCaseAbstract

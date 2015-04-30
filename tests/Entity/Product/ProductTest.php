@@ -13,8 +13,8 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Product;
 
-use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 use Gpupo\CnovaSdk\Entity\Product\Product;
+use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class ProductTest extends TestCaseAbstract
 {

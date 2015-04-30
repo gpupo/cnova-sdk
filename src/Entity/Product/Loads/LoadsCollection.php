@@ -13,8 +13,8 @@
 
 namespace Gpupo\CnovaSdk\Entity\Product\Loads;
 
-use Gpupo\CnovaSdk\Entity\Product\ProductExtended;
 use Gpupo\CnovaSdk\Entity\MetadataContainerAbstract;
+use Gpupo\CnovaSdk\Entity\Product\ProductExtended;
 
 class LoadsCollection extends MetadataContainerAbstract
 {
@@ -31,7 +31,7 @@ class LoadsCollection extends MetadataContainerAbstract
     }
 
     public function __construct($data = null)
-    {    
+    {
         parent::__construct($data);
 
         foreach ($data->getSkus() as $product) {

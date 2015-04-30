@@ -15,7 +15,7 @@ namespace Gpupo\Tests\CnovaSdk;
 
 use Gpupo\CnovaSdk\Factory;
 use Gpupo\Tests\CommonSdk\TestCaseAbstract as CommonSdkTestCaseAbstract;
-use Gpupo\CommonSdk\Entity\ManagerInterface;
+
 abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 {
     private $factory;
@@ -61,7 +61,7 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 
         $list = [];
 
-        foreach($manager->fetch() as $product) {
+        foreach ($manager->fetch() as $product) {
             $list[] = [$product];
         }
 
