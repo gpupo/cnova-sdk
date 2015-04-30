@@ -24,15 +24,22 @@ abstract class MetadataContainerAbstract extends CollectionAbstract
         return $this->metadata;
     }
 
-    protected function factoryMetadata(array $metas)
+    protected function normalizeMetas($metas)
     {
         $data = [];
 
-        foreach ($metas as $meta) {
-            $data[$meta['key']] = $meta['value'];
+        if (is_array($metas)) {
+            foreach ($metas as $meta) {
+                $data[$meta['key']] = $meta['value'];
+            }
         }
 
-        $this->metadata = new Metadata($data);
+        return $data;
+    }
+
+    protected function factoryMetadata($metas = [])
+    {
+        $this->metadata = new Metadata($this->normalizeMetas($metas));
 
         return $this;
     }

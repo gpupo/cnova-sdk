@@ -19,8 +19,6 @@ use Gpupo\CommonSdk\Entity\ManagerInterface;
 
 abstract class ManagerAbstract extends CommonAbstract implements ManagerInterface
 {
-    protected $entity;
-
     protected function fetchDefaultParameters()
     {
         return [
@@ -38,6 +36,11 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
         if (!empty($data)) {
             return $this->factoryEntityCollection($data);
         }
+    }
+
+    protected function factoryEntityCollection($data)
+    {
+        return $this->factoryNeighborObject($this->getEntityName() . 'Collection', $data);
     }
 
     /**

@@ -18,21 +18,20 @@ use Gpupo\Tests\CnovaSdk\TestCaseAbstract as TestCaseMain;
 
 abstract class TestCaseAbstract extends TestCaseMain
 {
-    protected function getManager()
+    protected function getManager($filename = null)
     {
-        return $this->getFactory()->factoryManager('loads');
-    }
+        if (empty($filename)) {
+            $filename = 'Loads.json';
+        }
 
-    protected function factoryMockup($filename)
-    {
-        return $this->factoryResponseFromFixture('fixture/Product/Loads/'.$filename);
+        $manager = $this->getFactory()->factoryManager('loads');
+        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Product/Loads/'.$filename));
+
+        return $manager;
     }
 
     protected function getLoads()
     {
-        $manager = $this->getManager();
-        $manager->setDryRun($this->factoryMockup('Loads.json'));
-
-        return $manager->fetch();
+        return $this->getManager()->fetch();
     }
 }

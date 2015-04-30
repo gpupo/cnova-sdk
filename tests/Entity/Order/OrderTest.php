@@ -14,6 +14,7 @@
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
 
 use Gpupo\Common\Entity\CollectionInterface;
+use Gpupo\CnovaSdk\Entity\Order\OrderCollection;
 
 class OrderTest extends OrderTestCaseAbstract
 {
@@ -31,7 +32,7 @@ class OrderTest extends OrderTestCaseAbstract
     /**
      * @depends testCadaItemDeUmaListaEUmObjeto
      */
-    public function testCadaPedidoPossuiObjetoBilling(CollectionInterface $list)
+    public function testCadaPedidoPossuiObjetoBilling(OrderCollection $list)
     {
         foreach ($list as $item) {
             $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Billing\Billing', $item->getBilling());
@@ -41,7 +42,7 @@ class OrderTest extends OrderTestCaseAbstract
     /**
      * @depends testCadaItemDeUmaListaEUmObjeto
      */
-    public function testCadaPedidoPossuiObjetoCliente(CollectionInterface $list)
+    public function testCadaPedidoPossuiObjetoCliente(OrderCollection $list)
     {
         foreach ($list as $item) {
             $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Customer\Customer', $item->getCustomer());
@@ -51,7 +52,7 @@ class OrderTest extends OrderTestCaseAbstract
     /**
      * @depends testCadaItemDeUmaListaEUmObjeto
      */
-    public function testCadaPedidoPossuiObjetoFrete(CollectionInterface $list)
+    public function testCadaPedidoPossuiObjetoFrete(OrderCollection $list)
     {
         foreach ($list as $item) {
             $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Freight\Freight', $item->getFreight());
@@ -61,7 +62,7 @@ class OrderTest extends OrderTestCaseAbstract
     /**
      * @depends testCadaItemDeUmaListaEUmObjeto
      */
-    public function testCadaPedidoPossuiObjetoContendoEnderecoDeEntrega(CollectionInterface $list)
+    public function testCadaPedidoPossuiObjetoContendoEnderecoDeEntrega(OrderCollection $list)
     {
         foreach ($list as $item) {
             $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Shipping\Shipping', $item->getShipping());
@@ -71,7 +72,7 @@ class OrderTest extends OrderTestCaseAbstract
     /**
      * @depends testCadaItemDeUmaListaEUmObjeto
      */
-    public function testCadaPedidoPossuiColecaoDeRastreamentos(CollectionInterface $list)
+    public function testCadaPedidoPossuiColecaoDeRastreamentos(OrderCollection $list)
     {
         foreach ($list as $item) {
             $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Trackings\Trackings', $item->getTrackings());
@@ -81,7 +82,7 @@ class OrderTest extends OrderTestCaseAbstract
     /**
      * @depends testCadaItemDeUmaListaEUmObjeto
      */
-    public function testCadaPedidoPossuiColecaoDeProdutos(CollectionInterface $list)
+    public function testCadaPedidoPossuiColecaoDeProdutos(OrderCollection $list)
     {
         foreach ($list as $item) {
             $collection = $item->getItens();

@@ -17,19 +17,16 @@ class ManagerTest extends TestCaseAbstract
 {
     public function testObtemListaDeSituacoesDeProdutos()
     {
-        $entity = $this->getFactory()->createProduct(current($this->dataProviderProducts()));
-
         $loads = $this->getLoads();
 
-        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Loads\Loads', $loads);
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Loads\LoadsCollection', $loads);
 
         return $loads;
     }
 
     public function testPermiteAcessoAListaDeProdutosComErro()
     {
-        $manager = $this->getManager();
-        $manager->setDryRun($this->factoryMockup('Errors.json'));
+        $manager = $this->getManager('Errors.json');
         $loads = $manager->fetch(0, 20, ['status' => 'Error']);
 
         foreach ($loads as $product) {

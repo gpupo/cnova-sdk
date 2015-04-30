@@ -23,5 +23,4 @@ class Manager extends ManagerAbstract
         'findById'  => ['GET', '/orders/{itemId}'],
         'fetch'     => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
     ];
-
 }

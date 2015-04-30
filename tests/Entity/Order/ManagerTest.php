@@ -18,7 +18,7 @@ class ManagerTest extends OrderTestCaseAbstract
     public function testObtemListaPedidos()
     {
         $list = $this->getList();
-        $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionInterface',
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\OrderCollection',
             $list);
 
         return $list;
@@ -29,6 +29,7 @@ class ManagerTest extends OrderTestCaseAbstract
      */
     public function testRecuperaInformacoesDeUmPedidoEspecifico()
     {
+        return $this->markIncomplete();
         $manager = $this->getManager('OrderId.json');
         $order = $manager->findById(14080);
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Order', $order);

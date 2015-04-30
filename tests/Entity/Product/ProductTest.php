@@ -14,6 +14,7 @@
 namespace Gpupo\Tests\CnovaSdk\Entity\Product;
 
 use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
+use Gpupo\CnovaSdk\Entity\Product\Product;
 
 class ProductTest extends TestCaseAbstract
 {
@@ -40,36 +41,19 @@ class ProductTest extends TestCaseAbstract
     /**
      * @dataProvider dataProviderProducts
      */
-    public function testPossuiPropriedadesEObjetos(array $data)
+    public function testPossuiPropriedadesEObjetos(Product $product)
     {
-        $product = $this->factory($data);
-
         $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\Product', $product);
-
-        foreach (['skuSellerId', 'title', 'description', 'brand'] as $key) {
-            $this->assertEquals($data[$key], $product->get($key), 'Simples');
-            $method = 'get'.ucfirst($key);
-            $this->assertEquals($data[$key], $product->$method(), 'Magic');
-        }
-
         $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\Dimensions', $product->getDimensions());
     }
 
     /**
      * @dataProvider dataProviderProducts
      */
-    public function testPossuiUmaColecaoAttributes($data)
+    public function testPossuiUmaColecaoAttributes(Product $product)
     {
-        $product = $this->factory($data);
-
-        foreach ($data['attributes'] as $item) {
-            $attribute = $product->getAttributes()->current();
+        foreach ($product->getAttributes() as $attribute) {
             $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\Attributes\Attribute', $attribute);
-
-            $this->assertEquals($item['name'], $attribute->getName());
-            $this->assertEquals($item['value'], $attribute->getValue());
-
-            $product->getAttributes()->next();
         }
     }
 

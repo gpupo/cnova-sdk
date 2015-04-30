@@ -17,8 +17,12 @@ use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class ManagerTest extends TestCaseAbstract
 {
-    protected function getManager($filename = 'Products.json')
+    protected function getManager($filename = null)
     {
+        if (empty($filename)) {
+            $filename = 'Products.json';
+        }
+
         $manager = $this->getFactory()->factoryManager('product');
         $manager->setDryRun($this->factoryResponseFromFixture('fixture/Product/'.$filename));
 
@@ -56,7 +60,7 @@ class ManagerTest extends TestCaseAbstract
     public function testObtemListaDeProdutosCadastrados($manager)
     {
         $list = $manager->fetch();
-        $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionInterface', $list);
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\ProductCollection', $list);
 
         return $list;
     }

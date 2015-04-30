@@ -6,7 +6,7 @@
     "require": {
         "php": ">=5.4",
         "ext-curl" : "*",
-        "gpupo/common-sdk": "~1.8.4"
+        "gpupo/common-sdk": "~1.8.5"
     },
     "suggest": {
         "monolog/monolog": "Write Log messages"

@@ -13,7 +13,7 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Product\Loads;
 
-use Gpupo\CnovaSdk\Entity\Product\Loads\Loads;
+use Gpupo\CnovaSdk\Entity\Product\Loads\LoadsCollection;
 
 class LoadsTest extends TestCaseAbstract
 {
@@ -30,7 +30,7 @@ class LoadsTest extends TestCaseAbstract
     /**
      * @depends testPossuiColecaoDeProducts
      */
-    public function testCadaProductPossuiStatus(Loads $loads)
+    public function testCadaProductPossuiStatus(LoadsCollection $loads)
     {
         foreach ($loads as $product) {
             $this->assertContains($product->getStatus(),
@@ -41,7 +41,7 @@ class LoadsTest extends TestCaseAbstract
     /**
      * @depends testPossuiColecaoDeProducts
      */
-    public function testPossuiObjetoMetadata(Loads $loads)
+    public function testPossuiObjetoMetadata(LoadsCollection $loads)
     {
         $metadata = $loads->getMetadata();
 

@@ -15,7 +15,7 @@ namespace Gpupo\Tests\CnovaSdk;
 
 use Gpupo\CnovaSdk\Factory;
 use Gpupo\Tests\CommonSdk\TestCaseAbstract as CommonSdkTestCaseAbstract;
-
+use Gpupo\CommonSdk\Entity\ManagerInterface;
 abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 {
     private $factory;
@@ -45,6 +45,10 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
         return $this->factory;
     }
 
+    protected function getManager($filename = null)
+    {
+    }
+
     protected function hasToken()
     {
         return $this->hasConstant('ACCESS_TOKEN');
@@ -52,11 +56,15 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 
     public function dataProviderProducts()
     {
-        return $this->getResourceJson('fixture/Product/Products.json');
-    }
+        $manager = $this->getFactory()->factoryManager('product');
+        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Product/Products.json'));
 
-    public function dataProviderOrders()
-    {
-        return $this->getResourceJson('fixture/Order/Orders.json');
+        $list = [];
+
+        foreach($manager->fetch() as $product) {
+            $list[] = [$product];
+        }
+
+        return $list;
     }
 }
