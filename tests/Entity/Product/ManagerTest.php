@@ -17,15 +17,17 @@ use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class ManagerTest extends TestCaseAbstract
 {
-    protected function getManager()
+    protected function getManager($filename = 'Products.json')
     {
-        return $this->getFactory()->factoryManager('product');
+        $manager = $this->getFactory()->factoryManager('product');
+        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Product/'.$filename));
+
+        return $manager;
     }
 
     public function testAcessoAoAdministradorDeProdutos()
     {
         $manager = $this->getManager();
-        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Products.json'));
 
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Manager', $manager);
 
@@ -53,46 +55,19 @@ class ManagerTest extends TestCaseAbstract
      */
     public function testObtemListaDeProdutosCadastrados($manager)
     {
-        if (!$this->hasToken()) {
-            return $this->markSkipped('API Token ausente');
-        }
-
         $list = $manager->fetch();
-
-        if (empty($list)) {
-            return $this->markSkipped('Nenhum produto encontrado no Marketplace');
-        }
-
         $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionInterface', $list);
-
-        $this->log('info', 'Produtos cadastrados', ['count' => $list->count()]);
 
         return $list;
     }
 
-    /**
-     * @depends testObtemListaDeProdutosCadastrados
-     */
-    public function testRecuperaInformacoesDeUmProdutoEspecifico($list)
+    public function testRecuperaInformacoesDeUmProdutoEspecifico()
     {
-        if (!$this->hasToken()) {
-            return $this->markSkipped('API Token ausente');
-        }
-
-        if (empty($list)) {
-            return $this->markSkipped('Nenhum produto cadastrado no Marketplace');
-        }
-
-        $manager = $this->getManager();
-
-        foreach ($list as $product) {
-            $info = $manager->findById($product->getSkuSellerId());
-
-            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Product',
-            $info);
-
-            $this->assertEquals($product->getSkuSellerId(), $info->getSkuSellerId());
-        }
+        $manager = $this->getManager('ProductId.json');
+        $product = $manager->findById(14080);
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Product', $product);
+        $this->assertEquals(14080, $product->getSkuSellerId());
+        $this->assertEquals(14080, $product->getId());
     }
 
     public function testGuardaProdutosNaoCadastradosEmUmaFilaParaGravacaoEmLote()

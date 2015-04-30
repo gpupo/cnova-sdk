@@ -49,5 +49,4 @@ class MetadataTest extends TestCaseAbstract
     {
         $this->assertEquals(20, $metadata->getLimit());
     }
-
 }

@@ -42,7 +42,7 @@ class Loads extends CollectionAbstract
         $data = [];
 
         foreach ($metas as $meta) {
-            $data[$meta['key']] = $meta['value'];            
+            $data[$meta['key']] = $meta['value'];
         }
 
         $this->metadata = new Metadata($data);

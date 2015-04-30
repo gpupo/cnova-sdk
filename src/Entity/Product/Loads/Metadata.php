@@ -23,7 +23,7 @@ use Gpupo\Common\Entity\CollectionAbstract;
  * @method string getPrevious()
  * @method string getNext()
  * @method string getLast()
-*/
+ */
 class Metadata extends CollectionAbstract
 {
 }

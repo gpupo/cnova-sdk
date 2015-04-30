@@ -13,9 +13,6 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Product\Loads;
 
-use Gpupo\CnovaSdk\Entity\Product\Loads\Loads;
-use Gpupo\CnovaSdk\Entity\Product\Loads\Metadata;
-
 class ManagerTest extends TestCaseAbstract
 {
     public function testObtemListaDeSituacoesDeProdutos()
@@ -33,11 +30,10 @@ class ManagerTest extends TestCaseAbstract
     {
         $manager = $this->getManager();
         $manager->setDryRun($this->factoryMockup('Errors.json'));
-        $loads = $manager->fetch(0, 20, ['status'=>'Error']);
+        $loads = $manager->fetch(0, 20, ['status' => 'Error']);
 
-        foreach($loads as $product) {
+        foreach ($loads as $product) {
             $this->assertEquals('Error', $product->getStatus());
         }
-
     }
 }

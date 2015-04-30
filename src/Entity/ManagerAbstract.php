@@ -21,17 +21,27 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
 {
     protected $entity;
 
+    protected function fetchPrepare($data)
+    {
+        if (!empty($data)) {
+            return $this->factoryEntityCollection($data->toArray());
+        }
+    }
+
     public function fetch($offset = 0, $limit = 50, array $parameters = [])
     {
         $data = parent::fetch($offset, $limit, $parameters);
 
-        if ($data->getTotal() > 0) {
-            $method = 'get'.$this->getEntityName().'s';
+        return $this->fetchPrepare($data);
+    }
 
-            return $this->factoryEntityCollection($data->$method());
+    public function findById($itemId)
+    {
+        $data = parent::findById($itemId);
+
+        if (!empty($data)) {
+            return $this->factoryEntity($data->toArray());
         }
-
-        return $data;
     }
 
     /**
