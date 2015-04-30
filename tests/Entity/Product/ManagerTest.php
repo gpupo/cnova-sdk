@@ -25,7 +25,7 @@ class ManagerTest extends TestCaseAbstract
         return $manager;
     }
 
-    public function testAcessoAoAdministradorDeProdutos()
+    public function testÉOAdministradorDeProdutos()
     {
         $manager = $this->getManager();
 
@@ -35,7 +35,7 @@ class ManagerTest extends TestCaseAbstract
     }
 
     /**
-     * @depends testAcessoAoAdministradorDeProdutos
+     * @depends testÉOAdministradorDeProdutos
      */
     public function testPossuiObjetoPool($manager)
     {
@@ -43,7 +43,7 @@ class ManagerTest extends TestCaseAbstract
     }
 
     /**
-     * @depends testAcessoAoAdministradorDeProdutos
+     * @depends testÉOAdministradorDeProdutos
      */
     public function testPossuiObjetoClient($manager)
     {
@@ -51,7 +51,7 @@ class ManagerTest extends TestCaseAbstract
     }
 
     /**
-     * @depends testAcessoAoAdministradorDeProdutos
+     * @depends testÉOAdministradorDeProdutos
      */
     public function testObtemListaDeProdutosCadastrados($manager)
     {
@@ -61,7 +61,7 @@ class ManagerTest extends TestCaseAbstract
         return $list;
     }
 
-    public function testRecuperaInformacoesDeUmProdutoEspecifico()
+    public function testRecuperaInformacoesDeUmProdutoEspecificoAPartirDeId()
     {
         $manager = $this->getManager('ProductId.json');
         $product = $manager->findById(14080);
@@ -70,7 +70,7 @@ class ManagerTest extends TestCaseAbstract
         $this->assertEquals(14080, $product->getId());
     }
 
-    public function testGuardaProdutosNaoCadastradosEmUmaFilaParaGravacaoEmLote()
+    public function testGuardaProdutosEmUmaFilaParaGravacaoEmLote()
     {
         $manager = $this->getManager();
         $list = $this->dataProviderProducts();
@@ -100,7 +100,6 @@ class ManagerTest extends TestCaseAbstract
 
         $list = $this->dataProviderProducts();
 
-        $i = 0;
         foreach ($list as $data) {
             $product = $this->getFactory()->createProduct(current($data));
             $manager->save($product);
@@ -109,7 +108,21 @@ class ManagerTest extends TestCaseAbstract
         $this->assertTrue($manager->commit(), 'Gravacao de lote');
     }
 
-    public function testNaoExecutaOperacaoEmProdutoInalterado()
+    public function testAtualizaPrecoEEstoqueDeUmProduto()
+    {
+        $manager = $this->getFactory()->factoryManager('product')->setDryRun();
+        $list = $this->dataProviderProducts();
+
+        foreach ($list as $data) {
+            $entityA = $this->getFactory()->createProduct(current($data));
+            $entityB = $this->getFactory()->createProduct(current($data));
+            $entityA->setPrevious($entityB);
+            $this->assertFalse($manager->attributesDiff($entityA, $entityB));
+            $this->assertFalse($manager->save($entityA));
+        }
+    }
+
+    public function testNaoExecutaAtualizacaoEmProdutoInalterado()
     {
         $manager = $this->getFactory()->factoryManager('product')->setDryRun();
         $list = $this->dataProviderProducts();
@@ -132,7 +145,8 @@ class ManagerTest extends TestCaseAbstract
             $entityA = $this->getFactory()->createProduct(current($data));
             $entityB = $this->getFactory()->createProduct(current($data));
             $entityB->getStock()->setQuantity(8);
-            $this->assertEquals(['quantity'], $manager->attributesDiff($entityA->getStock(), $entityB->getStock()), 'Diff');
+            $this->assertEquals(['quantity'], $manager->attributesDiff(
+                $entityA->getStock(), $entityB->getStock()), 'Diff');
             $entityA->setPrevious($entityB);
             $this->assertTrue($manager->save($entityA), 'Save');
         }

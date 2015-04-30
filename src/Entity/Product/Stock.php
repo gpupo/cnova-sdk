@@ -23,6 +23,13 @@ class Stock extends EntityAbstract implements EntityInterface
         return  [
             'quantity'         => 'integer',
             'crossDockingTime' => 'integer',
+            'reserved'         => 'integer',
+            'warehouse'        => 'integer',
         ];
+    }
+
+    protected function setUp()
+    {
+        $this->setOptionalSchema(['crossDockingTime', 'reserved', 'warehouse']);
     }
 }
