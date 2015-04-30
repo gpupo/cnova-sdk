@@ -24,18 +24,4 @@ class Manager extends ManagerAbstract
         'fetch'     => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
     ];
 
-    /**
-     * @param int   $offset
-     * @param int   $limit
-     * @param array $parameters
-     *
-     * @return \Gpupo\CommonSdk\Entity\CollectionInterface
-     */
-    public function fetch($offset = 1, $limit = 50, array $parameters = [])
-    {
-        return parent::fetch($offset, $limit, array_merge([
-            'status'        => 'new',
-            'purchaseAt'    => '',
-        ], $parameters));
-    }
 }

@@ -13,7 +13,6 @@
 
 namespace Gpupo\CnovaSdk\Entity;
 
-use Gpupo\CnovaSdk\Entity\Product\ProductExtended;
 use Gpupo\Common\Entity\CollectionAbstract;
 
 abstract class MetadataContainerAbstract extends CollectionAbstract

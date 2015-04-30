@@ -22,15 +22,7 @@ class Manager extends ManagerAbstract
     protected $maps = [
         'fetch' => ['GET', '/loads/products?_offset={offset}&_limit={limit}&status={status}&createdAt={createdAt}'],
     ];
-
-    protected function fetchDefaultParameters()
-    {
-        return [
-            'status'    => '',
-            'createdAt' => '',
-        ];
-    }
-
+    
     protected function factoryEntityCollection($data)
     {
         return new Loads($data);

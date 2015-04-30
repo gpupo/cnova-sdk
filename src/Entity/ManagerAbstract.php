@@ -21,6 +21,15 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
 {
     protected $entity;
 
+    protected function fetchDefaultParameters()
+    {
+        return [
+            'status'        => '',
+            'createdAt'     => '',
+            'purchaseAt'    => '',
+        ];
+    }
+
     /**
      * @return Gpupo\Common\Entity\CollectionAbstract|null
      */
