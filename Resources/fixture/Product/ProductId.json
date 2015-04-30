@@ -19,7 +19,7 @@
         "http://foo/bar.avi"
     ],
     "price": {
-        "offer": 139,
+        "offer": 119,
         "default": 139
     },
     "stock": {
