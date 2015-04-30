@@ -1,0 +1,132 @@
+{
+    "orders":
+    [
+    {
+      "id": "589",
+      "orderMarketplaceId": "string",
+      "paymentType": "integer",
+      "purchasedAt": "date-time",
+      "approvedAt": "date-time",
+      "updatedAt": "date-time",
+      "status": "string",
+      "totalAmount": "double",
+      "totalDiscountAmount": "double",
+      "billing": {
+        "address": "string",
+        "number": "string",
+        "complement": "string",
+        "quarter": "string",
+        "reference": "string",
+        "city": "string",
+        "state": "string",
+        "countryId": "string",
+        "zipCode": "string",
+        "recipientName": "string"
+      },
+      "customer": {
+        "id": "string",
+        "name": "string",
+        "documentNumber": "string",
+        "type": "string",
+        "createdAt": "date-time",
+        "email": "string",
+        "phones": [
+          {
+            "number": "4133448853",
+            "type": "HOME"
+          },
+          {
+            "number": "4188448853",
+            "type": "CELLPHONE"
+          }
+        ]
+      },
+      "freight": {
+        "actualAmount": "double",
+        "chargedAmount": "double",
+        "type": "string",
+        "scheduledAt": "date-time",
+        "scheduledPeriod": "string"
+      },
+      "items": [
+        {
+          "id": "string",
+          "skuSellerId": "string",
+          "name": "string",
+          "salePrice": "double",
+          "sent": "boolean",
+          "freight": {
+            "actualAmount": "double",
+            "chargedAmount": "double",
+            "transitTime": "integer",
+            "crossDockingTime": "integer",
+            "additionalInfo": "string",
+            "type": "string",
+            "scheduledAt": "date-time",
+            "scheduledPeriod": "string"
+          },
+          "giftWrap": {
+            "available": "boolean",
+            "value": "number",
+            "messageSupport": "boolean",
+            "giftCard": {
+              "from": "string",
+              "to": "string",
+              "message": "string"
+            }
+          }
+        }
+      ],
+      "shipping": {
+        "address": "string",
+        "number": "string",
+        "complement": "string",
+        "quarter": "string",
+        "reference": "string",
+        "city": "string",
+        "state": "string",
+        "countryId": "string",
+        "zipCode": "string",
+        "recipientName": "string"
+      },
+      "trackings": [
+        {
+          "items": [
+            {
+              "skuSellerId": "string",
+              "quantity": "integer",
+              "href": "string"
+            }
+          ],
+          "controlPoint": "string",
+          "description": "string",
+          "occurredAt": "date-time",
+          "carrier": {
+            "name": "string",
+            "cnpj": "string"
+          },
+          "url": "string",
+          "number": "string",
+          "sellerDeliveryId": "string",
+          "cte": "string",
+          "invoice": {
+            "cnpj": "string",
+            "number": "string",
+            "serie": "string",
+            "issuedAt": "date-time",
+            "accessKey": "string",
+            "linkXML": "string",
+            "linkDanfe": "string"
+          }
+        }
+      ]
+    }
+
+    ],
+    "metadata": [
+        {
+            "key": "totalRows",
+            "value": "1"
+        }
+    ]
+}

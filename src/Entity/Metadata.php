@@ -11,7 +11,7 @@
  * @version 1
  */
 
-namespace Gpupo\CnovaSdk\Entity\Product\Loads;
+namespace Gpupo\CnovaSdk\Entity;
 
 use Gpupo\Common\Entity\CollectionAbstract;
 

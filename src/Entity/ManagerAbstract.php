@@ -27,18 +27,8 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
     protected function fetchPrepare($data)
     {
         if (!empty($data)) {
-            return $this->factoryEntityCollection($data->toArray());
+            return $this->factoryEntityCollection($data);
         }
-    }
-
-    /**
-     * @return Gpupo\Common\Entity\CollectionAbstract|null
-     */
-    public function fetch($offset = 0, $limit = 50, array $parameters = [])
-    {
-        $data = parent::fetch($offset, $limit, $parameters);
-
-        return $this->fetchPrepare($data);
     }
 
     /**

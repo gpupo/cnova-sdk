@@ -19,26 +19,21 @@ use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 abstract class OrderTestCaseAbstract extends TestCaseAbstract
 {
-    protected function getManager()
+    protected function getManager($filename = 'Orders.json')
     {
         return $this->getFactory()->factoryManager('order')
-            ->setDryRun($this->factoryResponseFromFixture('fixture/Orders.json'));
+            ->setDryRun($this->factoryResponseFromFixture('fixture/Order/'.$filename));
     }
 
     protected function getList()
     {
-        $list = [];
-        foreach ($this->dataProviderOrderCollection() as $array) {
-            $list[] = current($array);
-        }
-
-        return new Collection($list);
+        return $this->getManager()->fetch();
     }
 
     public function dataProviderOrderCollection()
     {
         $list = [];
-        foreach ($this->dataProviderOrders() as $order) {
+        foreach ($this->getList() as $order) {
             $list[][] = new Order($order);
         }
 

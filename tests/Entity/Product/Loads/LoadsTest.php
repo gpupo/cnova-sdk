@@ -45,7 +45,7 @@ class LoadsTest extends TestCaseAbstract
     {
         $metadata = $loads->getMetadata();
 
-        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Loads\Metadata', $metadata);
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Metadata', $metadata);
 
         return $metadata;
     }

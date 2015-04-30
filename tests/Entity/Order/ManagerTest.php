@@ -27,9 +27,12 @@ class ManagerTest extends OrderTestCaseAbstract
     /**
      * @depends testObtemListaPedidos
      */
-    public function testRecuperaInformacoesDeUmPedidoEspecifico($list)
+    public function testRecuperaInformacoesDeUmPedidoEspecifico()
     {
-        return $this->markIncomplete();
+        $manager = $this->getManager('OrderId.json');
+        $order = $manager->findById(14080);
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Order', $order);
+        $this->assertEquals(14080, $order->getId());
     }
 
     /**

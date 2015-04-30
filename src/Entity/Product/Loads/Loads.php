@@ -14,17 +14,10 @@
 namespace Gpupo\CnovaSdk\Entity\Product\Loads;
 
 use Gpupo\CnovaSdk\Entity\Product\ProductExtended;
-use Gpupo\Common\Entity\CollectionAbstract;
+use Gpupo\CnovaSdk\Entity\MetadataContainerAbstract;
 
-class Loads extends CollectionAbstract
+class Loads extends MetadataContainerAbstract
 {
-    protected $metadata;
-
-    public function getMetadata()
-    {
-        return $this->metadata;
-    }
-
     protected function factoryProduct(array $raw)
     {
         $data = [
@@ -37,20 +30,9 @@ class Loads extends CollectionAbstract
         return new ProductExtended($data);
     }
 
-    protected function factoryMetadata(array $metas)
+    public function __construct($data = null)
     {
-        $data = [];
-
-        foreach ($metas as $meta) {
-            $data[$meta['key']] = $meta['value'];
-        }
-
-        $this->metadata = new Metadata($data);
-    }
-
-    public function __construct(CollectionAbstract $data = null)
-    {
-        $this->factoryMetadata($data->getMetadata());
+        parent::__construct($data);
 
         foreach ($data->getSkus() as $product) {
             $this->add($this->factoryProduct($product));

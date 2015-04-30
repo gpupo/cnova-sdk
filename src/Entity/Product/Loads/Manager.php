@@ -23,18 +23,17 @@ class Manager extends ManagerAbstract
         'fetch' => ['GET', '/loads/products?_offset={offset}&_limit={limit}&status={status}&createdAt={createdAt}'],
     ];
 
-    protected function fetchPrepare($data)
+    protected function fetchDefaultParameters()
     {
-        return $data;
-    }
-
-    public function fetch($offset = 0, $limit = 50, array $parameters = [])
-    {
-        $data = parent::fetch($offset, $limit, array_merge([
+        return [
             'status'    => '',
             'createdAt' => '',
-        ], $parameters));
+        ];
+    }
 
+    protected function factoryEntityCollection($data)
+    {
         return new Loads($data);
     }
+
 }
