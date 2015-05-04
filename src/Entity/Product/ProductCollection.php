@@ -17,19 +17,13 @@ use Gpupo\CnovaSdk\Entity\MetadataContainerAbstract;
 
 class ProductCollection extends MetadataContainerAbstract
 {
-    protected function factoryProduct(array $data)
+    protected function getKey()
     {
-        return new Product($data);
+        return 'skus';
     }
 
-    public function __construct($data = null)
+    protected function factoryEntity(array $data)
     {
-        parent::__construct($data);
-
-        $list = $this->dataPiece('skus', $data);
-
-        foreach ($list as $product) {
-            $this->add($this->factoryProduct($product));
-        }
+        return new Product($data);
     }
 }

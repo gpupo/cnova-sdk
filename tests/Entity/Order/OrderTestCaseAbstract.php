@@ -13,27 +13,72 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
 
+use Gpupo\CnovaSdk\Entity\Order\Customer\Customer;
 use Gpupo\CnovaSdk\Entity\Order\Order;
 use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 abstract class OrderTestCaseAbstract extends TestCaseAbstract
 {
-    protected function getManager($filename = 'Orders.json')
+    protected function getManager($filename = null)
     {
-        return $this->getFactory()->factoryManager('order')
-            ->setDryRun($this->factoryResponseFromFixture('fixture/Order/'.$filename));
+        if (empty($filename)) {
+            $filename = 'Orders.json';
+        }
+
+        $manager = $this->getFactory()->factoryManager('order');
+        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Order/'.$filename));
+
+        return $manager;
     }
 
+    /**
+     * return \Gpupo\CnovaSdk\Entity\Order\OrderCollection;.
+     */
     protected function getList()
     {
-        return $this->getManager()->fetch();
+        $list =  $this->getManager()->fetch();
+
+        return $list;
     }
 
     public function dataProviderOrderCollection()
     {
         $list = [];
         foreach ($this->getList() as $order) {
-            $list[][] = new Order($order);
+            $list[][] = $order;
+        }
+
+        if (empty($list)) {
+            throw new \Exception('Lista Vazia!');
+        }
+
+        return $list;
+    }
+
+    public function dataProviderCustomers()
+    {
+        $list = [];
+
+        foreach ($this->getList() as $order) {
+            if (!$order instanceof Order) {
+                throw new \Exception('Objeto não é Order');
+            }
+            $list[] = [$order->getCustomer()];
+        }
+
+        return $list;
+    }
+
+    public function dataProviderPhones()
+    {
+        $list = [];
+
+        foreach ($this->dataProviderCustomers() as $data) {
+            $customer = current($data);
+            if (!$customer instanceof Customer) {
+                throw new \Exception('Objeto não é Customer');
+            }
+            $list[] = [$customer->getPhones()];
         }
 
         return $list;

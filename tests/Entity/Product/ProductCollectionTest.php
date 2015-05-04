@@ -13,17 +13,18 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity;
 
-use Gpupo\CnovaSdk\Entity\MetadataContainer;
+use Gpupo\CnovaSdk\Entity\Product\ProductCollection;
 
-class MetadataContainerTest extends MetadataContainerTestAbstract
+class ProductCollectionTest extends MetadataContainerTestAbstract
 {
     public function dataProviderContainer()
     {
-        $data = $this->getResourceJson('fixture/Order/Orders.json');
-        $container = new MetadataContainer($data);
+        $data = $this->getResourceJson('fixture/Product/Products.json');
+
+        $container = new ProductCollection($data);
 
         return [
-            [$container,['totalRows' => 2]],
+            [$container, ['totalRows' => 6287]],
         ];
     }
 }

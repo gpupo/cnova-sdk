@@ -18,24 +18,20 @@ use Gpupo\CnovaSdk\Entity\Product\ProductExtended;
 
 class LoadsCollection extends MetadataContainerAbstract
 {
-    protected function factoryProduct(array $raw)
+    protected function getKey()
     {
-        $data = [
-            'skuSellerId'   => $raw['skuSeller']['id'],
-            'href'          => $raw['skuSeller']['href'],
-            'status'        => $raw['status'],
-            'createdAt'     => $raw['createdAt'],
-        ];
-
-        return new ProductExtended($data);
+        return 'skus';
     }
 
-    public function __construct($data = null)
+    protected function factoryEntity(array $data)
     {
-        parent::__construct($data);
+        $input = [
+            'skuSellerId'   => $data['skuSeller']['id'],
+            'href'          => $data['skuSeller']['href'],
+            'status'        => $data['status'],
+            'createdAt'     => $data['createdAt'],
+        ];
 
-        foreach ($data->getSkus() as $product) {
-            $this->add($this->factoryProduct($product));
-        }
+        return new ProductExtended($input);
     }
 }

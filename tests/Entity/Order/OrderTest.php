@@ -84,12 +84,12 @@ class OrderTest extends OrderTestCaseAbstract
     public function testCadaPedidoPossuiColecaoDeProdutos(OrderCollection $list)
     {
         foreach ($list as $item) {
-            $collection = $item->getItens();
+            $collection = $item->getItems();
 
-            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Itens\Itens', $collection);
+            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Items\Items', $collection);
 
             foreach ($collection as $product) {
-                $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Itens\Product\Product', $product);
+                $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Items\Product\Product', $product);
             }
         }
     }

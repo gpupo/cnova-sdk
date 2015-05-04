@@ -17,17 +17,13 @@ use Gpupo\CnovaSdk\Entity\MetadataContainerAbstract;
 
 class OrderCollection extends MetadataContainerAbstract
 {
-    protected function factoryOrder(array $data)
+    protected function getKey()
     {
-        return new Order($data);
+        return 'orders';
     }
 
-    public function __construct($data = null)
+    protected function factoryEntity(array $data)
     {
-        parent::__construct($data);
-
-        foreach ($data->getOrders() as $order) {
-            $this->add($this->factoryOrder($order));
-        }
+        return new Order($data);
     }
 }

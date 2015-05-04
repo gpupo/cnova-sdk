@@ -15,4 +15,12 @@ namespace Gpupo\CnovaSdk\Entity;
 
 final class MetadataContainer extends MetadataContainerAbstract
 {
+    protected function getKey()
+    {
+        return 'foo';
+    }
+
+    protected function factoryEntity(array $data)
+    {
+    }
 }

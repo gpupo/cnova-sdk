@@ -13,6 +13,8 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
 
+use Gpupo\CnovaSdk\Entity\Order\Order;
+
 class ManagerTest extends OrderTestCaseAbstract
 {
     public function testObtemListaPedidos()
@@ -29,23 +31,20 @@ class ManagerTest extends OrderTestCaseAbstract
      */
     public function testRecuperaInformacoesDeUmPedidoEspecifico()
     {
-        return $this->markIncomplete();
         $manager = $this->getManager('OrderId.json');
-        $order = $manager->findById(14080);
+        $order = $manager->findById(975101);
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Order', $order);
-        $this->assertEquals(14080, $order->getId());
+        $this->assertEquals(975101, $order->getId());
+        $this->assertEquals('2015-04-30T14:54:29.000-03:00', $order->getPurchasedAt());
     }
 
     /**
-     * @depends testObtemListaPedidos
+     * @dataProvider dataProviderOrderCollection
      */
-    public function testAtualizaStatusDeUmPedido($list)
+    public function testAtualizaStatusDeUmPedido(Order $order)
     {
+        $order->setStatus('sent');
         $manager = $this->getManager()->setDryRun();
-
-        foreach ($list as $order) {
-            $order->setStatus('sent');
-            $this->assertTrue($manager->saveStatus($order));
-        }
+        $this->assertTrue($manager->saveStatus($order));
     }
 }

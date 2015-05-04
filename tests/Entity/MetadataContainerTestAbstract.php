@@ -13,8 +13,8 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity;
 
-use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 use Gpupo\CnovaSdk\Entity\MetadataContainerAbstract;
+use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 abstract class MetadataContainerTestAbstract extends TestCaseAbstract
 {
@@ -23,9 +23,24 @@ abstract class MetadataContainerTestAbstract extends TestCaseAbstract
     /**
      * @dataProvider dataProviderContainer
      */
-    public function testPossuiPropriedadeIndicadoraDeQuantidadeDeRegistros(Array $expected, MetadataContainerAbstract $container)
+    public function testÉUmObjetoMetadataContainer(MetadataContainerAbstract $container)
     {
-        $this->assertEquals($expected['totalRows'], $container->getMetadata()->getTotalRows());
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\MetadataContainerAbstract', $container);
     }
 
+    /**
+     * @dataProvider dataProviderContainer
+     */
+    public function testPossuiObjetoMetadata(MetadataContainerAbstract $container)
+    {
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Metadata', $container->getMetadata());
+    }
+
+    /**
+     * @dataProvider dataProviderContainer
+     */
+    public function testPossuiPropriedadeIndicadoraDeQuantidadeDeRegistros(MetadataContainerAbstract $container, array $expected)
+    {
+        $this->assertEquals($container->getMetadata()->getTotalRows(), $expected['totalRows']);
+    }
 }

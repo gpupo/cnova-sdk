@@ -13,22 +13,25 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order\Customer;
 
+use Gpupo\CnovaSdk\Entity\Order\Customer\Customer;
+use Gpupo\CnovaSdk\Entity\Order\Order;
 use Gpupo\Tests\CnovaSdk\Entity\Order\OrderTestCaseAbstract;
 
 class CustomerTest extends OrderTestCaseAbstract
 {
-    public function testCadaClientePossuiColecaoDeTelefones()
+    /**
+     * @dataProvider dataProviderOrderCollection
+     */
+    public function testÉPropriedadeDeOrder(Order $order)
     {
-        foreach ($this->getList() as $order) {
-            $phones = $order->getCustomer()->getPhones();
+        $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Order\Customer\Customer', $order->getCustomer());
+    }
 
-            $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionAbstract', $phones);
-
-            foreach ($phones as $phone) {
-                $this->assertInstanceOf('\Gpupo\Common\Entity\CollectionAbstract', $phone);
-                $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Customer\Phones\Phone', $phone);
-                $this->assertTrue(in_array($phone->getType(), ['HOME', 'CELLPHONE', 'BUSINESS'], true));
-            }
-        }
+    /**
+     * @dataProvider dataProviderCustomers
+     */
+    public function testPossuiObjetoPhones(Customer $customer)
+    {
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Customer\Phones\Phones', $customer->getPhones());
     }
 }

@@ -1,0 +1,40 @@
+<?php
+
+/*
+ * This file is part of gpupo/cnova-sdk
+ *
+ * (c) Gilmar Pupo <g@g1mr.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @version 1
+ */
+
+namespace Gpupo\Tests\CnovaSdk\Entity\Order\Customer;
+
+use Gpupo\CnovaSdk\Entity\Order\Customer\Phones\Phones;
+use Gpupo\Tests\CnovaSdk\Entity\Order\OrderTestCaseAbstract;
+
+class PhoneTest extends OrderTestCaseAbstract
+{
+    /**
+     * @dataProvider dataProviderPhones
+     */
+    public function testPossuiNumero(Phones $phones)
+    {
+        foreach ($phones as $phone) {
+            $this->assertGreaterThan(10000000000, $phone->getNumber());
+        }
+    }
+
+    /**
+     * @dataProvider dataProviderPhones
+     */
+    public function testPossuiIdentificaçãoDeTipo(Phones $phones)
+    {
+        foreach ($phones as $phone) {
+            $this->assertTrue(in_array($phone->getType(), ['HOME', 'CELLPHONE', 'BUSINESS', 'MOBILE', 'OFFICE'], true));
+        }
+    }
+}

@@ -17,9 +17,22 @@ use Gpupo\Common\Entity\CollectionAbstract;
 
 abstract class MetadataContainerAbstract extends CollectionAbstract
 {
+    abstract protected function getKey();
+
+    abstract protected function factoryEntity(array $data);
+
+    protected $metadata;
+
+    protected $raw;
+
     public function getMetadata()
     {
-        return $this->get('metadata');
+        return $this->metadata;
+    }
+
+    public function getRaw()
+    {
+        return $this->raw;
     }
 
     protected function normalizeMetas($metas)
@@ -54,17 +67,22 @@ abstract class MetadataContainerAbstract extends CollectionAbstract
             $data = $this->normalizeMetas($data);
         }
 
-        $this->set('metadata', new Metadata($data));
+        $this->metadata = new Metadata($data);
 
         return true;
     }
 
     public function __construct($data = null)
     {
-        parent::__construct([
-            'raw' => $data,
-        ]);
+        $this->raw = $data;
 
         $this->factoryMetadata($data);
+
+        $list = $this->dataPiece($this->getKey(), $data);
+        if (!empty($list)) {
+            foreach ($list as $entityData) {
+                $this->add($this->factoryEntity($entityData));
+            }
+        }
     }
 }
