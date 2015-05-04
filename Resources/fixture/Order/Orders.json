@@ -1,132 +1,198 @@
 {
-    "orders":
-    [
-    {
-      "id": "589",
-      "orderMarketplaceId": "string",
-      "paymentType": "integer",
-      "purchasedAt": "date-time",
-      "approvedAt": "date-time",
-      "updatedAt": "date-time",
-      "status": "string",
-      "totalAmount": "double",
-      "totalDiscountAmount": "double",
-      "billing": {
-        "address": "string",
-        "number": "string",
-        "complement": "string",
-        "quarter": "string",
-        "reference": "string",
-        "city": "string",
-        "state": "string",
-        "countryId": "string",
-        "zipCode": "string",
-        "recipientName": "string"
-      },
-      "customer": {
-        "id": "string",
-        "name": "string",
-        "documentNumber": "string",
-        "type": "string",
-        "createdAt": "date-time",
-        "email": "string",
-        "phones": [
-          {
-            "number": "4133448853",
-            "type": "HOME"
-          },
-          {
-            "number": "4188448853",
-            "type": "CELLPHONE"
-          }
-        ]
-      },
-      "freight": {
-        "actualAmount": "double",
-        "chargedAmount": "double",
-        "type": "string",
-        "scheduledAt": "date-time",
-        "scheduledPeriod": "string"
-      },
-      "items": [
+    "orders": [
         {
-          "id": "string",
-          "skuSellerId": "string",
-          "name": "string",
-          "salePrice": "double",
-          "sent": "boolean",
-          "freight": {
-            "actualAmount": "double",
-            "chargedAmount": "double",
-            "transitTime": "integer",
-            "crossDockingTime": "integer",
-            "additionalInfo": "string",
-            "type": "string",
-            "scheduledAt": "date-time",
-            "scheduledPeriod": "string"
-          },
-          "giftWrap": {
-            "available": "boolean",
-            "value": "number",
-            "messageSupport": "boolean",
-            "giftCard": {
-              "from": "string",
-              "to": "string",
-              "message": "string"
-            }
-          }
-        }
-      ],
-      "shipping": {
-        "address": "string",
-        "number": "string",
-        "complement": "string",
-        "quarter": "string",
-        "reference": "string",
-        "city": "string",
-        "state": "string",
-        "countryId": "string",
-        "zipCode": "string",
-        "recipientName": "string"
-      },
-      "trackings": [
+            "id": "975101",
+            "orderMarketplaceId": "9751",
+            "site": null,
+            "paymentType": "1",
+            "purchasedAt": "2015-04-30T14:54:29.000-03:00",
+            "approvedAt": null,
+            "updatedAt": "2015-04-30T19:06:18.462-03:00",
+            "status": "PEN",
+            "totalAmount": 288,
+            "totalDiscountAmount": 0,
+            "billing": {
+                "address": "Rua da Chaleira",
+                "number": "01",
+                "complement": "Na hora do Chá",
+                "quarter": "Ingleses",
+                "reference": null,
+                "city": "NãoSeiLândia",
+                "state": "SP",
+                "countryId": "BR",
+                "zipCode": "50000000"
+            },
+            "customer": {
+                "id": "218208",
+                "name": "João da Silva ",
+                "documentNumber": "11111111111",
+                "type": "PF",
+                "createdAt": "2015-04-30T14:54:29.000-03:00",
+                "email": "atendimento+OS_905000700110@mktp.extra.com.br",
+                "phones": [
+                    {
+                        "number": "11399977721",
+                        "type": "HOME"
+                    },
+                    {
+                        "number": "11999917771",
+                        "type": "MOBILE"
+                    },
+                    {
+                        "number": "11499974771",
+                        "type": "OFFICE"
+                    }
+                ]
+            },
+            "freight": {
+                "actualAmount": 10,
+                "chargedAmount": 10,
+                "type": "NOR",
+                "scheduledAt": null,
+                "scheduledPeriod": null
+            },
+            "items": [
+                {
+                    "id": "23236199-1",
+                    "skuSellerId": "14080",
+                    "name": "Esfoliante Facial Creme Doux Polissant Unissex 50ml Clarins",
+                    "salePrice": 139,
+                    "sent": false,
+                    "freight": {
+                        "actualAmount": 5,
+                        "chargedAmount": null,
+                        "transitTime": 1,
+                        "crossDockingTime": 1,
+                        "additionalInfo": null,
+                        "type": null,
+                        "scheduledAt": null,
+                        "scheduledPeriod": null
+                    },
+                    "giftWrap": null
+                },
+                {
+                    "id": "23236199-2",
+                    "skuSellerId": "14080",
+                    "name": "Esfoliante Facial Creme Doux Polissant Unissex 50ml Clarins",
+                    "salePrice": 139,
+                    "sent": false,
+                    "freight": {
+                        "actualAmount": 5,
+                        "chargedAmount": null,
+                        "transitTime": 1,
+                        "crossDockingTime": 1,
+                        "additionalInfo": null,
+                        "type": null,
+                        "scheduledAt": null,
+                        "scheduledPeriod": null
+                    },
+                    "giftWrap": null
+                }
+            ],
+            "trackings": null
+        },
         {
-          "items": [
-            {
-              "skuSellerId": "string",
-              "quantity": "integer",
-              "href": "string"
-            }
-          ],
-          "controlPoint": "string",
-          "description": "string",
-          "occurredAt": "date-time",
-          "carrier": {
-            "name": "string",
-            "cnpj": "string"
-          },
-          "url": "string",
-          "number": "string",
-          "sellerDeliveryId": "string",
-          "cte": "string",
-          "invoice": {
-            "cnpj": "string",
-            "number": "string",
-            "serie": "string",
-            "issuedAt": "date-time",
-            "accessKey": "string",
-            "linkXML": "string",
-            "linkDanfe": "string"
-          }
+            "id": "975001",
+            "orderMarketplaceId": "9750",
+            "site": null,
+            "paymentType": "1",
+            "purchasedAt": "2015-04-30T14:49:10.000-03:00",
+            "approvedAt": null,
+            "updatedAt": "2015-04-30T19:06:18.464-03:00",
+            "status": "PEN",
+            "totalAmount": 149,
+            "totalDiscountAmount": 0,
+            "billing": {
+                "address": "Rua da Chaleira",
+                "number": "01",
+                "complement": "Na hora do Chá",
+                "quarter": "Ingleses",
+                "reference": null,
+                "city": "NãoSeiLândia",
+                "state": "SP",
+                "countryId": "BR",
+                "zipCode": "50000000"
+            },
+            "customer": {
+                "id": "218208",
+                "name": "João da Silva ",
+                "documentNumber": "11111111111",
+                "type": "PF",
+                "createdAt": "2015-04-30T14:49:10.000-03:00",
+                "email": "atendimento+OS_905000700010@mktp.extra.com.br",
+                "phones": [
+                    {
+                        "number": "11399977721",
+                        "type": "HOME"
+                    },
+                    {
+                        "number": "11999917771",
+                        "type": "MOBILE"
+                    },
+                    {
+                        "number": "11499974771",
+                        "type": "OFFICE"
+                    }
+                ]
+            },
+            "freight": {
+                "actualAmount": 10,
+                "chargedAmount": 10,
+                "type": "NOR",
+                "scheduledAt": null,
+                "scheduledPeriod": null
+            },
+            "items": [
+                {
+                    "id": "23236199-1",
+                    "skuSellerId": "14080",
+                    "name": "Esfoliante Facial Creme Doux Polissant Unissex 50ml Clarins",
+                    "salePrice": 139,
+                    "sent": false,
+                    "freight": {
+                        "actualAmount": 10,
+                        "chargedAmount": null,
+                        "transitTime": 1,
+                        "crossDockingTime": 1,
+                        "additionalInfo": null,
+                        "type": null,
+                        "scheduledAt": null,
+                        "scheduledPeriod": null
+                    },
+                    "giftWrap": null
+                }
+            ],
+            "trackings": null
         }
-      ]
-    }
-
     ],
     "metadata": [
         {
             "key": "totalRows",
-            "value": "1"
+            "value": "2"
+        },
+        {
+            "key": "offset",
+            "value": "0"
+        },
+        {
+            "key": "limit",
+            "value": "50"
+        },
+        {
+            "key": "first",
+            "value": "/orders/status/new?_offset=0&_limit=50"
+        },
+        {
+            "key": "previous",
+            "value": ""
+        },
+        {
+            "key": "next",
+            "value": ""
+        },
+        {
+            "key": "last",
+            "value": "/orders/status/new?_offset=0&_limit=50"
         }
     ]
 }
