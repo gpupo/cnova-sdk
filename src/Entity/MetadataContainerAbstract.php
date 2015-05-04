@@ -37,15 +37,23 @@ abstract class MetadataContainerAbstract extends CollectionAbstract
         return $data;
     }
 
-    protected function factoryMetadata($metas = [])
+    protected function factoryMetadata($data)
     {
+        if ($data instanceof CollectionAbstract) {
+            $metas = $data->getMetadata();
+        } elseif (array_key_exists('metadata', $data)) {
+            $metas = $data['metadata'];
+        } else {
+            return false;
+        }
+
         $this->metadata = new Metadata($this->normalizeMetas($metas));
 
-        return $this;
+        return true;
     }
 
     public function __construct($data = null)
     {
-        $this->factoryMetadata($data->getMetadata());
+        $this->factoryMetadata($data);
     }
 }

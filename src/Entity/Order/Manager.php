@@ -22,8 +22,8 @@ class Manager extends ManagerAbstract
 
     protected $maps = [
         'saveStatus'    => ['POST', '/order/{itemId}/trackings/{status}'],
-        'findById'  => ['GET', '/orders/{itemId}'],
-        'fetch'     => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
+        'findById'      => ['GET', '/orders/{itemId}'],
+        'fetch'         => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
     ];
 
     public function saveStatus(EntityInterface $order)
@@ -31,7 +31,6 @@ class Manager extends ManagerAbstract
         $status = $order->getStatus();
 
         return $this->execute($this->factoryMap('saveStatus',
-            ['itemId' => $order->getId(),'status'=>$status]), $order->toJson());
+            ['itemId' => $order->getId(), 'status' => $status]), $order->toJson());
     }
-
 }
