@@ -56,27 +56,49 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[/-&/" | sed 's/.*Gpupo.*/&\'$'\n/
 -->
 
 A lista abaixo é gerada a partir da saída da execução dos testes:
-
 ### Client\Client
 
 
 - [x] Sucesso ao definir options
 - [x] Gerencia uri de recurso
-- [ ] Objeto request possui header
-- [ ] Acesso a lista de pedidos
-- [ ] Acesso a lista de produtos
+- [x Objeto request possui header
+- [x] Acesso a lista de pedidos
+- [x] Acesso a lista de produtos
+
+### Entity\MetadataContainer
+
+
+- [x] É um objeto metadata container
+- [x] Possui objeto metadata
+- [x] Possui propriedade indicadora de quantidade de registros
 
 ### Entity\Order\Customer\Customer
 
 
-- [x] Cada cliente possui colecao de telefones
+- [x] É propriedade de order
+- [x] Possui objeto phones
+
+### Entity\Order\Customer\Phone
+
+
+- [x] Possui numero
+- [x] Possui identificação de tipo
 
 ### Entity\Order\Manager
 
 
 - [x] Obtem lista pedidos
-- [ ] Recupera informacoes de um pedido especifico
-- [ ] Atualiza status de um pedido
+- [x] Recupera informacoes de um pedido especifico
+- [x] Atualiza status de um pedido
+
+### Entity\OrderCollection
+
+
+- [x] Cada elementoÉ um objeto order
+- [x] Cada elemento possui dados corretos
+- [x] É um objeto metadata container
+- [x] Possui objeto metadata
+- [x] Possui propriedade indicadora de quantidade de registros
 
 ### Entity\Order\Order
 
@@ -100,7 +122,7 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 
 
 - [x] Obtem lista de situacoes de produtos
-- [ ] Permite acesso a lista de produtos com erro
+- [x] Permite acesso a lista de produtos com erro
 
 ### Entity\Product\Loads\Metadata
 
@@ -113,14 +135,31 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 ### Entity\Product\Manager
 
 
-- [x] Acesso ao administrador de produtos
+- [x] É o administrador de produtos
 - [x] Possui objeto pool
 - [x] Possui objeto client
-- [ ] Obtem lista de produtos cadastrados
-- [x] Guarda produtos nao cadastrados em uma fila para gravacao em lote
-- [ ] Gerencia gravacao de produtos em lote
-- [x] Nao executa operacao em produto inalterado
+- [x] Obtem lista de produtos cadastrados
+- [x] Recupera informacoes de um produto especifico a partir de id
+- [x] Guarda produtos em uma fila para gravacao em lote
+- [x] Gerencia gravacao de produtos em lote
+- [x] Atualiza preco e estoque de um produto
+- [x] Nao executa atualizacao em produto inalterado
 - [x] Atualiza apenas estoque em caso de ser o unico atributo alterado
+
+### Entity\Product\Price
+
+
+- [x] É propriedade de product
+- [x] Possui preço de
+- [x] Possui preço pro
+- [x] Entrega parâmetros para atualização de preço do sku
+
+### Entity\Product\ProductCollection
+
+
+- [x] É um objeto metadata container
+- [x] Possui objeto metadata
+- [x] Possui propriedade indicadora de quantidade de registros
 
 ### Entity\Product\Product
 
@@ -132,6 +171,14 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 - [x] Possui objeto dimensions
 - [x] Possui objeto gift wrap
 - [x] Entrega json
+
+### Entity\Product\Stock
+
+
+- [x] É propriedade de product
+- [x] Possui quantidade
+- [x] Possui tempo preparação do produto
+- [x] Entrega parâmetros para atualização de estoque do sku
 
 ### Factory
 

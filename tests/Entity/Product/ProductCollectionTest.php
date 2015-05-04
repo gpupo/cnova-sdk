@@ -11,7 +11,7 @@
  * @version 1
  */
 
-namespace Gpupo\Tests\CnovaSdk\Entity;
+namespace Gpupo\Tests\CnovaSdk\Entity\Product;
 
 use Gpupo\CnovaSdk\Entity\Product\ProductCollection;
 
