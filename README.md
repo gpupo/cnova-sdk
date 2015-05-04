@@ -56,12 +56,13 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[/-&/" | sed 's/.*Gpupo.*/&\'$'\n/
 -->
 
 A lista abaixo é gerada a partir da saída da execução dos testes:
+
 ### Client\Client
 
 
 - [x] Sucesso ao definir options
 - [x] Gerencia uri de recurso
-- [x Objeto request possui header
+- [x] Objeto request possui header
 - [x] Acesso a lista de pedidos
 - [x] Acesso a lista de produtos
 

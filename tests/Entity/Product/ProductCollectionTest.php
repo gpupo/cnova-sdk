@@ -14,6 +14,7 @@
 namespace Gpupo\Tests\CnovaSdk\Entity\Product;
 
 use Gpupo\CnovaSdk\Entity\Product\ProductCollection;
+use Gpupo\Tests\CnovaSdk\Entity\MetadataContainerTestAbstract;
 
 class ProductCollectionTest extends MetadataContainerTestAbstract
 {
