@@ -26,7 +26,9 @@ class ProductCollection extends MetadataContainerAbstract
     {
         parent::__construct($data);
 
-        foreach ($data->getSkus() as $product) {
+        $list = $this->dataPiece('skus', $data);
+
+        foreach ($list as $product) {
             $this->add($this->factoryProduct($product));
         }
     }

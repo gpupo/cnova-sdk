@@ -11,11 +11,11 @@
  * @version 1
  */
 
-namespace Gpupo\CnovaSdk\Entity\Order\Itens;
+namespace Gpupo\CnovaSdk\Entity\Order\Items;
 
 use Gpupo\Common\Entity\CollectionAbstract;
 
-class Itens extends CollectionAbstract
+class Items extends CollectionAbstract
 {
     public function __construct(array $elements = [])
     {

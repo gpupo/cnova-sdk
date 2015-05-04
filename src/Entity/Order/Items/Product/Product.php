@@ -11,7 +11,7 @@
  * @version 1
  */
 
-namespace Gpupo\CnovaSdk\Entity\Order\Itens\Product;
+namespace Gpupo\CnovaSdk\Entity\Order\Items\Product;
 
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;

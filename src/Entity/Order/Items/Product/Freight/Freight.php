@@ -11,7 +11,7 @@
  * @version 1
  */
 
-namespace Gpupo\CnovaSdk\Entity\Order\Itens\Product\Freight;
+namespace Gpupo\CnovaSdk\Entity\Order\Items\Product\Freight;
 
 use Gpupo\CnovaSdk\Entity\Order\Freight\Freight as FreightAbstract;
 

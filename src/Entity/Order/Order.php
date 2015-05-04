@@ -32,7 +32,7 @@ class Order extends EntityAbstract implements EntityInterface
             'billing'               => 'object',
             'customer'              => 'object',
             'freight'               => 'object',
-            'itens'                 => 'object',
+            'items'                 => 'object',
             'shipping'              => 'object',
             'trackings'             => 'object',
         ];

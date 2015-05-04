@@ -11,19 +11,20 @@
  * @version 1
  */
 
-namespace Gpupo\CnovaSdk\Entity\Order\Itens\Product\GiftWrap;
+namespace Gpupo\CnovaSdk\Entity\Order\Items\Product\GiftWrap;
 
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
-class GiftCard extends EntityAbstract implements EntityInterface
+class GiftWrap extends EntityAbstract implements EntityInterface
 {
     public function getSchema()
     {
         return  [
-            'from'      => 'string',
-            'to'        => 'string',
-            'message'   => 'string',
+            'available'         => 'boolean',
+            'value'             => 'number',
+            'messageSupport'    => 'boolean',
+            'giftCard'          => 'object',
         ];
     }
 }
