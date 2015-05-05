@@ -17,8 +17,36 @@ use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
 /**
- * @method object getPrice()
- * @method object getStock()
+ * @method string getSkuSellerId();
+ * @method setSkuSellerId(string);
+ * @method string getSkuId();
+ * @method setSkuId(string);
+ * @method string getProductSellerId();
+ * @method setProductSellerId(string);
+ * @method string getTitle();
+ * @method setTitle(string);
+ * @method string getDescription();
+ * @method setDescription(string);
+ * @method string getBrand();
+ * @method setBrand(string);
+ * @method array getGtin();
+ * @method setGtin(array);
+ * @method array getCategories();
+ * @method setCategories(array);
+ * @method array getImages();
+ * @method setImages(array);
+ * @method array getVideos();
+ * @method setVideos(array);
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getPrice();
+ * @method setPrice(\Gpupo\CommonSdk\Entity\EntityInterface);
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getStock();
+ * @method setStock(\Gpupo\CommonSdk\Entity\EntityInterface);
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getDimensions();
+ * @method setDimensions(\Gpupo\CommonSdk\Entity\EntityInterface);
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getGiftWrap();
+ * @method setGiftWrap(\Gpupo\CommonSdk\Entity\EntityInterface);
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getAttributes();
+ * @method setAttributes(\Gpupo\CommonSdk\Entity\EntityInterface);
  */
 class Product extends EntityAbstract implements EntityInterface
 {

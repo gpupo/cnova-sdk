@@ -13,10 +13,16 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
 
+use Gpupo\CnovaSdk\Entity\Order\Order;
 use Gpupo\CnovaSdk\Entity\Order\OrderCollection;
 
 class OrderTest extends OrderTestCaseAbstract
 {
+    public static function setUpBeforeClass()
+    {
+        self::displayClassDocumentation(new Order());
+    }
+
     public function testCadaItemDeUmaListaEUmObjeto()
     {
         $list = $this->getList();

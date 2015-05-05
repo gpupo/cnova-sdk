@@ -18,6 +18,11 @@ use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class ProductTest extends TestCaseAbstract
 {
+    public static function setUpBeforeClass()
+    {
+        self::displayClassDocumentation(new Product());
+    }
+
     protected function factory($data)
     {
         return $this->getFactory()->createProduct($data);

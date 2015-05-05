@@ -55,7 +55,7 @@ class ManagerTest extends OrderTestCaseAbstract
     public function testAtualizaStatusDeUmPedido(Order $order)
     {
         return $this->markIncomplete();
-        
+
         $order->setStatus('sent');
         $manager = $this->getManager()->setDryRun();
         $this->assertTrue($manager->saveStatus($order));
