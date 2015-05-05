@@ -15,6 +15,7 @@ namespace Gpupo\CnovaSdk\Entity\Order;
 
 use Gpupo\CnovaSdk\Entity\ManagerAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
+use \Gpupo\CommonSdk\Exception\InvalidArgumentException;
 
 class Manager extends ManagerAbstract
 {
@@ -26,11 +27,17 @@ class Manager extends ManagerAbstract
         'fetch'         => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
     ];
 
-    public function saveStatus(EntityInterface $order)
+    public function saveStatus(Order $order)
     {
+        $this->validateStatus($order);
         $status = $order->getStatus();
 
         return $this->execute($this->factoryMap('saveStatus',
             ['itemId' => $order->getId(), 'status' => $status]), $order->toJson());
+    }
+
+    protected function validateStatus(Order $order)
+    {
+        throw new InvalidArgumentException();
     }
 }
