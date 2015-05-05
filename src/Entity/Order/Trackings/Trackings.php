@@ -27,4 +27,13 @@ class Trackings extends CollectionAbstract
 
         parent::__construct($list);
     }
+
+    public function activeRequiredSchema()
+    {
+        $this->forAll(
+            function($key, $element) {
+                $element->activeRequiredSchema();
+            }
+        );
+    }
 }

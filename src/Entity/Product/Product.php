@@ -17,36 +17,36 @@ use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
 /**
- * @method string getSkuSellerId();
- * @method setSkuSellerId(string);
- * @method string getSkuId();
- * @method setSkuId(string);
- * @method string getProductSellerId();
- * @method setProductSellerId(string);
- * @method string getTitle();
- * @method setTitle(string);
- * @method string getDescription();
- * @method setDescription(string);
- * @method string getBrand();
- * @method setBrand(string);
- * @method array getGtin();
- * @method setGtin(array);
- * @method array getCategories();
- * @method setCategories(array);
- * @method array getImages();
- * @method setImages(array);
- * @method array getVideos();
- * @method setVideos(array);
- * @method \Gpupo\CommonSdk\Entity\EntityInterface getPrice();
- * @method setPrice(\Gpupo\CommonSdk\Entity\EntityInterface);
- * @method \Gpupo\CommonSdk\Entity\EntityInterface getStock();
- * @method setStock(\Gpupo\CommonSdk\Entity\EntityInterface);
- * @method \Gpupo\CommonSdk\Entity\EntityInterface getDimensions();
- * @method setDimensions(\Gpupo\CommonSdk\Entity\EntityInterface);
- * @method \Gpupo\CommonSdk\Entity\EntityInterface getGiftWrap();
- * @method setGiftWrap(\Gpupo\CommonSdk\Entity\EntityInterface);
- * @method \Gpupo\CommonSdk\Entity\EntityInterface getAttributes();
- * @method setAttributes(\Gpupo\CommonSdk\Entity\EntityInterface);
+ * @method string getSkuSellerId()
+ * @method setSkuSellerId(string $skuSellerId)
+ * @method string getSkuId()
+ * @method setSkuId(string $skuId)
+ * @method string getProductSellerId()
+ * @method setProductSellerId(string $productSellerId)
+ * @method string getTitle()
+ * @method setTitle(string $title)
+ * @method string getDescription()
+ * @method setDescription(string $description)
+ * @method string getBrand()
+ * @method setBrand(string $brand)
+ * @method array getGtin()
+ * @method setGtin(array $gtin)
+ * @method array getCategories()
+ * @method setCategories(array $categories)
+ * @method array getImages()
+ * @method setImages(array $images)
+ * @method array getVideos()
+ * @method setVideos(array $videos)
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getPrice()
+ * @method setPrice(\Gpupo\CommonSdk\Entity\EntityInterface $price)
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getStock()
+ * @method setStock(\Gpupo\CommonSdk\Entity\EntityInterface $stock)
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getDimensions()
+ * @method setDimensions(\Gpupo\CommonSdk\Entity\EntityInterface $dimensions)
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getGiftWrap()
+ * @method setGiftWrap(\Gpupo\CommonSdk\Entity\EntityInterface $giftWrap)
+ * @method \Gpupo\CommonSdk\Entity\EntityInterface getAttributes()
+ * @method setAttributes(\Gpupo\CommonSdk\Entity\EntityInterface $attributes)
  */
 class Product extends EntityAbstract implements EntityInterface
 {

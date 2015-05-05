@@ -35,7 +35,6 @@ class Manager extends ManagerAbstract
     /**
      * {@inheritDoc}
      *
-     * @todo Implementar atualização de status
      */
     public function update(EntityInterface $entity, EntityInterface $existent)
     {

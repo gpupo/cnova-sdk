@@ -19,6 +19,11 @@ use Gpupo\Tests\CnovaSdk\Entity\Order\OrderTestCaseAbstract;
 
 class CustomerTest extends OrderTestCaseAbstract
 {
+    public static function setUpBeforeClass()
+    {
+        self::displayClassDocumentation(new Customer());
+    }
+
     /**
      * @dataProvider dataProviderOrderCollection
      */

@@ -11,13 +11,19 @@
  * @version 1
  */
 
-namespace Gpupo\Tests\CnovaSdk\Entity\Order\Customer;
+namespace Gpupo\Tests\CnovaSdk\Entity\Order\Customer\Phones;
 
+use Gpupo\CnovaSdk\Entity\Order\Customer\Phones\Phone;
 use Gpupo\CnovaSdk\Entity\Order\Customer\Phones\Phones;
 use Gpupo\Tests\CnovaSdk\Entity\Order\OrderTestCaseAbstract;
 
 class PhoneTest extends OrderTestCaseAbstract
 {
+    public static function setUpBeforeClass()
+    {
+        self::displayClassDocumentation(new Phone());
+    }
+
     /**
      * @dataProvider dataProviderPhones
      */

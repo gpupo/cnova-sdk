@@ -16,6 +16,12 @@ namespace Gpupo\CnovaSdk\Entity\Order\Customer\Phones;
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
+/**
+ * @method string getNumber()
+ * @method setNumber(string $number)
+ * @method string getType()
+ * @method setType(string $type)
+ */
 class Phone extends EntityAbstract implements EntityInterface
 {
     public function getSchema()
