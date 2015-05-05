@@ -28,12 +28,14 @@ class Trackings extends CollectionAbstract
         parent::__construct($list);
     }
 
-    public function activeRequiredSchema()
+    public function validate()
     {
         $this->forAll(
             function($key,Tracking\Tracking $element) {
-                $element->activeRequiredSchema();
+                $element->validateForSent();
             }
         );
+
+
     }
 }

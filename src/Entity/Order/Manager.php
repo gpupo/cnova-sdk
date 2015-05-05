@@ -38,7 +38,6 @@ class Manager extends ManagerAbstract
     protected function validateStatus($status, Order $order)
     {
         if ($status === 'sent') {
-            $order->getTrackings()->activeRequiredSchema();
             $order->getTrackings()->validate();
         }
     }

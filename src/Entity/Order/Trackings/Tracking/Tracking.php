@@ -57,8 +57,11 @@ class Tracking extends EntityAbstract implements EntityInterface
         ];
     }
 
-    public function activeRequiredSchema()
+    public function validateForSent()
     {
-        throw new InvalidArgumentException();
+        $this->setRequiredSchema(['number', 'sellerDeliveryId']);
+        $this->getCarrier()->validateForSent();
+        $this->getInvoice()->validateForSent();
+        $this->validate();
     }
 }

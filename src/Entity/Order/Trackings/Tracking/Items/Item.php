@@ -26,4 +26,9 @@ class Item extends EntityAbstract implements EntityInterface
             'href'        => 'string',
         ];
     }
+
+    public function setUp()
+    {
+        $this->setRequiredSchema(['skuSellerId', 'quantity']);
+    }
 }

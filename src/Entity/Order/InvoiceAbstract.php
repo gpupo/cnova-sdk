@@ -30,4 +30,9 @@ abstract class InvoiceAbstract extends EntityAbstract implements EntityInterface
             'linkDanfe' => 'string',
         ];
     }
+
+    public function validateForSent()
+    {
+        $this->setRequiredSchema(['cnpj', 'number', 'serie', 'accessKey']);
+    }
 }
