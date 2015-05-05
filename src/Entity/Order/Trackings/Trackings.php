@@ -31,7 +31,7 @@ class Trackings extends CollectionAbstract
     public function activeRequiredSchema()
     {
         $this->forAll(
-            function($key, $element) {
+            function($key,Tracking\Tracking $element) {
                 $element->activeRequiredSchema();
             }
         );
