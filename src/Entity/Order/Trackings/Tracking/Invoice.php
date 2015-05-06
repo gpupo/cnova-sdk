@@ -13,8 +13,26 @@
 
 namespace Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking;
 
-use Gpupo\CnovaSdk\Entity\Order\InvoiceAbstract;
+use Gpupo\CommonSdk\Entity\EntityAbstract;
+use Gpupo\CommonSdk\Entity\EntityInterface;
 
-class Invoice extends InvoiceAbstract
+class Invoice extends EntityAbstract implements EntityInterface
 {
+    public function getSchema()
+    {
+        return  [
+            'cnpj'      => 'string',
+            'number'    => 'string',
+            'serie'     => 'string',
+            'issuedAt'  => 'string',
+            'accessKey' => 'string',
+            'linkXML'   => 'string',
+            'linkDanfe' => 'string',
+        ];
+    }
+
+    public function validateForSent()
+    {
+        $this->setRequiredSchema(['cnpj', 'number', 'serie', 'accessKey']);
+    }
 }
