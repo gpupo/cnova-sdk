@@ -34,7 +34,6 @@ class Manager extends ManagerAbstract
 
     /**
      * {@inheritDoc}
-     *
      */
     public function update(EntityInterface $entity, EntityInterface $existent)
     {

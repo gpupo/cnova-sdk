@@ -31,11 +31,9 @@ class Trackings extends CollectionAbstract
     public function validate()
     {
         $this->forAll(
-            function($key,Tracking\Tracking $element) {
+            function ($key, Tracking\Tracking $element) {
                 $element->validateForSent();
             }
         );
-
-
     }
 }
