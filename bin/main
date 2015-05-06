@@ -1,0 +1,57 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+
+use Gpupo\CnovaSdk\Factory;
+
+$app = new Application();
+
+$app->register('credential')->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
+    $dialog = $app->getHelperSet()->get('dialog');
+
+    $client_id = $dialog->ask($output, 'Client ID: ');
+    $access_token = $dialog->ask($output, 'Access Token: ');
+    $verbose = $dialog->ask($output, 'Verbose (default false): ', false);
+    $sslVersion = $dialog->ask($output, 'sslVersion (default SecureTransport): ', 'SecureTransport');
+
+    $versions = ['sandbox', 'api'];
+    $version = $dialog->askAndValidate($output, 'Version (default sandbox): ', function ($version) use ($versions) {
+       if (!in_array($version, array_values($versions))) {
+           throw new \InvalidArgumentException(sprintf('Version "%s" is invalid.', $version));
+       }
+
+       return $version;
+    }, false, 'sandbox');
+
+    $options = [
+        'client_id'     => $client_id,
+        'access_token'  => $access_token,
+        'version'       => $version,
+        'verbose'       => $verbose,
+        'sslVersion'    => $sslVersion,
+    ];
+
+    $factory = Factory::getInstance();
+    $factory->setup($options);
+
+    $productManager = $factory->factoryManager('product');
+
+    $list = $productManager->fetch();
+
+    if ($list) {
+        $output->writeln('<info>Success!</info>');
+    } else {
+        $output->writeln('<error>Error</error>');
+    }
+
+});
+
+$app->run();
