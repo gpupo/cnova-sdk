@@ -56,12 +56,17 @@ class Tracking extends EntityAbstract implements EntityInterface
         ];
     }
 
+    public function setUp()
+    {
+        $this->setOptionalSchema(['controlPoint', 'description', 'cte', 'url']);
+    }
+
     public function validateForSent()
     {
         $this->setRequiredSchema(['number', 'sellerDeliveryId']);
         $this->getCarrier()->validateForSent();
         $this->getInvoice()->validateForSent();
-        
+
         return $this->validate();
     }
 }
