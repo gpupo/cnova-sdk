@@ -17,26 +17,26 @@ use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
 /**
-* @method array getItems()
-* @method setItems(array $items)
-* @method string getControlPoint()
-* @method setControlPoint(string $controlPoint)
-* @method string getDescription()
-* @method setDescription(string $description)
-* @method string getOccurredAt()
-* @method setOccurredAt(string $occurredAt)
-* @method \Gpupo\CommonSdk\Entity\EntityInterface getCarrier()
-* @method setCarrier(\Gpupo\CommonSdk\Entity\EntityInterface $carrier)
-* @method string getUrl()
-* @method setUrl(string $url)
-* @method string getNumber()
-* @method setNumber(string $number)
-* @method string getSellerDeliveryId()
-* @method setSellerDeliveryId(string $sellerDeliveryId)
-* @method string getCte()
-* @method setCte(string $cte)
-* @method \Gpupo\CommonSdk\Entity\EntityInterface getInvoice()
-* @method setInvoice(\Gpupo\CommonSdk\Entity\EntityInterface $invoice)
+ * @method array getItems()
+ * @method setItems(array $items)
+ * @method string getControlPoint()
+ * @method setControlPoint(string $controlPoint)
+ * @method string getDescription()
+ * @method setDescription(string $description)
+ * @method string getOccurredAt()
+ * @method setOccurredAt(string $occurredAt)
+ * @method Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Carrier getCarrier()
+ * @method setCarrier(Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Carrier $carrier)
+ * @method string getUrl()
+ * @method setUrl(string $url)
+ * @method string getNumber()
+ * @method setNumber(string $number)
+ * @method string getSellerDeliveryId()
+ * @method setSellerDeliveryId(string $sellerDeliveryId)
+ * @method string getCte()
+ * @method setCte(string $cte)
+ * @method Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Invoice getInvoice()
+ * @method setInvoice(Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Invoice $invoice)
  */
 class Tracking extends EntityAbstract implements EntityInterface
 {
@@ -61,6 +61,7 @@ class Tracking extends EntityAbstract implements EntityInterface
         $this->setRequiredSchema(['number', 'sellerDeliveryId']);
         $this->getCarrier()->validateForSent();
         $this->getInvoice()->validateForSent();
-        $this->validate();
+        
+        return $this->validate();
     }
 }

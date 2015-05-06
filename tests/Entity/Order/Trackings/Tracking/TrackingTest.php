@@ -13,6 +13,7 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order\Trackings\Tracking;
 
+use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Invoice;
 use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Tracking;
 use Gpupo\Tests\CnovaSdk\Entity\Order\OrderTestCaseAbstract;
 
@@ -25,7 +26,7 @@ class TrackingTest extends OrderTestCaseAbstract
 
     protected function factoryTracking()
     {
-        $tracking = new Tracking([
+        return new Tracking([
             'items' => [
                 '23236199-1',
                 '23236199-2',
@@ -49,22 +50,35 @@ class TrackingTest extends OrderTestCaseAbstract
         ]);
     }
 
-    public function testPossuiColeçãoDeItems()
+    public function testPossuiListaDeItems()
     {
+        $tracking = $this->factoryTracking();
+        $this->assertContains('23236199-1', $tracking->getItems());
     }
 
+    /**
+     * @expectedException \Gpupo\CommonSdk\Exception\ExceptionInterface
+     */
     public function testInválidoComRastreamentoAusente()
     {
-        return $this->markIncomplete();
+        $tracking = $this->factoryTracking();
+        $tracking->setNumber('');
+        $tracking->validateForSent();
     }
 
+    /**
+     * @expectedException \Gpupo\CommonSdk\Exception\ExceptionInterface
+     */
     public function testInválidoComNotaFiscalAusente()
     {
-        return $this->markIncomplete();
+        $tracking = $this->factoryTracking();
+        $tracking->setInvoice(new Invoice([]));
+        $tracking->validateForSent();
     }
 
     public function testVálidoComDadosCompletos()
     {
-        return $this->markIncomplete();
+        $tracking = $this->factoryTracking();
+        $this->assertTrue($tracking->validateForSent());
     }
 }
