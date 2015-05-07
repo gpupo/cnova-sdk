@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+/**
+ */
 require __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
@@ -14,28 +16,47 @@ use Gpupo\CnovaSdk\Factory;
 
 $app = new Application();
 
-$app->register('credential')->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
+$app->register('credential')
+->setDescription('Testa a validade de suas credenciais')
+->setDefinition([
+       new InputOption('client_id', null, InputOption::VALUE_REQUIRED),
+       new InputOption('access_token', null, InputOption::VALUE_REQUIRED),
+       new InputOption('sslVersion', 'SecureTransport', InputOption::VALUE_REQUIRED),
+       new InputOption('apiVersion', 'api', InputOption::VALUE_REQUIRED),
+   ])
+->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
     $dialog = $app->getHelperSet()->get('dialog');
 
-    $client_id = $dialog->ask($output, 'Client ID: ');
-    $access_token = $dialog->ask($output, 'Access Token: ');
-    $verbose = $dialog->ask($output, 'Verbose (default false): ', false);
-    $sslVersion = $dialog->ask($output, 'sslVersion (default SecureTransport): ', 'SecureTransport');
+    $getParameter = function($key, $extra = '') use ($input, $dialog, $output) {
+        if ($input->getOption($key)) {
+            return $input->getOption($key);
+        } else {
+            return  $dialog->ask($output, $key.$extra.': ');
+        }
+    };
 
-    $versions = ['sandbox', 'api'];
-    $version = $dialog->askAndValidate($output, 'Version (default sandbox): ', function ($version) use ($versions) {
-       if (!in_array($version, array_values($versions))) {
-           throw new \InvalidArgumentException(sprintf('Version "%s" is invalid.', $version));
-       }
+    $client_id = $getParameter('client_id');
+    $access_token = $getParameter('access_token');
+    $sslVersion = $getParameter('sslVersion',  '(default SecureTransport)');
 
-       return $version;
-    }, false, 'sandbox');
+    if ($input->getOption('apiVersion')) {
+        $version = $input->getOption('apiVersion');
+    } else {
+        $versions = ['sandbox', 'api'];
+        $version = $dialog->askAndValidate($output, 'Version ([api, sandbox (default)]): ', function ($version) use ($versions) {
+           if (!in_array($version, array_values($versions))) {
+               throw new \InvalidArgumentException(sprintf('Version "%s" is invalid.', $version));
+           }
+
+           return $version;
+        }, false, 'sandbox');
+    }
 
     $options = [
         'client_id'     => $client_id,
         'access_token'  => $access_token,
         'version'       => $version,
-        'verbose'       => $verbose,
+        'verbose'       => true,
         'sslVersion'    => $sslVersion,
     ];
 

@@ -28,6 +28,7 @@ class Client extends ClientAbstract implements ClientInterface
             'verbose'       => false,
             'sslVersion'    => 'SecureTransport',
             'cacheTTL'      => 3600,
+            'sslVerifyPeer' => true,
         ];
     }
 
