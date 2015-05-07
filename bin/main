@@ -6,12 +6,9 @@
 require __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-
 use Gpupo\CnovaSdk\Factory;
 
 $app = new Application();
@@ -27,7 +24,7 @@ $app->register('credential')
 ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
     $dialog = $app->getHelperSet()->get('dialog');
 
-    $getParameter = function($key, $extra = '') use ($input, $dialog, $output) {
+    $getParameter = function ($key, $extra = '') use ($input, $dialog, $output) {
         if ($input->getOption($key)) {
             return $input->getOption($key);
         } else {

@@ -13,9 +13,9 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order\Trackings\Tracking;
 
+use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Carrier;
 use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Invoice;
 use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Tracking;
-use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Carrier;
 use Gpupo\Tests\CnovaSdk\Entity\Order\OrderTestCaseAbstract;
 
 class TrackingTest extends OrderTestCaseAbstract
