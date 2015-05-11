@@ -22,7 +22,7 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 
     protected function getResourcesPath()
     {
-        return dirname(dirname(__FILE__)) . '/Resources/';
+        return dirname(dirname(__FILE__)).'/Resources/';
     }
 
     public function factoryClient()
