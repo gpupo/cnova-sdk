@@ -34,7 +34,7 @@ abstract class OrderTestCaseAbstract extends TestCaseAbstract
     /**
      * return \Gpupo\CnovaSdk\Entity\Order\OrderCollection;.
      */
-    protected function getList()
+    public function getList()
     {
         $list =  $this->getManager()->fetch();
 

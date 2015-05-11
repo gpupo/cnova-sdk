@@ -20,6 +20,11 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 {
     private $factory;
 
+    protected function getResourcesPath()
+    {
+        return dirname(dirname(__FILE__)) . '/Resources/';
+    }
+
     public function factoryClient()
     {
         return $this->getFactory()->getClient();
