@@ -20,12 +20,23 @@ class ProductCollectionTest extends MetadataContainerTestAbstract
 {
     public function dataProviderContainer()
     {
-        $data = $this->getResourceJson('fixture/Product/Products.json');
+        $data = $this->getResourceJson('fixture/Product/sellerItems.json');
 
         $container = new ProductCollection($data);
 
         return [
-            [$container, ['totalRows' => 6287]],
+            [$container, ['totalRows' => 6273]],
         ];
     }
+
+    /**
+     * @dataProvider dataProviderContainer
+     */
+    public function testPossuiColeçãoDeProducts(ProductCollection $container)
+    {
+        foreach ($container as $product) {
+            $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Product', $product);
+        }
+    }
+
 }

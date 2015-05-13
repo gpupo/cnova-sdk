@@ -2,4 +2,4 @@
 
 phpunit --coverage-clover build/logs/clover.xml;
 
-CODECLIMATE_REPO_TOKEN=cb3f8d9d6be2617205fc4a2e8f87be1c0e1b7d95b2f95ae167ad0a8298dad294 ./vendor/bin/test-reporter
+CODECLIMATE_REPO_TOKEN=7fd1b430ba9863ee34555afe6976ecae10f194b8fd78809b58b651bf1725d33a ./vendor/bin/test-reporter

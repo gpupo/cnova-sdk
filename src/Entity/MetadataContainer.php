@@ -13,6 +13,9 @@
 
 namespace Gpupo\CnovaSdk\Entity;
 
+/**
+ * @codeCoverageIgnore
+ */
 final class MetadataContainer extends MetadataContainerAbstract
 {
     protected function getKey()

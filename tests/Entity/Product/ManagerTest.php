@@ -20,7 +20,7 @@ class ManagerTest extends TestCaseAbstract
     protected function getManager($filename = null)
     {
         if (empty($filename)) {
-            $filename = 'Products.json';
+            $filename = 'sellerItems.json';
         }
 
         $manager = $this->getFactory()->factoryManager('product');
@@ -105,7 +105,7 @@ class ManagerTest extends TestCaseAbstract
         $list = $this->dataProviderProducts();
 
         foreach ($list as $data) {
-            $product = $this->getFactory()->createProduct(current($data));
+            $product = current($data);
             $manager->save($product);
         }
 

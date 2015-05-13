@@ -19,7 +19,7 @@ class ProductCollection extends MetadataContainerAbstract
 {
     protected function getKey()
     {
-        return 'skus';
+        return 'sellerItems';
     }
 
     protected function factoryEntity(array $data)
