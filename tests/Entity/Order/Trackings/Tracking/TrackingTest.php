@@ -25,39 +25,44 @@ class TrackingTest extends OrderTestCaseAbstract
         self::displayClassDocumentation(new Tracking());
     }
 
-    protected $fixture = [
-        'items' => [
-            '23236199-1',
-            '23236199-2',
-        ],
-        'occurredAt'       => '2015-05-04T14:54:29.000-03:00',
-        'number'           => 'PE327842878BR',
-        'url'              => 'http://websro.correios.com.br/sro_bin/txect01$.querylist?p_lingua=001&p_tipo=001&p_cod_uni=PE327842878BR',
-        'sellerDeliveryId' => '975101',
-        'carrier'          => [
-            'name' => 'ECT',
-            'cnpj' => '111111111111',
-        ],
-        'invoice' => [
-            'cnpj'      => '111111111111',
-            'number'    => '2456',
-            'serie'     => '1',
-            'issuedAt'  => '2015-05-04T14:54:29.000-03:00',
-            'accessKey' => 'fooBarZetaJones',
-            'linkXML'   => 'http://foo/bar',
-            'linkDanfe' => 'http://bar/foo',
-        ],
-    ];
+    protected function getFixture()
+    {
+        return (require $this->getResourceFilePath('fixture/Order/tracking.php'));
+    }
 
     public function factoryTracking()
     {
-        return new Tracking($this->fixture);
+        return new Tracking($this->getFixture());
     }
 
-    public function testPossuiListaDeItems()
+    public function testValida()
     {
         $tracking = $this->factoryTracking();
+        $this->assertTrue($tracking->isValid());
+
+        return $tracking;
+    }
+
+    /**
+     * @depends testValida
+     */
+    public function testPossuiListaDeItems(Tracking $tracking)
+    {
+        $this->assertTrue($tracking->isValid());
         $this->assertContains('23236199-1', $tracking->getItems());
+
+        return $tracking;
+    }
+
+    /**
+     * @depends testValida
+     */
+    public function testPossuiDadosDaTransportadora(Tracking $tracking)
+    {
+        $carrier = $tracking->getCarrier();
+        $this->assertTrue($tracking->isValid());
+        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Carrier', $carrier);
+        $this->assertEquals('ECT', $carrier->getName());
     }
 
     /**
@@ -67,7 +72,7 @@ class TrackingTest extends OrderTestCaseAbstract
     {
         $tracking = $this->factoryTracking();
         $tracking->setNumber('');
-        $tracking->validateForSent();
+        $tracking->toJson();
     }
 
     /**
@@ -77,7 +82,7 @@ class TrackingTest extends OrderTestCaseAbstract
     {
         $tracking = $this->factoryTracking();
         $tracking->setInvoice(new Invoice([]));
-        $tracking->validateForSent();
+        $tracking->toJson();
     }
 
     /**
@@ -87,13 +92,13 @@ class TrackingTest extends OrderTestCaseAbstract
     {
         $tracking = $this->factoryTracking();
         $tracking->setCarrier(new Carrier([]));
-        $tracking->validateForSent();
+        $tracking->toJson();
     }
 
     public function testVálidoComDadosCompletos()
     {
         $tracking = $this->factoryTracking();
-        $this->assertTrue($tracking->validateForSent());
+        $this->assertTrue($tracking->isValid());
     }
 
     public function testPossuiFormatoParaAtualizaçãoDeOrder()
@@ -102,6 +107,6 @@ class TrackingTest extends OrderTestCaseAbstract
         $json = $tracking->toJson();
         $array = json_decode($json, true);
 
-        $this->assertEquals($this->fixture, $array);
+        $this->assertEquals($this->getFixture(), $array);
     }
 }

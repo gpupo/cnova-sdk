@@ -47,7 +47,7 @@ class Invoice extends EntityAbstract implements EntityInterface
         ];
     }
 
-    public function validateForSent()
+    public function setUp()
     {
         $this->setRequiredSchema(['cnpj', 'number', 'serie', 'accessKey']);
     }

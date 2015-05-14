@@ -28,16 +28,6 @@ class Trackings extends CollectionAbstract
         parent::__construct($list);
     }
 
-    public function validate()
-    {
-        $this->forAll(
-            function ($key, Tracking\Tracking $element) {
-                unset($key);
-                $element->validateForSent();
-            }
-        );
-    }
-
     public function add($element)
     {
         $first = $this->first()->getNumber();
@@ -48,5 +38,4 @@ class Trackings extends CollectionAbstract
 
         parent::add($element);
     }
-
 }

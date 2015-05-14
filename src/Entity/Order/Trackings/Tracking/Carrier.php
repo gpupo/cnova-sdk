@@ -26,7 +26,7 @@ class Carrier extends EntityAbstract implements EntityInterface
         ];
     }
 
-    public function validateForSent()
+    public function setUp()
     {
         $this->setRequiredSchema(['name', 'cnpj']);
     }

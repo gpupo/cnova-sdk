@@ -14,6 +14,7 @@
 namespace Gpupo\CnovaSdk\Entity\Order;
 
 use Gpupo\CnovaSdk\Entity\ManagerAbstract;
+use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Tracking;
 
 class Manager extends ManagerAbstract
 {
@@ -25,20 +26,18 @@ class Manager extends ManagerAbstract
         'fetch'         => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
     ];
 
-    public function saveStatus(Order $order)
+    protected function saveStatus(Order $order, $json)
     {
         $status = $order->getStatus();
 
-        $this->validateStatus($status, $order);
-
         return $this->execute($this->factoryMap('saveStatus',
-            ['itemId' => $order->getId(), 'status' => $status]), $order->toJson());
+            ['itemId' => $order->getId(), 'status' => $status]), $json);
     }
 
-    protected function validateStatus($status, Order $order)
+    public function moveToSent(Order $order, Tracking $tracking)
     {
-        if ($status === 'sent') {
-            $order->getTrackings()->validate();
-        }
+        $order->setStatus('sent');
+
+        return $this->saveStatus($order, $tracking->toJson());
     }
 }
