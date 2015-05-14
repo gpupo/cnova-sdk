@@ -34,9 +34,22 @@ class Manager extends ManagerAbstract
             ['itemId' => $order->getId(), 'status' => $status]), $json);
     }
 
+    /**
+     * Registra uma nova operação de tracking de Envio para os itens do pedido.
+     */
     public function moveToSent(Order $order, Tracking $tracking)
     {
         $order->setStatus('sent');
+
+        return $this->saveStatus($order, $tracking->toJson());
+    }
+
+    /**
+     * Registra uma nova operação de tracking de Entrega para os itens do pedido.
+     */
+    public function moveToDelivered(Order $order, Tracking $tracking)
+    {
+        $order->setStatus('delivered');
 
         return $this->saveStatus($order, $tracking->toJson());
     }
