@@ -51,7 +51,7 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
     }
 
     /**
-     * Requer Implementação mas não será abstrato para não impedir testes que não o usam
+     * Requer Implementação mas não será abstrato para não impedir testes que não o usam.
      */
     protected function getManager($filename = null)
     {

@@ -37,4 +37,16 @@ class Trackings extends CollectionAbstract
             }
         );
     }
+
+    public function add($element)
+    {
+        $first = $this->first()->getNumber();
+
+        if (empty($first)) {
+            $this->clear();
+        }
+
+        parent::add($element);
+    }
+
 }

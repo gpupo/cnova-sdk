@@ -38,5 +38,4 @@ class ProductCollectionTest extends MetadataContainerTestAbstract
             $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Product', $product);
         }
     }
-
 }

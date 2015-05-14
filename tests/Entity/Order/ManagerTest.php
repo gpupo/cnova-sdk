@@ -14,6 +14,10 @@
 namespace Gpupo\Tests\CnovaSdk\Entity\Order;
 
 use Gpupo\CnovaSdk\Entity\Order\Order;
+use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Carrier;
+use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Invoice;
+use Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Tracking;
+use Gpupo\Tests\CnovaSdk\Entity\Order\Trackings\Tracking\TrackingTest;
 
 class ManagerTest extends OrderTestCaseAbstract
 {
@@ -40,24 +44,27 @@ class ManagerTest extends OrderTestCaseAbstract
 
     /**
      * @dataProvider dataProviderOrderCollection
-     * @expectedException \Gpupo\CommonSdk\Exception\ExceptionInterface
      */
-    public function testFalhaAoTentarMarcarPedidoComoEnviadoInformaçõesCompletas(Order $order)
+    public function testMovePedidoParaEnviado(Order $order)
     {
         $order->setStatus('sent');
         $manager = $this->getManager()->setDryRun();
-        $manager->saveStatus($order);
+
+        $trackingTest = new TrackingTest();
+        $tracking = $trackingTest->factoryTracking();
+        $order->getTrackings()->add($tracking);
+
+        $this->assertTrue($manager->saveStatus($order));
     }
 
     /**
      * @dataProvider dataProviderOrderCollection
+     * @expectedException \Gpupo\CommonSdk\Exception\ExceptionInterface
      */
-    public function testAtualizaStatusDeUmPedido(Order $order)
+    public function testFalhaAoMoverPedidoParaEnviadoSemInformaçõesCompletas(Order $order)
     {
-        return $this->markIncomplete();
-
         $order->setStatus('sent');
         $manager = $this->getManager()->setDryRun();
-        $this->assertTrue($manager->saveStatus($order));
+        $manager->saveStatus($order);
     }
 }

@@ -49,7 +49,7 @@ class TrackingTest extends OrderTestCaseAbstract
         ],
     ];
 
-    protected function factoryTracking()
+    public function factoryTracking()
     {
         return new Tracking($this->fixture);
     }
