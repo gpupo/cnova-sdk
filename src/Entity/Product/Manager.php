@@ -70,6 +70,9 @@ class Manager extends ManagerAbstract
     public function save(EntityInterface $product, $route = 'save')
     {
         $existent = $product->getPrevious();
+
+        $this->log('INFO', 'save', ['route' => $route, 'existent' => $existent]);
+
         if ($existent) {
             return $this->update($product, $existent);
         }

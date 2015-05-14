@@ -67,18 +67,4 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
             'existent'  => $existent,
         ]);
     }
-
-    /**
-     * {@inheritDoc}
-     *
-     * Tenta 3 vezes em caso de erro do lado servidor.
-     */
-    protected function retry(\Exception $exception, $i)
-    {
-        if ($i <= 2 && $exception->getCode() >= 500) {
-            return true;
-        }
-
-        return false;
-    }
 }

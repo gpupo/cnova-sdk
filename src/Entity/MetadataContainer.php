@@ -13,6 +13,8 @@
 
 namespace Gpupo\CnovaSdk\Entity;
 
+use Gpupo\Common\Entity\Collection;
+
 /**
  * @codeCoverageIgnore
  */
@@ -25,5 +27,6 @@ final class MetadataContainer extends MetadataContainerAbstract
 
     protected function factoryEntity(array $data)
     {
+        return new Collection($data);
     }
 }

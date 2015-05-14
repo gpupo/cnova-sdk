@@ -32,6 +32,7 @@ class Trackings extends CollectionAbstract
     {
         $this->forAll(
             function ($key, Tracking\Tracking $element) {
+                unset($key);
                 $element->validateForSent();
             }
         );

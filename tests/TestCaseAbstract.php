@@ -50,8 +50,14 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
         return $this->factory;
     }
 
+    /**
+     * Requer Implementação mas não será abstrato para não impedir testes que não o usam
+     */
     protected function getManager($filename = null)
     {
+        unset($filename);
+
+        return;
     }
 
     protected function hasToken()
