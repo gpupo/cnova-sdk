@@ -1,9 +1,12 @@
+[![Author](http://img.shields.io/badge/author-@gpupo-blue.svg?style=flat-square)](https://twitter.com/gpupo)
+[![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/gpupo/cnova-sdk/blob/master/LICENSE)
 [![Build Status](https://secure.travis-ci.org/gpupo/cnova-sdk.png?branch=master)](http://travis-ci.org/gpupo/cnova-sdk)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gpupo/cnova-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gpupo/cnova-sdk/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/a8e4deb5-33f2-4d4b-b5f8-9d9310c6439c/mini.png)](https://insight.sensiolabs.com/projects/a8e4deb5-33f2-4d4b-b5f8-9d9310c6439c)
 [![Codacy Badge](https://www.codacy.com/project/badge/1826444de06447b098349808ea0d5ce7)](https://www.codacy.com/app/g/cnova-sdk)
-[![Code Climate](https://codeclimate.com/repos/554b6869e30ba03cff006635/badges/1beb50c17865d8513255/gpa.svg)](https://codeclimate.com/repos/554b6869e30ba03cff006635/feed)
-[![Test Coverage](https://codeclimate.com/repos/554b6869e30ba03cff006635/badges/1beb50c17865d8513255/coverage.svg)](https://codeclimate.com/repos/554b6869e30ba03cff006635/coverage)
+[![Code Climate](https://codeclimate.com/github/gpupo/cnova-sdk/badges/gpa.svg)](https://codeclimate.com/github/gpupo/cnova-sdk)
+[![Test Coverage](https://codeclimate.com/github/gpupo/cnova-sdk/badges/coverage.svg)](https://codeclimate.com/github/gpupo/cnova-sdk/coverage)
+
 
 # SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace (Extra.com.br, Pontofrio.com.br, Casasbahia.com.br)
 
