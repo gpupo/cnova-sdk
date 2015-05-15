@@ -13,18 +13,12 @@
 
 namespace Gpupo\CnovaSdk\Entity\Product\Attributes;
 
-use Gpupo\Common\Entity\CollectionAbstract;
+use Gpupo\CommonSdk\Entity\CollectionAbstract;
 
 class Attributes extends CollectionAbstract
 {
-    public function __construct(array $elements = [])
+    public function factoryElement($data)
     {
-        $list = [];
-
-        foreach ($elements as $product) {
-            $list[] = new Attribute($product);
-        }
-
-        parent::__construct($list);
+        return new Attribute($data);
     }
 }

@@ -13,8 +13,8 @@
 
 namespace Gpupo\Tests\CnovaSdk\Entity\Order\Items;
 
-use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 use Gpupo\CnovaSdk\Entity\Order\Items\Items;
+use Gpupo\Tests\CnovaSdk\TestCaseAbstract;
 
 class ItemsTest extends TestCaseAbstract
 {

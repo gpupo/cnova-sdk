@@ -13,18 +13,12 @@
 
 namespace Gpupo\CnovaSdk\Entity\Order\Customer\Phones;
 
-use Gpupo\Common\Entity\CollectionAbstract;
+use Gpupo\CommonSdk\Entity\CollectionAbstract;
 
 class Phones extends CollectionAbstract
 {
-    public function __construct(array $elements = [])
+    public function factoryElement($data)
     {
-        $list = [];
-
-        foreach ($elements as $item) {
-            $list[] = new Phone($item);
-        }
-
-        parent::__construct($list);
+        return new Phone($data);
     }
 }

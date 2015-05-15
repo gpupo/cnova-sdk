@@ -13,29 +13,12 @@
 
 namespace Gpupo\CnovaSdk\Entity\Order\Trackings;
 
-use Gpupo\Common\Entity\CollectionAbstract;
+use Gpupo\CommonSdk\Entity\CollectionAbstract;
 
 class Trackings extends CollectionAbstract
 {
-    public function __construct(array $elements = [])
+    public function factoryElement($data)
     {
-        $list = [];
-
-        foreach ($elements as $item) {
-            $list[] = new Tracking\Tracking($item);
-        }
-
-        parent::__construct($list);
-    }
-
-    public function add($element)
-    {
-        $first = $this->first()->getNumber();
-
-        if (empty($first)) {
-            $this->clear();
-        }
-
-        parent::add($element);
+        return  new Tracking\Tracking($data);
     }
 }

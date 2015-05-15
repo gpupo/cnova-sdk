@@ -13,19 +13,13 @@
 
 namespace Gpupo\CnovaSdk\Entity\Order\Items;
 
-use Gpupo\Common\Entity\CollectionAbstract;
+use Gpupo\CommonSdk\Entity\CollectionAbstract;
 
 class Items extends CollectionAbstract
 {
-    public function __construct(array $elements = [])
+    public function factoryElement($data)
     {
-        $list = [];
-
-        foreach ($elements as $product) {
-            $list[] = new Product\Product($product);
-        }
-
-        parent::__construct($list);
+        return new Product\Product($data);
     }
 
     public function getIdList()
