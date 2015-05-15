@@ -27,4 +27,15 @@ class Items extends CollectionAbstract
 
         parent::__construct($list);
     }
+
+    public function getIdList()
+    {
+        $list = [];
+
+        foreach ($this as $product) {
+            $list[] = $product->getId();
+        }
+
+        return $list;
+    }
 }
