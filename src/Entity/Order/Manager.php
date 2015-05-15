@@ -36,7 +36,7 @@ class Manager extends ManagerAbstract
 
     protected function move($to, Order $order, Tracking $tracking)
     {
-        if (in_array($to, ['sent', 'delivered'])) {
+        if (in_array($to, ['sent', 'delivered', 'cancel'], true)) {
             $order->setStatus($to);
 
             return $this->saveStatus($order, $tracking->toJson());
@@ -59,5 +59,13 @@ class Manager extends ManagerAbstract
     public function moveToDelivered(Order $order, Tracking $tracking)
     {
         return $this->move('delivered', $order, $tracking);
+    }
+
+    /**
+     * Registra uma nova operação de tracking de Entrega para os itens do pedido.
+     */
+    public function moveToCanceled(Order $order, Tracking $tracking)
+    {
+        return $this->move('cancel', $order, $tracking);
     }
 }

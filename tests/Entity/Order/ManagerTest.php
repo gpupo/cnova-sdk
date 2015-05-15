@@ -61,7 +61,6 @@ class ManagerTest extends OrderTestCaseAbstract
         $this->assertTrue($manager->moveToSent($order, $tracking));
     }
 
-
     /**
      * @dataProvider dataProviderOrderCollection
      */
@@ -72,4 +71,13 @@ class ManagerTest extends OrderTestCaseAbstract
         $this->assertTrue($manager->moveToDelivered($order, $tracking));
     }
 
+    /**
+     * @dataProvider dataProviderOrderCollection
+     */
+    public function testMovePedidoParaStatusCancelado(Order $order)
+    {
+        $manager = $this->getManager()->setDryRun();
+        $tracking = new Tracking(require $this->getResourceFilePath('fixture/Order/tracking.php'));
+        $this->assertTrue($manager->moveToCanceled($order, $tracking));
+    }
 }
