@@ -34,14 +34,23 @@ class Manager extends ManagerAbstract
             ['itemId' => $order->getId(), 'status' => $status]), $json);
     }
 
+    protected function move($to, Order $order, Tracking $tracking)
+    {
+        if (in_array($to, ['sent', 'delivered'])) {
+            $order->setStatus($to);
+
+            return $this->saveStatus($order, $tracking->toJson());
+        }
+
+        return false;
+    }
+
     /**
      * Registra uma nova operação de tracking de Envio para os itens do pedido.
      */
     public function moveToSent(Order $order, Tracking $tracking)
     {
-        $order->setStatus('sent');
-
-        return $this->saveStatus($order, $tracking->toJson());
+        return $this->move('sent', $order, $tracking);
     }
 
     /**
@@ -49,8 +58,6 @@ class Manager extends ManagerAbstract
      */
     public function moveToDelivered(Order $order, Tracking $tracking)
     {
-        $order->setStatus('delivered');
-
-        return $this->saveStatus($order, $tracking->toJson());
+        return $this->move('delivered', $order, $tracking);
     }
 }
