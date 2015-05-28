@@ -46,6 +46,14 @@ class Manager extends ManagerAbstract
     }
 
     /**
+     * Obtém a lista de pedidos recém aprovados e que esperam processamento
+     */
+    public function fetchQuee($offset = 0, $limit = 50, array $parameters = [])
+    {
+        return $this->fetch($offset, $limit, array_merge(['status' => 'approved'], $parameters));
+    }
+
+    /**
      * Registra uma nova operação de tracking de Envio para os itens do pedido.
      */
     public function moveToSent(Order $order, Tracking $tracking)
