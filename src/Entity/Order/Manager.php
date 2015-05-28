@@ -34,10 +34,10 @@ class Manager extends ManagerAbstract
             ['itemId' => $order->getId(), 'status' => $status]), $json);
     }
 
-    protected function move($to, Order $order, Tracking $tracking)
+    protected function move($statusTo, Order $order, Tracking $tracking)
     {
-        if (in_array($to, ['sent', 'delivered', 'cancel'], true)) {
-            $order->setStatus($to);
+        if (in_array($statusTo, ['sent', 'delivered', 'cancel'], true)) {
+            $order->setStatus($statusTo);
 
             return $this->saveStatus($order, $tracking->toJson());
         }
