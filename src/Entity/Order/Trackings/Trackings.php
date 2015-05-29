@@ -19,6 +19,8 @@ class Trackings extends CollectionAbstract
 {
     public function factoryElement($data)
     {
-        return  new Tracking\Tracking($data);
+        if (!empty($data)) {
+            return  new Tracking\Tracking($data);
+        }
     }
 }
