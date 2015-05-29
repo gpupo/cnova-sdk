@@ -29,7 +29,7 @@ class ManagerTest extends OrderTestCaseAbstract
 
     public function testObtémAListaDePedidosRecémAprovadosEQueEsperamProcessamento()
     {
-        $list = $this->getManager()->fetchQuee();
+        $list = $this->getManager()->fetchQueue();
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\OrderCollection', $list);
     }
 
