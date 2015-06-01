@@ -30,6 +30,6 @@ class Stock extends EntityAbstract implements EntityInterface
 
     protected function setUp()
     {
-        $this->setOptionalSchema(['crossDockingTime', 'reserved', 'warehouse']);
+        $this->setOptionalSchema(['reserved', 'warehouse']);
     }
 }
