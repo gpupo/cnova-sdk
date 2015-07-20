@@ -29,7 +29,7 @@ class Manager extends ManagerAbstract
         'updateStock'   => ['PUT', '/sellerItems/{itemId}/stock'], //Atualização do estoque do item
         'updatePrice'   => ['PUT', '/sellerItems/{itemId}/prices'], //Atualização do preço do item
         'findById'      => ['GET', '/loads/products/{itemId}'],
-        'fetch'         => ['GET', '/sellerItems?_offset={offset}&_limit={limit}'],
+        'fetch'         => ['GET', '/sellerItems?_offset={offset}&_limit={limit}&status={status}&createdAt={createdAt}'],
     ];
 
     /**
