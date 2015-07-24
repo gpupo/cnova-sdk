@@ -8,7 +8,8 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @version 1
+ * For more information, see
+ * <http://www.g1mr.com/cnova-sdk/>.
  */
 
 namespace Gpupo\CnovaSdk\Entity\Order;
@@ -46,7 +47,7 @@ class Manager extends ManagerAbstract
     }
 
     /**
-     * Obtém a lista de pedidos recém aprovados e que esperam processamento
+     * Obtém a lista de pedidos recém aprovados e que esperam processamento.
      */
     public function fetchQueue($offset = 0, $limit = 50, array $parameters = [])
     {
