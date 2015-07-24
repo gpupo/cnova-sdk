@@ -87,129 +87,129 @@ A lista abaixo é gerada a partir da saída da execução dos testes:
 ### Client\Client
 
 
-- [x] Sucesso ao definir options
-- [x] Gerencia uri de recurso
-- [x] Objeto request possui header
-- [x] Acesso a lista de pedidos
-- [x] Acesso a lista de produtos
+- Sucesso ao definir options
+- Gerencia uri de recurso
+- Objeto request possui header
+- Acesso a lista de pedidos
+- Acesso a lista de produtos
 
 ### Entity\MetadataContainer
 
 
-- [x] É um objeto metadata container
-- [x] Possui objeto metadata
-- [x] Possui propriedade indicadora de quantidade de registros
+- É um objeto metadata container
+- Possui objeto metadata
+- Possui propriedade indicadora de quantidade de registros
 
 ### Entity\Order\Customer\Customer
 
 
-- [x] É propriedade de order
-- [x] Possui objeto phones
+- É propriedade de order
+- Possui objeto phones
 
 ### Entity\Order\Customer\Phone
 
 
-- [x] Possui numero
-- [x] Possui identificação de tipo
+- Possui numero
+- Possui identificação de tipo
 
 ### Entity\Order\Manager
 
 
-- [x] Obtem lista pedidos
-- [x] Recupera informacoes de um pedido especifico
-- [x] Atualiza status de um pedido
+- Obtem lista pedidos
+- Recupera informacoes de um pedido especifico
+- Atualiza status de um pedido
 
 ### Entity\OrderCollection
 
 
-- [x] Cada elementoÉ um objeto order
-- [x] Cada elemento possui dados corretos
-- [x] É um objeto metadata container
-- [x] Possui objeto metadata
-- [x] Possui propriedade indicadora de quantidade de registros
+- Cada elementoÉ um objeto order
+- Cada elemento possui dados corretos
+- É um objeto metadata container
+- Possui objeto metadata
+- Possui propriedade indicadora de quantidade de registros
 
 ### Entity\Order\Order
 
 
-- [x] Cada item de uma lista e um objeto
-- [x] Cada pedido possui objeto billing
-- [x] Cada pedido possui objeto cliente
-- [x] Cada pedido possui objeto frete
-- [x] Cada pedido possui objeto contendo endereco de entrega
-- [x] Cada pedido possui colecao de rastreamentos
-- [x] Cada pedido possui colecao de produtos
+- Cada item de uma lista e um objeto
+- Cada pedido possui objeto billing
+- Cada pedido possui objeto cliente
+- Cada pedido possui objeto frete
+- Cada pedido possui objeto contendo endereco de entrega
+- Cada pedido possui colecao de rastreamentos
+- Cada pedido possui colecao de produtos
 
 ### Entity\Product\Loads\Loads
 
 
-- [x] Possui colecao de products
-- [x] Cada product possui status
-- [x] Possui objeto metadata
+- Possui colecao de products
+- Cada product possui status
+- Possui objeto metadata
 
 ### Entity\Product\Loads\Manager
 
 
-- [x] Obtem lista de situacoes de produtos
-- [x] Permite acesso a lista de produtos com erro
+- Obtem lista de situacoes de produtos
+- Permite acesso a lista de produtos com erro
 
 ### Entity\Product\Loads\Metadata
 
 
-- [x] É uma collection
-- [x] Metadata possui quantidade de objetos enviados
-- [x] Metadata possui informacao do offset atual
-- [x] Metadata possui informacao do limit atual
+- É uma collection
+- Metadata possui quantidade de objetos enviados
+- Metadata possui informacao do offset atual
+- Metadata possui informacao do limit atual
 
 ### Entity\Product\Manager
 
 
-- [x] É o administrador de produtos
-- [x] Possui objeto pool
-- [x] Possui objeto client
-- [x] Obtem lista de produtos cadastrados
-- [x] Recupera informacoes de um produto especifico a partir de id
-- [x] Guarda produtos em uma fila para gravacao em lote
-- [x] Gerencia gravacao de produtos em lote
-- [x] Atualiza preco e estoque de um produto
-- [x] Nao executa atualizacao em produto inalterado
-- [x] Atualiza apenas estoque em caso de ser o unico atributo alterado
+- É o administrador de produtos
+- Possui objeto pool
+- Possui objeto client
+- Obtem lista de produtos cadastrados
+- Recupera informacoes de um produto especifico a partir de id
+- Guarda produtos em uma fila para gravacao em lote
+- Gerencia gravacao de produtos em lote
+- Atualiza preco e estoque de um produto
+- Nao executa atualizacao em produto inalterado
+- Atualiza apenas estoque em caso de ser o unico atributo alterado
 
 ### Entity\Product\Price
 
 
-- [x] É propriedade de product
-- [x] Possui preço de
-- [x] Possui preço pro
-- [x] Entrega parâmetros para atualização de preço do sku
+- É propriedade de product
+- Possui preço de
+- Possui preço pro
+- Entrega parâmetros para atualização de preço do sku
 
 ### Entity\Product\ProductCollection
 
 
-- [x] É um objeto metadata container
-- [x] Possui objeto metadata
-- [x] Possui propriedade indicadora de quantidade de registros
+- É um objeto metadata container
+- Possui objeto metadata
+- Possui propriedade indicadora de quantidade de registros
 
 ### Entity\Product\Product
 
 
-- [x] Possui propriedades e objetos
-- [x] Possui uma colecao attributes
-- [x] Possui objeto price
-- [x] Possui objeto stock
-- [x] Possui objeto dimensions
-- [x] Possui objeto gift wrap
-- [x] Entrega json
+- Possui propriedades e objetos
+- Possui uma colecao attributes
+- Possui objeto price
+- Possui objeto stock
+- Possui objeto dimensions
+- Possui objeto gift wrap
+- Entrega json
 
 ### Entity\Product\Stock
 
 
-- [x] É propriedade de product
-- [x] Possui quantidade
-- [x] Possui tempo preparação do produto
-- [x] Entrega parâmetros para atualização de estoque do sku
+- É propriedade de product
+- Possui quantidade
+- Possui tempo preparação do produto
+- Entrega parâmetros para atualização de estoque do sku
 
 ### Factory
 
 
-- [x] Centraliza acesso a managers
-- [x] Centraliza criacao de objetos
+- Centraliza acesso a managers
+- Centraliza criacao de objetos
