@@ -8,14 +8,23 @@
 [![Test Coverage](https://codeclimate.com/github/gpupo/cnova-sdk/badges/coverage.svg)](https://codeclimate.com/github/gpupo/cnova-sdk/coverage)
 
 
-# SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace (Extra.com.br, Pontofrio.com.br, Casasbahia.com.br)
+# Cnova-SDK
 
+SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace (Extra.com.br, Pontofrio.com.br, Casasbahia.com.br)
 
 [Documentação Oficial da API V2](https://desenvolvedores.cnova.com/api-portal/docs/apilojista/main/getting-started.html)
 
 ## Licença
 
-MIT, veja LICENSE.
+MIT, see [LICENSE](https://github.com/gpupo/cnova-sdk/blob/master/LICENSE).
+
+---
+
+## Instalação
+
+Adicione o pacote ``cnova-sdk`` ao seu projeto utilizando [composer](http://getcomposer.org):
+
+    composer require gpupo/cnova-sdk
 
 ---
 
@@ -28,8 +37,8 @@ MIT, veja LICENSE.
 
 ## Links
 
-* [cnova-sdk Composer Package](https://packagist.org/packages/gpupo/cnova-sdk) no packagist.org
-* [marketplace-bundle Composer Package](https://packagist.org/packages/gpupo/marketplace-bundle) - Integração deste pacote com Symfony2
+* [Cnova-sdk Composer Package](https://packagist.org/packages/gpupo/cnova-sdk) no packagist.org
+* [Marketplace-bundle Composer Package](https://packagist.org/packages/gpupo/marketplace-bundle) - Integração deste pacote com Symfony2
 * [Outras SDKs para o Ecommerce do Brasil](https://github.com/gpupo/common-sdk)
 
 ---

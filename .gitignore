@@ -5,3 +5,8 @@ Resources/logs/*
 Resources/doc/*
 /build/
 *.phar
+_layout/*
+_site/*
+fonts/*
+javascripts/*
+stylesheets/*
