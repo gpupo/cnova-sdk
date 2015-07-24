@@ -62,7 +62,7 @@ Personalize os parâmetros!
 
 ---
 
-# Comandos
+## Comandos
 
 Lista de comandos disponíveis:
 
@@ -74,7 +74,7 @@ Você pode verificar suas credenciais Cnova na linha de comando:
 
 ---
 
-# Propriedades dos objetos (Testdox)
+## Propriedades dos objetos (Testdox)
 
 <!--
 Comando para geração da lista:
