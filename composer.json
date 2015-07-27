@@ -1,6 +1,13 @@
 {
     "name": "gpupo/cnova-sdk",
     "description": "SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace",
+    "homepage": "http://www.g1mr.com/cnova-sdk/",
+    "authors": [
+        {
+            "name": "Gilmar Pupo",
+            "email": "g@g1mr.com"
+        }
+    ],
     "keywords": ["cnova","extra", "pontofrio", "casasbahia", "sdk", "api"],
     "license": "MIT",
     "require": {
@@ -26,6 +33,12 @@
         "psr-4": {
             "Gpupo\\Tests\\CnovaSdk\\": "tests"
         }
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "mkdir -p Resources/logs",
+            "touch Resources/logs/tests.log"
+        ]
     },
     "config": {
         "preferred-install": "dist"
