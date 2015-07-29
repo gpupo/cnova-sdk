@@ -28,7 +28,7 @@ Adicione o pacote ``cnova-sdk`` ao seu projeto utilizando [composer](http://getc
 
 ---
 
-### Uso
+## Uso
 
 Este exemplo demonstra o uso simplificado a partir do ``Factory``:
 
@@ -58,6 +58,7 @@ Este exemplo demonstra o uso simplificado a partir do ``Factory``:
     $manager->save($product);
 
 ---
+
 ## Contributors
 
 - [@gpupo](https://github.com/gpupo)
