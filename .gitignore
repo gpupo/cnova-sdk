@@ -7,6 +7,3 @@ Resources/doc/*
 *.phar
 _layout/*
 _site/*
-fonts/*
-javascripts/*
-stylesheets/*

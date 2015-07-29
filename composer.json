@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.4",
         "ext-curl" : "*",
-        "gpupo/common-sdk": "~1.8.6",
+        "gpupo/common-sdk": "~1.9",
         "symfony/console": "~2.6"
     },
     "suggest": {

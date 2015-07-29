@@ -28,6 +28,36 @@ Adicione o pacote ``cnova-sdk`` ao seu projeto utilizando [composer](http://getc
 
 ---
 
+### Uso
+
+Este exemplo demonstra o uso simplificado a partir do ``Factory``:
+
+
+    <?php
+    ///...
+    use Gpupo\CnovaSdk\Factory;
+
+    $cnovaSdk = Factory::getInstance()
+        ->setup(['client_id' => 'foo','client_secret' => 'bar', 'version' => 'sandbox']);
+
+    $manager = $cnovaSdk->factoryManager('product'));
+
+    // Acesso a lista de produtos cadastrados:
+    $produtosCadastrados = $manager->fetch(); // Collection de Objetos Product
+
+    // Acesso a informações de um produto cadastrado e com identificador conhecido:
+    $produto = $manager->findById(9)); // Objeto Produto
+    echo $product->getTitle(); // Acesso ao nome do produto de Id 9
+
+
+    // Criação de um produto:
+    $data = []; // Veja o formato de $data em Resources/fixture/Product/ProductId.json
+    $product = $cnovaSdk->createProduct($data);
+
+    //Envio do produto para o Marketplace:
+    $manager->save($product);
+
+---
 ## Contributors
 
 - [@gpupo](https://github.com/gpupo)
@@ -46,13 +76,8 @@ Adicione o pacote ``cnova-sdk`` ao seu projeto utilizando [composer](http://getc
 ## Desenvolvimento
 
     git clone --depth=1  git@github.com:gpupo/cnova-sdk.git
-
     cd cnova-sdk;
-
     composer install;
-
-    phpunit;
-
 
 Personalize a configuração do ``phpunit``:
 
@@ -74,7 +99,7 @@ Você pode verificar suas credenciais Cnova na linha de comando:
 
 ---
 
-## Propriedades dos objetos (Testdox)
+## Propriedades dos objetos
 
 <!--
 Comando para geração da lista:
