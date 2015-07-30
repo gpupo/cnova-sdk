@@ -65,11 +65,8 @@ $app->register('credential')
         'sslVersion'    => $sslVersion,
     ];
 
-    $factory = Factory::getInstance();
-    $factory->setup($options);
-
+    $factory = Factory::getInstance()->setup($options);
     $productManager = $factory->factoryManager('product');
-
     $list = $productManager->fetch();
 
     if ($list) {

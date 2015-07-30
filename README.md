@@ -42,21 +42,35 @@ Este exemplo demonstra o uso simplificado a partir do ``Factory``:
 
     $manager = $cnovaSdk->factoryManager('product'));
 
-    // Acesso a lista de produtos cadastrados:
+### Acesso a lista de produtos cadastrados:
+
     $produtosCadastrados = $manager->fetch(); // Collection de Objetos Product
 
-    // Acesso a informações de um produto cadastrado e com identificador conhecido:
+### Acesso a informações de um produto cadastrado e com identificador conhecido:
+
     $produto = $manager->findById(9)); // Objeto Produto
     echo $product->getTitle(); // Acesso ao nome do produto de Id 9
 
 
-    // Criação de um produto:
+### Criação de um produto:
+
     $data = []; // Veja o formato de $data em Resources/fixture/Product/ProductId.json
     $product = $cnovaSdk->createProduct($data);
 
-    //Envio do produto para o Marketplace:
+## Envio do produto para o Marketplace:
+
     $manager->save($product);
 
+### Registro (log)
+
+    //...
+    use Monolog\Logger;
+    use Monolog\Handler\StreamHandler;
+    //..
+    $logger = new Logger('foo');
+    $logger->pushHandler(new StreamHandler('Resources/logs/main.log', Logger::DEBUG));
+    $cnovaSdk->setLogger($logger);
+    
 ---
 
 ## Contributors
