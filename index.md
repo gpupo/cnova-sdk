@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-[![Author](http://img.shields.io/badge/author-@gpupo-blue.svg?style=flat-square)](https://twitter.com/gpupo)
-[![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/gpupo/cnova-sdk/blob/master/LICENSE)
 [![Build Status](https://secure.travis-ci.org/gpupo/cnova-sdk.png?branch=master)](http://travis-ci.org/gpupo/cnova-sdk)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gpupo/cnova-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gpupo/cnova-sdk/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/a8e4deb5-33f2-4d4b-b5f8-9d9310c6439c/mini.png)](https://insight.sensiolabs.com/projects/a8e4deb5-33f2-4d4b-b5f8-9d9310c6439c)
