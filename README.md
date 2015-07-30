@@ -12,8 +12,6 @@
 
 SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace (Extra.com.br, Pontofrio.com.br, Casasbahia.com.br)
 
-[Documentação Oficial da API V2](https://desenvolvedores.cnova.com/api-portal/docs/apilojista/main/getting-started.html)
-
 ## Licença
 
 MIT, see [LICENSE](https://github.com/gpupo/cnova-sdk/blob/master/LICENSE).
@@ -57,7 +55,7 @@ Este exemplo demonstra o uso simplificado a partir do ``Factory``:
     $data = []; // Veja o formato de $data em Resources/fixture/Product/ProductId.json
     $product = $cnovaSdk->createProduct($data);
 
-## Envio do produto para o Marketplace:
+### Envio do produto para o Marketplace:
 
     $manager->save($product);
 
@@ -70,7 +68,7 @@ Este exemplo demonstra o uso simplificado a partir do ``Factory``:
     $logger = new Logger('foo');
     $logger->pushHandler(new StreamHandler('Resources/logs/main.log', Logger::DEBUG));
     $cnovaSdk->setLogger($logger);
-    
+
 ---
 
 ## Contributors
@@ -83,6 +81,7 @@ Este exemplo demonstra o uso simplificado a partir do ``Factory``:
 ## Links
 
 * [Cnova-sdk Composer Package](https://packagist.org/packages/gpupo/cnova-sdk) no packagist.org
+* [Documentação Oficial da API V2](https://desenvolvedores.cnova.com/api-portal/docs/apilojista/main/getting-started.html)
 * [Marketplace-bundle Composer Package](https://packagist.org/packages/gpupo/marketplace-bundle) - Integração deste pacote com Symfony2
 * [Outras SDKs para o Ecommerce do Brasil](https://github.com/gpupo/common-sdk)
 
