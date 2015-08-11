@@ -30,4 +30,8 @@
         <const name="VERBOSE" value="true"/>
         <const name="REGISTER_PATH" value=""/>
     </php>
+    <logging>
+      <log type="coverage-clover" target="build/logs/clover.xml"/>
+      <log type="testdox-text" target="build/logs/testdox.txt"/>
+    </logging>
 </phpunit>
