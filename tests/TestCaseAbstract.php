@@ -21,7 +21,7 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 {
     private $factory;
 
-    protected function getResourcesPath()
+    public static function getResourcesPath()
     {
         return dirname(dirname(__FILE__)).'/Resources/';
     }
