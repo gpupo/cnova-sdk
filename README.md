@@ -10,6 +10,13 @@
 
 SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace (Extra.com.br, Pontofrio.com.br, Casasbahia.com.br)
 
+## Requisitos
+
+* PHP >= *5.4*
+* [curl extension](http://php.net/manual/en/intro.curl.php)
+* [Composer Dependency Manager](http://getcomposer.org)
+
+
 ## Licença
 
 MIT, see [LICENSE](https://github.com/gpupo/cnova-sdk/blob/master/LICENSE).
