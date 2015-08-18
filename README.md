@@ -35,15 +35,28 @@ Adicione o pacote ``cnova-sdk`` ao seu projeto utilizando [composer](http://getc
 
 Este exemplo demonstra o uso simplificado a partir do ``Factory``:
 
+```PHP
 
-    <?php
-    ///...
-    use Gpupo\CnovaSdk\Factory;
+///...
+use Gpupo\CnovaSdk\Factory;
 
-    $cnovaSdk = Factory::getInstance()
-        ->setup(['client_id' => 'foo','client_secret' => 'bar', 'version' => 'sandbox']);
+$cnovaSdk = Factory::getInstance()->setup([
+    'client_id' => 'foo',
+    'client_secret' => 'bar',
+    'version' => 'sandbox',
+ ]);
 
-    $manager = $cnovaSdk->factoryManager('product'));
+$manager = $cnovaSdk->factoryManager('product'));
+
+```
+
+Parâmetro | Descrição | Valores possíveis
+----------|-----------|------------------
+``client_id``|Chave da loja| string
+``client_secret``|Token de autorização da aplicação| string
+``version``|Identificação do Ambiente| sandbox, prod (produção)
+``registerPath``|Quando informado, registra no diretório informado, os dados de cada requisição executada
+
 
 ### Acesso a lista de produtos cadastrados:
 
