@@ -42,9 +42,9 @@ Este exemplo demonstra o uso simplificado a partir do ``Factory``:
 use Gpupo\CnovaSdk\Factory;
 
 $cnovaSdk = Factory::getInstance()->setup([
-    'client_id' => 'foo',
-    'client_secret' => 'bar',
-    'version' => 'sandbox',
+    'client_id'     => 'foo',
+    'access_token'  => 'bar',
+    'version'       => 'sandbox',
  ]);
 
 $manager = $cnovaSdk->factoryManager('product'));
@@ -54,7 +54,7 @@ $manager = $cnovaSdk->factoryManager('product'));
 Parâmetro | Descrição | Valores possíveis
 ----------|-----------|------------------
 ``client_id``|Chave da loja| string
-``client_secret``|Token de autorização da aplicação| string
+``access_token``|Token de autorização da aplicação| string
 ``version``|Identificação do Ambiente| sandbox, prod (produção)
 ``registerPath``|Quando informado, registra no diretório informado, os dados de cada requisição executada
 
@@ -129,6 +129,20 @@ Lista de comandos disponíveis:
 Você pode verificar suas credenciais Cnova na linha de comando:
 
     ./bin/main credential
+
+Você poder criar um arquivo chamado ``app.json`` com suas configurações personalizadas, as quais serão utilizadas na linha de comando:
+
+``` JSON
+{
+    "client_id": "foo",
+    "access_token": "bar"
+}
+```
+
+Utilize como modelo o arquivo ``app.json.dist``
+
+
+*Dica*: Verifique os logs gerados em ``Resources/logs/main.log``
 
 ---
 
