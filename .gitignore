@@ -7,3 +7,4 @@ Resources/doc/*
 *.phar
 _layout/*
 _site/*
+app.json

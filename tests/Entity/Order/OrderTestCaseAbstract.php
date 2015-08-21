@@ -27,7 +27,7 @@ abstract class OrderTestCaseAbstract extends TestCaseAbstract
         }
 
         $manager = $this->getFactory()->factoryManager('order');
-        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Order/'.$filename));
+        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Order/' . $filename));
 
         return $manager;
     }

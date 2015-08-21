@@ -25,7 +25,7 @@ class ManagerTest extends TestCaseAbstract
         }
 
         $manager = $this->getFactory()->factoryManager('product');
-        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Product/'.$filename));
+        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Product/' . $filename));
 
         return $manager;
     }

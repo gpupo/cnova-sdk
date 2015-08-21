@@ -33,16 +33,16 @@ class Factory extends FactoryAbstract
     {
         return [
             'product' => [
-                'class'     => $namespace.'Product\Product',
-                'manager'   => $namespace.'Product\Manager',
+                'class'     => $namespace . 'Product\Product',
+                'manager'   => $namespace . 'Product\Manager',
             ],
             'order' => [
-                'class'     => $namespace.'Order\Order',
-                'manager'   => $namespace.'Order\Manager',
+                'class'     => $namespace . 'Order\Order',
+                'manager'   => $namespace . 'Order\Manager',
             ],
             'loads' => [
-                'class'     => $namespace.'Product\Loads\Loads',
-                'manager'   => $namespace.'Product\Loads\Manager',
+                'class'     => $namespace . 'Product\Loads\Loads',
+                'manager'   => $namespace . 'Product\Loads\Manager',
             ],
         ];
     }

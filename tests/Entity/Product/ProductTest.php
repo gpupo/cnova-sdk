@@ -31,8 +31,8 @@ class ProductTest extends TestCaseAbstract
 
     protected function assertIsObject($name)
     {
-        $method = 'get'.$name;
-        $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\\'.$name,
+        $method = 'get' . $name;
+        $this->assertInstanceOf('Gpupo\CnovaSdk\Entity\Product\\' . $name,
             $this->factorySingleProduct()->$method());
     }
 

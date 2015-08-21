@@ -47,9 +47,9 @@ class Manager extends ManagerAbstract
             'Price',
             //'Status'
         ] as $key) {
-            $getter = 'get'.$key;
+            $getter = 'get' . $key;
             if ($this->attributesDiff($entity->$getter(), $existent->$getter())) {
-                $method = 'update'.$key;
+                $method = 'update' . $key;
                 $updated[$key] = $this->$method($entity);
             }
         }
@@ -63,7 +63,7 @@ class Manager extends ManagerAbstract
         ];
 
         $this->log('info', 'Operação de Atualização de entity '
-            .$this->entity, $context);
+            . $this->entity, $context);
 
         return $atualizado;
     }
@@ -96,6 +96,13 @@ class Manager extends ManagerAbstract
     protected function updateStock(Product $product)
     {
         $map = $this->getMap('updateStock', $product);
+
+        return $this->execute($map, $product->getStock()->toJson());
+    }
+
+    protected function updateStatus(Product $product)
+    {
+        $map = $this->getMap('updateStatus', $product);
 
         return $this->execute($map, $product->getStock()->toJson());
     }

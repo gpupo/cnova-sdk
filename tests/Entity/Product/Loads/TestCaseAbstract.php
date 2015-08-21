@@ -26,7 +26,7 @@ abstract class TestCaseAbstract extends TestCaseMain
         }
 
         $manager = $this->getFactory()->factoryManager('loads');
-        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Product/Loads/'.$filename));
+        $manager->setDryRun($this->factoryResponseFromFixture('fixture/Product/Loads/' . $filename));
 
         return $manager;
     }

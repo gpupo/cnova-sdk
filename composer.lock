@@ -456,16 +456,16 @@
         },
         {
             "name": "gpupo/common",
-            "version": "1.5.0",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gpupo/common.git",
-                "reference": "36a62fbe634ae0d3ae512ac82578689b1583cac0"
+                "reference": "8fd4288f4746ab4cf5babbd33a9b0bcccf74f1c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gpupo/common/zipball/36a62fbe634ae0d3ae512ac82578689b1583cac0",
-                "reference": "36a62fbe634ae0d3ae512ac82578689b1583cac0",
+                "url": "https://api.github.com/repos/gpupo/common/zipball/8fd4288f4746ab4cf5babbd33a9b0bcccf74f1c5",
+                "reference": "8fd4288f4746ab4cf5babbd33a9b0bcccf74f1c5",
                 "shasum": ""
             },
             "require": {
@@ -498,28 +498,28 @@
             "keywords": [
                 "common"
             ],
-            "time": "2015-08-06 14:40:40"
+            "time": "2015-08-18 20:52:15"
         },
         {
             "name": "gpupo/common-sdk",
-            "version": "1.9.10",
+            "version": "1.9.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gpupo/common-sdk.git",
-                "reference": "3a33b492541bc94e25ddc78449caa26e000fc671"
+                "reference": "245a0acf9f4665bcfbe691dfce276a02b84b1272"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/3a33b492541bc94e25ddc78449caa26e000fc671",
-                "reference": "3a33b492541bc94e25ddc78449caa26e000fc671",
+                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/245a0acf9f4665bcfbe691dfce276a02b84b1272",
+                "reference": "245a0acf9f4665bcfbe691dfce276a02b84b1272",
                 "shasum": ""
             },
             "require": {
                 "gpupo/cache": "~1.2",
-                "gpupo/common": "~1.5",
+                "gpupo/common": "~1.5.1",
                 "php": ">=5.4",
                 "psr/log": "~1.0",
-                "twig/twig": "~1.0"
+                "twig/twig": "~1.20.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
@@ -548,7 +548,7 @@
             "keywords": [
                 "sdk"
             ],
-            "time": "2015-08-14 14:06:31"
+            "time": "2015-08-18 21:00:12"
         },
         {
             "name": "psr/log",
@@ -1338,16 +1338,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.4",
+            "version": "4.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "55bf1d6092b0e13a1f26bd5eaffeef3d8ad85ea7"
+                "reference": "9b7417edaf28059ea63d86be941e6004dbfcc0cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/55bf1d6092b0e13a1f26bd5eaffeef3d8ad85ea7",
-                "reference": "55bf1d6092b0e13a1f26bd5eaffeef3d8ad85ea7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9b7417edaf28059ea63d86be941e6004dbfcc0cc",
+                "reference": "9b7417edaf28059ea63d86be941e6004dbfcc0cc",
                 "shasum": ""
             },
             "require": {
@@ -1406,24 +1406,24 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-15 04:21:23"
+            "time": "2015-08-19 09:20:57"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.6",
+            "version": "2.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "18dfbcb81d05e2296c0bcddd4db96cade75e6f42"
+                "reference": "5e2645ad49d196e020b85598d7c97e482725786a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/18dfbcb81d05e2296c0bcddd4db96cade75e6f42",
-                "reference": "18dfbcb81d05e2296c0bcddd4db96cade75e6f42",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/5e2645ad49d196e020b85598d7c97e482725786a",
+                "reference": "5e2645ad49d196e020b85598d7c97e482725786a",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "~1.0,>=1.0.2",
+                "doctrine/instantiator": "^1.0.2",
                 "php": ">=5.3.3",
                 "phpunit/php-text-template": "~1.2",
                 "sebastian/exporter": "~1.2"
@@ -1462,7 +1462,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-07-10 06:54:24"
+            "time": "2015-08-19 09:14:08"
         },
         {
             "name": "satooshi/php-coveralls",
