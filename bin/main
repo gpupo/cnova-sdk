@@ -16,12 +16,13 @@ require __DIR__.'/../vendor/autoload.php';
 use Gpupo\CnovaSdk\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
 
 $app = new Application("cnova-sdk");
 $app->findConfig([__DIR__.'/../']);
 
-$app->appendCommand('credential', 'Testa a validade de suas credenciais')
+$app->appendCommand('credential:test', 'Testa a validade de suas credenciais')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
         $list = $app->processInputParameters([], $input, $output);
 
@@ -31,5 +32,22 @@ $app->appendCommand('credential', 'Testa a validade de suas credenciais')
             $output->writeln('<error>Error</error>');
         }
     });
+
+$app->appendCommand('product:status', 'Consulta a situação de um produto')
+    ->addArgument('skuSellerId', InputArgument::REQUIRED, 'Lojista Sku Id')
+    ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
+        $list = $app->processInputParameters([], $input, $output);
+
+$input->getArgument('skuSellerId');
+return print_r($list);
+        if ($app->factorySdk($list)->factoryManager('product')->fetch()) {
+            $output->writeln('<info>Success!</info>');
+        } else {
+            $output->writeln('<error>Error</error>');
+        }
+    });
+
+
+
 
 $app->run();

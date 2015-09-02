@@ -127,6 +127,24 @@ class ManagerTest extends TestCaseAbstract
         }
     }
 
+    /**
+     * @testdoc Atualiza Situação (``status``) de um SKU em loja específica
+     */
+    public function testStatusUpdate()
+    {
+        $manager = $this->getFactory()->factoryManager('product')->setDryRun();
+        $list = $this->dataProviderProducts();
+
+
+
+        $product = new Product(["skuSellerId": "14080"]);
+        $
+        foreach ($list as $data) {
+            $entityA = $this->getFactory()->createProduct(current($data));
+            $this->assertTrue($manager->updateStatus($entityA));
+        }
+    }
+
     public function testNaoExecutaAtualizacaoEmProdutoInalterado()
     {
         $manager = $this->getFactory()->factoryManager('product')->setDryRun();

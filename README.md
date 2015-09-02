@@ -1,6 +1,5 @@
 [![Build Status](https://secure.travis-ci.org/gpupo/cnova-sdk.png?branch=master)](http://travis-ci.org/gpupo/cnova-sdk)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gpupo/cnova-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gpupo/cnova-sdk/?branch=master)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/a8e4deb5-33f2-4d4b-b5f8-9d9310c6439c/mini.png)](https://insight.sensiolabs.com/projects/a8e4deb5-33f2-4d4b-b5f8-9d9310c6439c)
 [![Codacy Badge](https://www.codacy.com/project/badge/1826444de06447b098349808ea0d5ce7)](https://www.codacy.com/app/g/cnova-sdk)
 [![Code Climate](https://codeclimate.com/github/gpupo/cnova-sdk/badges/gpa.svg)](https://codeclimate.com/github/gpupo/cnova-sdk)
 [![Test Coverage](https://codeclimate.com/github/gpupo/cnova-sdk/badges/coverage.svg)](https://codeclimate.com/github/gpupo/cnova-sdk/coverage)
@@ -15,12 +14,10 @@ SDK Não Oficial para integração a partir de aplicações PHP com as APIs da C
 
 * PHP >= *5.4*
 * [curl extension](http://php.net/manual/en/intro.curl.php)
-* [Composer Dependency Manager](http://getcomposer.org)
-
 
 ## Licença
 
-MIT, see [LICENSE](https://github.com/gpupo/cnova-sdk/blob/master/LICENSE).
+[MIT](https://github.com/gpupo/cnova-sdk/blob/master/LICENSE) © [Gilmar Pupo](https://github.com/gpupo)
 
 ---
 
