@@ -71,8 +71,8 @@ class ManagerTest extends TestCaseAbstract
         $manager = $this->getManager('ProductId.json');
         $product = $manager->findById(14080);
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Product\Product', $product);
-        $this->assertEquals(14080, $product->getSkuSellerId());
-        $this->assertEquals(14080, $product->getId());
+        $this->assertSame('14080', $product->getSkuSellerId());
+        $this->assertSame('14080', $product->getId());
     }
 
     public function testGuardaProdutosEmUmaFilaParaGravacaoEmLote()
@@ -92,7 +92,7 @@ class ManagerTest extends TestCaseAbstract
             $poolItem = current($poolItens);
 
             foreach (['skuSellerId', 'title', 'description', 'brand'] as $key) {
-                $this->assertEquals($item[$key], $poolItem[$key]);
+                $this->assertSame($item[$key], $poolItem[$key]);
             }
 
             next($poolItens);
@@ -127,24 +127,6 @@ class ManagerTest extends TestCaseAbstract
         }
     }
 
-    /**
-     * @testdoc Atualiza Situação (``status``) de um SKU em loja específica
-     */
-    public function testStatusUpdate()
-    {
-        $manager = $this->getFactory()->factoryManager('product')->setDryRun();
-        $list = $this->dataProviderProducts();
-
-
-
-        $product = new Product(["skuSellerId": "14080"]);
-        $
-        foreach ($list as $data) {
-            $entityA = $this->getFactory()->createProduct(current($data));
-            $this->assertTrue($manager->updateStatus($entityA));
-        }
-    }
-
     public function testNaoExecutaAtualizacaoEmProdutoInalterado()
     {
         $manager = $this->getFactory()->factoryManager('product')->setDryRun();
@@ -168,7 +150,7 @@ class ManagerTest extends TestCaseAbstract
             $entityA = $this->getFactory()->createProduct(current($data));
             $entityB = $this->getFactory()->createProduct(current($data));
             $entityB->getStock()->setQuantity(8);
-            $this->assertEquals(['quantity'], $manager->attributesDiff(
+            $this->assertSame(['quantity'], $manager->attributesDiff(
                 $entityA->getStock(), $entityB->getStock()), 'Diff');
             $entityA->setPrevious($entityB);
             $this->assertTrue($manager->save($entityA), 'Save');

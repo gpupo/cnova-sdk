@@ -17,9 +17,6 @@ namespace Gpupo\CnovaSdk\Entity;
 use Gpupo\Common\Entity\CollectionAbstract;
 
 /**
- * @method int getTotalRows()
- * @method int getOffset()
- * @method int getLimit()
  * @method string getFirst()
  * @method string getPrevious()
  * @method string getNext()
@@ -27,4 +24,18 @@ use Gpupo\Common\Entity\CollectionAbstract;
  */
 class Metadata extends CollectionAbstract
 {
+    public function getOffset()
+    {
+        return intval($this->get('offset'));
+    }
+
+    public function getLimit()
+    {
+        return intval($this->get('limit'));
+    }
+
+    public function getTotalRows()
+    {
+        return intval($this->get('totalRows'));
+    }
 }

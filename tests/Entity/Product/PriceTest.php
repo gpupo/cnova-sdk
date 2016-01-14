@@ -36,15 +36,15 @@ class PriceTest extends TestCaseAbstract
      */
     public function testPossuiPreçoDe(Price $price)
     {
-        $this->assertSame(139, $price->getDefault());
+        $this->assertSame(139.0, $price->getDefault());
     }
 
     /**
      * @depends testÉPropriedadeDeProduct
      */
-    public function testPossuiPreçoPro(Price $price)
+    public function testPossuiPreçoPor(Price $price)
     {
-        $this->assertSame(119, $price->getOffer());
+        $this->assertSame(119.0, $price->getOffer());
     }
 
     /**
