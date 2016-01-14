@@ -24,7 +24,7 @@ class MetadataContainerTest extends MetadataContainerTestAbstract
         $container = new MetadataContainer($data);
 
         return [
-            [$container,['totalRows' => 2]],
+            [$container, ['totalRows' => 2]],
         ];
     }
 }

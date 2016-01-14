@@ -25,16 +25,16 @@ class Manager extends ManagerAbstract
     protected $entity = 'Product';
 
     protected $maps = [
-        'save'          => ['POST', '/loads/products'],
-        'updateStatus'  => ['PUT', '/sellerItems/{itemId}/status'], //Ativação/Desativação de produto no Marketplace
-        'updateStock'   => ['PUT', '/sellerItems/{itemId}/stock'], //Atualização do estoque do item
-        'updatePrice'   => ['PUT', '/sellerItems/{itemId}/prices'], //Atualização do preço do item
-        'findById'      => ['GET', '/loads/products/{itemId}'],
-        'fetch'         => ['GET', '/sellerItems?_offset={offset}&_limit={limit}&status={status}&createdAt={createdAt}'],
+        'save'         => ['POST', '/loads/products'],
+        'updateStatus' => ['PUT', '/sellerItems/{itemId}/status'], //Ativação/Desativação de produto no Marketplace
+        'updateStock'  => ['PUT', '/sellerItems/{itemId}/stock'], //Atualização do estoque do item
+        'updatePrice'  => ['PUT', '/sellerItems/{itemId}/prices'], //Atualização do preço do item
+        'findById'     => ['GET', '/loads/products/{itemId}'],
+        'fetch'        => ['GET', '/sellerItems?_offset={offset}&_limit={limit}&status={status}&createdAt={createdAt}'],
     ];
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function update(EntityInterface $entity, EntityInterface $existent)
     {
@@ -54,12 +54,12 @@ class Manager extends ManagerAbstract
             }
         }
 
-        $atualizado = !empty($updated);
+        $atualizado = ! empty($updated);
 
         $context = [
-            'id'            => $entity->getId(),
-            'atualizado'    => $atualizado,
-            'atributos'     => $updated,
+            'id'         => $entity->getId(),
+            'atualizado' => $atualizado,
+            'atributos'  => $updated,
         ];
 
         $this->log('info', 'Operação de Atualização de entity '

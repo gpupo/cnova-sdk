@@ -22,10 +22,10 @@ class GiftWrap extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'available'         => 'boolean',
-            'value'             => 'number',
-            'messageSupport'    => 'boolean',
-            'giftCard'          => 'object',
+            'available'      => 'boolean',
+            'value'          => 'number',
+            'messageSupport' => 'boolean',
+            'giftCard'       => 'object',
         ];
     }
 }

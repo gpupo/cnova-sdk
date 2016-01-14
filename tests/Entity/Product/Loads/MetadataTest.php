@@ -32,7 +32,7 @@ class MetadataTest extends TestCaseAbstract
      */
     public function testMetadataPossuiQuantidadeDeObjetosEnviados(Metadata $metadata)
     {
-        $this->assertEquals(6287, $metadata->getTotalRows());
+        $this->assertSame(6287, $metadata->getTotalRows());
     }
 
     /**
@@ -40,7 +40,7 @@ class MetadataTest extends TestCaseAbstract
      */
     public function testMetadataPossuiInformacaoDoOffsetAtual(Metadata $metadata)
     {
-        $this->assertEquals(0, $metadata->getOffset());
+        $this->assertSame(0, $metadata->getOffset());
     }
 
     /**
@@ -48,6 +48,6 @@ class MetadataTest extends TestCaseAbstract
      */
     public function testMetadataPossuiInformacaoDoLimitAtual(Metadata $metadata)
     {
-        $this->assertEquals(20, $metadata->getLimit());
+        $this->assertSame(20, $metadata->getLimit());
     }
 }

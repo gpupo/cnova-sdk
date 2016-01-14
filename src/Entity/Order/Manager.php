@@ -22,9 +22,9 @@ class Manager extends ManagerAbstract
     protected $entity = 'Order';
 
     protected $maps = [
-        'saveStatus'    => ['POST', '/orders/{itemId}/trackings/{status}'],
-        'findById'      => ['GET', '/orders/{itemId}'],
-        'fetch'         => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
+        'saveStatus' => ['POST', '/orders/{itemId}/trackings/{status}'],
+        'findById'   => ['GET', '/orders/{itemId}'],
+        'fetch'      => ['GET', '/orders/status/{status}/?_offset={offset}&_limit={limit}'],
     ];
 
     protected function saveStatus(Order $order, $json)

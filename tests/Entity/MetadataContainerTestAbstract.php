@@ -42,6 +42,6 @@ abstract class MetadataContainerTestAbstract extends TestCaseAbstract
      */
     public function testPossuiPropriedadeIndicadoraDeQuantidadeDeRegistros(MetadataContainerAbstract $container, array $expected)
     {
-        $this->assertEquals($container->getMetadata()->getTotalRows(), $expected['totalRows']);
+        $this->assertSame($container->getMetadata()->getTotalRows(), $expected['totalRows']);
     }
 }

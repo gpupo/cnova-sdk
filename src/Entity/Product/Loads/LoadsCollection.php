@@ -27,10 +27,10 @@ class LoadsCollection extends MetadataContainerAbstract
     protected function factoryEntity(array $data)
     {
         $input = [
-            'skuSellerId'   => $data['skuSeller']['id'],
-            'href'          => $data['skuSeller']['href'],
-            'status'        => $data['status'],
-            'createdAt'     => $data['createdAt'],
+            'skuSellerId' => $data['skuSeller']['id'],
+            'href'        => $data['skuSeller']['href'],
+            'status'      => $data['status'],
+            'createdAt'   => $data['createdAt'],
         ];
 
         return new ProductExtended($input);

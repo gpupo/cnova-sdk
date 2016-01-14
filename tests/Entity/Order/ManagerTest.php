@@ -42,8 +42,8 @@ class ManagerTest extends OrderTestCaseAbstract
         $manager = $this->getManager('OrderId.json');
         $order = $manager->findById(975101);
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Order', $order);
-        $this->assertEquals(975101, $order->getId());
-        $this->assertEquals('2015-04-30T14:54:29.000-03:00', $order->getPurchasedAt());
+        $this->assertSame(975101, $order->getId());
+        $this->assertSame('2015-04-30T14:54:29.000-03:00', $order->getPurchasedAt());
     }
 
     /**

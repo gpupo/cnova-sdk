@@ -25,11 +25,11 @@ class Freight extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'actualAmount'      => 'number',
-            'chargedAmount'     => 'number',
-            'type'              => 'string',
-            'scheduledAt'       => 'string',
-            'scheduledPeriod'   => 'string',
+            'actualAmount'    => 'number',
+            'chargedAmount'   => 'number',
+            'type'            => 'string',
+            'scheduledAt'     => 'string',
+            'scheduledPeriod' => 'string',
         ];
     }
 }

@@ -64,7 +64,7 @@ abstract class MetadataContainerAbstract extends CollectionAbstract
     {
         $data = $this->dataPiece('metadata', $raw);
 
-        if (!empty($data)) {
+        if ( ! empty($data)) {
             $data = $this->normalizeMetas($data);
         }
 
@@ -80,7 +80,7 @@ abstract class MetadataContainerAbstract extends CollectionAbstract
         $this->factoryMetadata($data);
 
         $list = $this->dataPiece($this->getKey(), $data);
-        if (!empty($list)) {
+        if ( ! empty($list)) {
             foreach ($list as $entityData) {
                 $this->add($this->factoryEntity($entityData));
             }

@@ -31,7 +31,7 @@ class ClientTest extends TestCaseAbstract
      */
     public function testGerenciaUriDeRecurso($client)
     {
-        $this->assertEquals('https://sandbox.cnova.com/api/v2/sku',
+        $this->assertSame('https://sandbox.cnova.com/api/v2/sku',
             $client->getResourceUri('/sku'));
     }
 
@@ -40,7 +40,7 @@ class ClientTest extends TestCaseAbstract
      */
     public function testObjetoRequestPossuiHeader($client)
     {
-        if (!$this->hasToken()) {
+        if ( ! $this->hasToken()) {
             return $this->markSkipped('API Token ausente');
         }
 
@@ -56,12 +56,12 @@ class ClientTest extends TestCaseAbstract
      */
     public function testAcessoAListaDePedidos()
     {
-        if (!$this->hasToken()) {
+        if ( ! $this->hasToken()) {
             return $this->markSkipped('API Token ausente');
         }
 
         $response = $this->factoryClient()->get('/orders/status/new/?_offset=0&_limit=1');
-        $this->assertEquals('200', $response->getHttpStatusCode());
+        $this->assertSame('200', $response->getHttpStatusCode());
     }
 
     /**
@@ -69,11 +69,11 @@ class ClientTest extends TestCaseAbstract
      */
     public function testAcessoAListaDeProdutos()
     {
-        if (!$this->hasToken()) {
+        if ( ! $this->hasToken()) {
             return $this->markSkipped('API Token ausente');
         }
 
         $response = $this->factoryClient()->get('/sellerItems/status/selling/?_offset=0&_limit=1');
-        $this->assertEquals('200', $response->getHttpStatusCode());
+        $this->assertSame('200', $response->getHttpStatusCode());
     }
 }

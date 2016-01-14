@@ -22,8 +22,8 @@ class Carrier extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'name'  => 'string',
-            'cnpj'  => 'string',
+            'name' => 'string',
+            'cnpj' => 'string',
         ];
     }
 

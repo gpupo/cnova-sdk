@@ -36,7 +36,7 @@ class ItemsTest extends TestCaseAbstract
     public function testPossuiIdsDiferentesParaCadaUnidadeMesmoComSkusIguais(Items $items)
     {
         foreach ($items as $product) {
-            $this->assertEquals('14080', $product->getSkuSellerId());
+            $this->assertSame('14080', $product->getSkuSellerId());
         }
     }
 
@@ -45,6 +45,6 @@ class ItemsTest extends TestCaseAbstract
      */
     public function testContémListaDeIdsExistentesNaColeção(Items $items)
     {
-        $this->assertEquals(['23236199-1', '23236199-2'], $items->getIdList());
+        $this->assertSame(['23236199-1', '23236199-2'], $items->getIdList());
     }
 }

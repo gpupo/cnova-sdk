@@ -28,8 +28,8 @@ class Phone extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'number'    => 'string',
-            'type'      => 'string', //HOME , CELLPHONE or BUSINESS
+            'number' => 'string',
+            'type'   => 'string', //HOME , CELLPHONE or BUSINESS
         ];
     }
 }

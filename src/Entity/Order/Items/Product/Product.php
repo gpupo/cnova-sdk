@@ -26,7 +26,7 @@ use Gpupo\CommonSdk\Entity\EntityInterface;
  * @method setName(string $name)
  * @method float getSalePrice()
  * @method setSalePrice(float $salePrice)
- * @method boolean getSent()
+ * @method bool getSent()
  * @method setSent(boolean $sent)
  * @method Gpupo\CnovaSdk\Entity\Order\Items\Product\Freight\Freight getFreight()
  * @method setFreight(Gpupo\CnovaSdk\Entity\Order\Items\Product\Freight\Freight $freight)
@@ -38,13 +38,13 @@ class Product extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'id'            => 'string',
-            'skuSellerId'   => 'string',
-            'name'          => 'string',
-            'salePrice'     => 'number',
-            'sent'          => 'boolean',
-            'freight'       => 'object',
-            'giftWrap'      => 'object',
+            'id'          => 'string',
+            'skuSellerId' => 'string',
+            'name'        => 'string',
+            'salePrice'   => 'number',
+            'sent'        => 'boolean',
+            'freight'     => 'object',
+            'giftWrap'    => 'object',
         ];
     }
 }

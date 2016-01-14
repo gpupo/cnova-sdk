@@ -27,7 +27,7 @@ class ProductTest extends TestCaseAbstract
     public function testPossuiUmIdentificadorPorUnidade()
     {
         $product = new Product(require $this->getResourceFilePath('fixture/Order/Items/Product/product.php'));
-        $this->assertEquals('23236199-2', $product->getId());
+        $this->assertSame('23236199-2', $product->getId());
 
         return $product;
     }
@@ -37,6 +37,6 @@ class ProductTest extends TestCaseAbstract
      */
     public function testPossuiIdentificadorDoSku(Product $product)
     {
-        $this->assertEquals('14080', $product->getSkuSellerId());
+        $this->assertSame('14080', $product->getSkuSellerId());
     }
 }

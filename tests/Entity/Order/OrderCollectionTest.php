@@ -48,7 +48,7 @@ class OrderCollectionTest extends MetadataContainerTestAbstract
     {
         $list = $this->factoryOrderCollection();
         $order = $list->first();
-        $this->assertEquals(975101, $order->getId());
-        $this->assertEquals('2015-04-30T14:54:29.000-03:00', $order->getPurchasedAt());
+        $this->assertSame(975101, $order->getId());
+        $this->assertSame('2015-04-30T14:54:29.000-03:00', $order->getPurchasedAt());
     }
 }

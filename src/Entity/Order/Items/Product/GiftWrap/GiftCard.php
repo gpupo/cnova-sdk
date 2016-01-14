@@ -22,9 +22,9 @@ class GiftCard extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'from'      => 'string',
-            'to'        => 'string',
-            'message'   => 'string',
+            'from'    => 'string',
+            'to'      => 'string',
+            'message' => 'string',
         ];
     }
 }

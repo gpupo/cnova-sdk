@@ -28,7 +28,7 @@ class TrackingTest extends OrderTestCaseAbstract
 
     protected function getFixture()
     {
-        return (require $this->getResourceFilePath('fixture/Order/tracking.php'));
+        return require $this->getResourceFilePath('fixture/Order/tracking.php');
     }
 
     public function factoryTracking()
@@ -63,7 +63,7 @@ class TrackingTest extends OrderTestCaseAbstract
         $carrier = $tracking->getCarrier();
         $this->assertTrue($tracking->isValid());
         $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\Trackings\Tracking\Carrier', $carrier);
-        $this->assertEquals('ECT', $carrier->getName());
+        $this->assertSame('ECT', $carrier->getName());
     }
 
     /**
@@ -108,6 +108,6 @@ class TrackingTest extends OrderTestCaseAbstract
         $json = $tracking->toJson();
         $array = json_decode($json, true);
 
-        $this->assertEquals($this->getFixture(), $array);
+        $this->assertSame($this->getFixture(), $array);
     }
 }

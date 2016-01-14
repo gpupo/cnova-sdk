@@ -44,16 +44,16 @@ class Tracking extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'items'             => 'array',
-            'controlPoint'      => 'string',
-            'description'       => 'string',
-            'occurredAt'        => 'string',
-            'carrier'           => 'object',
-            'url'               => 'string',
-            'number'            => 'string',
-            'sellerDeliveryId'  => 'string',
-            'cte'               => 'string',
-            'invoice'           => 'object',
+            'items'            => 'array',
+            'controlPoint'     => 'string',
+            'description'      => 'string',
+            'occurredAt'       => 'string',
+            'carrier'          => 'object',
+            'url'              => 'string',
+            'number'           => 'string',
+            'sellerDeliveryId' => 'string',
+            'cte'              => 'string',
+            'invoice'          => 'object',
         ];
     }
 

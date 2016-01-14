@@ -52,20 +52,20 @@ class Order extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'id'                    => 'string',
-            'orderMarketplaceId'    => 'string',
-            'paymentType'           => 'string',
-            'purchasedAt'           => 'string',
-            'approvedAt'            => 'string',
-            'status'                => 'string',
-            'totalAmount'           => 'number',
-            'totalDiscountAmount'   => 'number',
-            'billing'               => 'object',
-            'customer'              => 'object',
-            'freight'               => 'object',
-            'items'                 => 'object',
-            'shipping'              => 'object',
-            'trackings'             => 'object',
+            'id'                  => 'string',
+            'orderMarketplaceId'  => 'string',
+            'paymentType'         => 'string',
+            'purchasedAt'         => 'string',
+            'approvedAt'          => 'string',
+            'status'              => 'string',
+            'totalAmount'         => 'number',
+            'totalDiscountAmount' => 'number',
+            'billing'             => 'object',
+            'customer'            => 'object',
+            'freight'             => 'object',
+            'items'               => 'object',
+            'shipping'            => 'object',
+            'trackings'           => 'object',
         ];
     }
 }

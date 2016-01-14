@@ -21,26 +21,26 @@ class Application extends AbstractApplication
 {
     protected $commonParameters = [
         [
-            'key'   => 'client_id',
+            'key' => 'client_id',
         ],
         [
-            'key'   => 'access_token',
+            'key' => 'access_token',
         ],
         [
-            'key'       => 'env',
-            'options'   => ['sandbox', 'api'],
-            'default'   => 'sandbox',
-            'name'      => 'Version',
+            'key'     => 'env',
+            'options' => ['sandbox', 'api'],
+            'default' => 'sandbox',
+            'name'    => 'Version',
         ],
         [
-            'key'       => 'sslVersion',
-            'options'   => ['SecureTransport', 'TLS'],
-            'default'   => 'SecureTransport',
-            'name'      => 'SSL Version',
+            'key'     => 'sslVersion',
+            'options' => ['SecureTransport', 'TLS'],
+            'default' => 'SecureTransport',
+            'name'    => 'SSL Version',
         ],
         [
-            'key'       => 'registerPath',
-            'default'   => false,
+            'key'     => 'registerPath',
+            'default' => false,
         ],
     ];
 
@@ -57,5 +57,4 @@ class Application extends AbstractApplication
             ->setDescription($description)
             ->setDefinition($this->factoryDefinition($definition));
     }
-
 }

@@ -31,7 +31,7 @@ class ManagerTest extends TestCaseAbstract
         $loads = $manager->fetch(0, 20, ['status' => 'Error']);
 
         foreach ($loads as $product) {
-            $this->assertEquals('Error', $product->getStatus());
+            $this->assertSame('Error', $product->getStatus());
         }
     }
 }

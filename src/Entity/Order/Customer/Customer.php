@@ -38,13 +38,13 @@ class Customer extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return  [
-            'id'                => 'string',
-            'name'              => 'string',
-            'documentNumber'    => 'string',
-            'type'              => 'string',
-            'createdAt'         => 'string',
-            'email'             => 'string',
-            'phones'            => 'object',
+            'id'             => 'string',
+            'name'           => 'string',
+            'documentNumber' => 'string',
+            'type'           => 'string',
+            'createdAt'      => 'string',
+            'email'          => 'string',
+            'phones'         => 'object',
         ];
     }
 }

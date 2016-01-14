@@ -36,7 +36,7 @@ class StockTest extends TestCaseAbstract
      */
     public function testPossuiQuantidade(Stock $stock)
     {
-        $this->assertEquals(5, $stock->getQuantity());
+        $this->assertSame(5, $stock->getQuantity());
     }
 
     /**
@@ -44,7 +44,7 @@ class StockTest extends TestCaseAbstract
      */
     public function testPossuiTempoPreparaçãoDoProduto(Stock $stock)
     {
-        $this->assertEquals(1, $stock->getCrossDockingTime());
+        $this->assertSame(1, $stock->getCrossDockingTime());
     }
 
     /**

@@ -40,7 +40,7 @@ class InvoiceTest extends OrderTestCaseAbstract
     public function testPossuiCnpj()
     {
         $invoice = $this->factoryInvoice();
-        $this->assertEquals('111111111111', $invoice->getCnpj());
+        $this->assertSame('111111111111', $invoice->getCnpj());
 
         return $invoice;
     }
@@ -50,6 +50,6 @@ class InvoiceTest extends OrderTestCaseAbstract
      */
     public function testPossuiChaveDeAcesso(Invoice $invoice)
     {
-        $this->assertEquals('fooBarZetaJones', $invoice->getAccessKey());
+        $this->assertSame('fooBarZetaJones', $invoice->getAccessKey());
     }
 }

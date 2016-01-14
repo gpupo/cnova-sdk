@@ -23,9 +23,9 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
     protected function fetchDefaultParameters()
     {
         return [
-            'status'        => '',
-            'createdAt'     => '',
-            'purchaseAt'    => '',
+            'status'     => '',
+            'createdAt'  => '',
+            'purchaseAt' => '',
         ];
     }
 
@@ -34,7 +34,7 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
      */
     protected function fetchPrepare($data)
     {
-        if (!empty($data)) {
+        if ( ! empty($data)) {
             return $this->factoryEntityCollection($data);
         }
     }
@@ -51,21 +51,21 @@ abstract class ManagerAbstract extends CommonAbstract implements ManagerInterfac
     {
         $data = parent::findById($itemId);
 
-        if (!empty($data)) {
+        if ( ! empty($data)) {
             return $this->factoryEntity($data->toArray());
         }
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function update(EntityInterface $entity, EntityInterface $existent)
     {
         $text = 'Chamada a Atualização de entity ' . $this->entity;
 
         return $this->log('debug', $text, [
-            'entity'    => $entity,
-            'existent'  => $existent,
+            'entity'   => $entity,
+            'existent' => $existent,
         ]);
     }
 }

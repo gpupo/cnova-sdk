@@ -19,7 +19,7 @@ use Gpupo\Tests\CommonSdk\FactoryTestAbstract;
 
 class FactoryTest extends FactoryTestAbstract
 {
-    public $namespace =  '\Gpupo\CnovaSdk\\';
+    public $namespace = '\Gpupo\CnovaSdk\\';
 
     public function getFactory()
     {

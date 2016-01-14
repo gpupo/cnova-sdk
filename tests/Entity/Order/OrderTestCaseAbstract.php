@@ -37,7 +37,7 @@ abstract class OrderTestCaseAbstract extends TestCaseAbstract
      */
     public function getList()
     {
-        $list =  $this->getManager()->fetch();
+        $list = $this->getManager()->fetch();
 
         return $list;
     }
@@ -61,7 +61,7 @@ abstract class OrderTestCaseAbstract extends TestCaseAbstract
         $list = [];
 
         foreach ($this->getList() as $order) {
-            if (!$order instanceof Order) {
+            if ( ! $order instanceof Order) {
                 throw new \Exception('Objeto não é Order');
             }
             $list[] = [$order->getCustomer()];
@@ -76,7 +76,7 @@ abstract class OrderTestCaseAbstract extends TestCaseAbstract
 
         foreach ($this->dataProviderCustomers() as $data) {
             $customer = current($data);
-            if (!$customer instanceof Customer) {
+            if ( ! $customer instanceof Customer) {
                 throw new \Exception('Objeto não é Customer');
             }
             $list[] = [$customer->getPhones()];

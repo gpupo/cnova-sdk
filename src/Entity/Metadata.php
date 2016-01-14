@@ -17,9 +17,9 @@ namespace Gpupo\CnovaSdk\Entity;
 use Gpupo\Common\Entity\CollectionAbstract;
 
 /**
- * @method integer getTotalRows()
- * @method integer getOffset()
- * @method integer getLimit()
+ * @method int getTotalRows()
+ * @method int getOffset()
+ * @method int getLimit()
  * @method string getFirst()
  * @method string getPrevious()
  * @method string getNext()
