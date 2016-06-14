@@ -31,7 +31,8 @@ $finder = DefaultFinder::create()
     ->in(__DIR__);
 
 return Config::create()
-    ->fixers(array(
+    ->fixers([
+        'yoda_conditions',
         'align_double_arrow',
         'header_comment',
         'multiline_spaces_before_semicolon',
@@ -51,7 +52,7 @@ return Config::create()
         'logical_not_operators_with_successor_space',
         'short_echo_tag',
         'pre_increment',
-    ))
+    ])
     ->level(FixerInterface::SYMFONY_LEVEL)
-    ->setUsingCache(false)
+    ->setUsingCache(true)
     ->finder($finder);

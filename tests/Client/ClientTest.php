@@ -11,7 +11,6 @@
  * For more information, see
  * <http://www.g1mr.com/cnova-sdk/>.
  */
-
 namespace Gpupo\Tests\CnovaSdk\Client;
 
 use Gpupo\Tests\CnovaSdk\TestCaseAbstract;

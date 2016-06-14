@@ -11,7 +11,6 @@
  * For more information, see
  * <http://www.g1mr.com/cnova-sdk/>.
  */
-
 namespace Gpupo\CnovaSdk\Entity;
 
 use Gpupo\Common\Entity\CollectionAbstract;

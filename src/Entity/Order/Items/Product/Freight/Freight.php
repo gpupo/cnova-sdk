@@ -11,7 +11,6 @@
  * For more information, see
  * <http://www.g1mr.com/cnova-sdk/>.
  */
-
 namespace Gpupo\CnovaSdk\Entity\Order\Items\Product\Freight;
 
 use Gpupo\CnovaSdk\Entity\Order\Freight\Freight as FreightAbstract;

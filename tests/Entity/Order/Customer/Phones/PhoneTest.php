@@ -11,7 +11,6 @@
  * For more information, see
  * <http://www.g1mr.com/cnova-sdk/>.
  */
-
 namespace Gpupo\Tests\CnovaSdk\Entity\Order\Customer\Phones;
 
 use Gpupo\CnovaSdk\Entity\Order\Customer\Phones\Phone;

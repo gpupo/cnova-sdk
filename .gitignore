@@ -9,3 +9,4 @@ _layout/*
 _site/*
 app.json
 composer.lock
+*.cache

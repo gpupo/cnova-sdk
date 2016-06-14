@@ -11,7 +11,6 @@
  * For more information, see
  * <http://www.g1mr.com/cnova-sdk/>.
  */
-
 namespace Gpupo\CnovaSdk\Entity\Order\Shipping;
 
 use Gpupo\CnovaSdk\Entity\Order\AddressAbstract;

@@ -11,7 +11,6 @@
  * For more information, see
  * <http://www.g1mr.com/cnova-sdk/>.
  */
-
 namespace Gpupo\Tests\CnovaSdk\Entity\Order\Items\Product;
 
 use Gpupo\CnovaSdk\Entity\Order\Items\Product\Product;
