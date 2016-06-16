@@ -3,19 +3,16 @@ language: php
 os:
   - linux
 php:
-  - 5.4
-  - 5.5
   - 5.6
   - 7.0
+  - nightly
   - hhvm
 matrix:
   allow_failures:
+    - php: nightly
     - php: hhvm
-    - php: 5.4
 before_script:
-  - composer self-update
-  - composer install --prefer-dist
-  - touch Resources/logs/tests.log
+  - ant
 script: ant test
 notifications:
   email: false

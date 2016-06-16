@@ -98,7 +98,7 @@ Parâmetro | Descrição | Valores possíveis
 
 * [Cnova-sdk Composer Package](https://packagist.org/packages/gpupo/cnova-sdk) no packagist.org
 * [Documentação Oficial da API V2](https://desenvolvedores.cnova.com/api-portal/docs/apilojista/main/getting-started.html)
-* [Marketplace-bundle Composer Package](https://packagist.org/packages/gpupo/marketplace-bundle) - Integração deste pacote com Symfony2
+* [Marketplace-bundle Composer Package](https://packagist.org/packages/gpupo/markethub-bundle) - Integração deste pacote com Symfony2
 * [Outras SDKs para o Ecommerce do Brasil](https://github.com/gpupo/common-sdk)
 
 ---
