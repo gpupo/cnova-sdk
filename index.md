@@ -9,10 +9,21 @@ SDK Não Oficial para integração a partir de aplicações PHP com as APIs da C
 [![Paypal Donations](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EK6F2WRKG7GNN&item_name=cnova-sdk)
 <!-- require -->
 
-## Requisitos
+## Requisitos para uso
 
 * PHP >= *5.6*
 * [curl extension](http://php.net/manual/en/intro.curl.php)
+
+Este componente **não é uma aplicação Stand Alone** e seu objetivo é ser utilizado como biblioteca.
+Sua implantação deve ser feita por desenvolvedores experientes.
+
+**Isto não é um Plugin!**
+
+As opções que funcionam no modo de comando apenas servem para depuração em modo de
+desenvolvimento.
+
+A documentação mais importante está nos testes unitários. Se você não consegue ler os testes unitários, eu recomendo que não utilize esta biblioteca.
+
 
 <!-- //require -->
 
