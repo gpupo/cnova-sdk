@@ -8,6 +8,7 @@ SDK Não Oficial para integração a partir de aplicações PHP com as APIs da C
 
 [![Paypal Donations](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EK6F2WRKG7GNN&item_name=cnova-sdk)
 <!-- require -->
+
 ## Requisitos
 
 * PHP >= *5.6*
@@ -16,6 +17,7 @@ SDK Não Oficial para integração a partir de aplicações PHP com as APIs da C
 <!-- //require -->
 
 <!-- licence -->
+
 ## Direitos autorais e de licença
 
 Este componente está sob a [licença MIT](https://github.com/gpupo/common-sdk/blob/master/LICENSE)
@@ -194,10 +196,6 @@ Personalize os parâmetros!
 <!-- todo -->
 ## Todo
 
-1) Atualmente os a estrutura de Produtos está relacionando cada SKU a um Product com o mesmo Id,
-ou seja, não há agrupamento de SKUs em um único Product, por conta da estrutura atual de apresentação
-de produtos no marketplace da Netshoes. No futuro, quando o agrupamento for implementado,
-as rotas de Entity/Product/Sku precisam ser revistas.
 
 <!-- //todo -->
 
