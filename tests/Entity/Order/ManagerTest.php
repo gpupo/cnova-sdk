@@ -22,8 +22,10 @@ class ManagerTest extends OrderTestCaseAbstract
     public function testObtemListaPedidos()
     {
         $list = $this->getList();
-        $this->assertInstanceOf('\Gpupo\CnovaSdk\Entity\Order\OrderCollection',
-            $list);
+        $this->assertInstanceOf(
+            '\Gpupo\CnovaSdk\Entity\Order\OrderCollection',
+            $list
+        );
 
         return $list;
     }

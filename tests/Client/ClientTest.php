@@ -31,8 +31,10 @@ class ClientTest extends TestCaseAbstract
      */
     public function testGerenciaUriDeRecurso($client)
     {
-        $this->assertSame('https://sandbox.cnova.com/api/v2/sku',
-            $client->getResourceUri('/sku'));
+        $this->assertSame(
+            'https://sandbox.cnova.com/api/v2/sku',
+            $client->getResourceUri('/sku')
+        );
     }
 
     /**

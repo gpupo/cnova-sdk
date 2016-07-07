@@ -31,8 +31,10 @@ class FactoryTest extends FactoryTestAbstract
      */
     public function testCentralizaAcessoAManagers($objectExpected, $target)
     {
-        return $this->assertInstanceOf($objectExpected,
-            $this->createObject($this->getFactory(), 'factoryManager', $target));
+        return $this->assertInstanceOf(
+            $objectExpected,
+            $this->createObject($this->getFactory(), 'factoryManager', $target)
+        );
     }
 
     public function dataProviderObjetos()

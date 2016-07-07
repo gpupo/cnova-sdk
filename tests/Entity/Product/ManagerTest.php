@@ -151,7 +151,9 @@ class ManagerTest extends TestCaseAbstract
             $entityB = $this->getFactory()->createProduct(current($data));
             $entityB->getStock()->setQuantity(8);
             $this->assertSame(['quantity'], $manager->attributesDiff(
-                $entityA->getStock(), $entityB->getStock()), 'Diff');
+                $entityA->getStock(),
+                $entityB->getStock()
+            ), 'Diff');
             $entityA->setPrevious($entityB);
             $this->assertTrue($manager->save($entityA), 'Save');
         }

@@ -31,8 +31,10 @@ class Manager extends ManagerAbstract
     {
         $status = $order->getStatus();
 
-        return $this->execute($this->factoryMap('saveStatus',
-            ['itemId' => $order->getId(), 'status' => $status]), $json);
+        return $this->execute($this->factoryMap(
+            'saveStatus',
+            ['itemId' => $order->getId(), 'status' => $status]
+        ), $json);
     }
 
     protected function move($statusTo, Order $order, Tracking $tracking)
