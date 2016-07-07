@@ -1,0 +1,36 @@
+{
+  "site": "EX",
+  "items": [
+    {
+      "skuSellerId": "14080",
+      "name": "Esfoliante Facial Creme Doux Polissant Unissex 50ml Clarins",
+      "salePrice": "139",
+      "quantity": "1"
+    }
+  ],
+  "customer": {
+    "name": "João da Silva",
+    "gender": "Masculino",
+    "documentNumber": "11111111111",
+    "type": "PF",
+    "email": "me@foo.com",
+    "bornAt": "1942-01-01",
+    "billing": {
+      "address": "Rua da Chaleira",
+      "number": "01",
+      "complement": "Na hora do Chá",
+      "quarter": "Ingleses",
+      "reference": "Perto do Chapeleiro Maluco",
+      "city": "NãoSeiLândia",
+      "state": "SP",
+      "countryId": "BR",
+      "zipCode": "50000000",
+      "recipientName": "A/C Joãozinho"
+    },
+    "phones": {
+      "mobile": "11 999917771",
+      "home": "11 399977721",
+      "office": "11 499974771"
+    }
+  }
+}

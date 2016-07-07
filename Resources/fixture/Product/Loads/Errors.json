@@ -1,0 +1,114 @@
+{
+    "skus": [
+        {
+            "skuSeller": {
+                "id": "1563",
+                "href": "/loads/products/1563"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-28T14:47:38.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "1564",
+                "href": "/loads/products/1564"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-28T14:47:38.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "16867",
+                "href": "/loads/products/16867"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-28T14:44:40.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "16869",
+                "href": "/loads/products/16869"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-28T14:44:40.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "17109",
+                "href": "/loads/products/17109"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-28T15:30:47.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "18255",
+                "href": "/loads/products/18255"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-28T15:21:50.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "18279",
+                "href": "/loads/products/18279"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-28T15:11:12.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "19904",
+                "href": "/loads/products/19904"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-28T13:23:43.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "22329",
+                "href": "/loads/products/22329"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-27T16:49:36.000-03:00"
+        },
+        {
+            "skuSeller": {
+                "id": "22370",
+                "href": "/loads/products/22370"
+            },
+            "status": "Error",
+            "createdAt": "2015-04-28T13:20:38.000-03:00"
+        }
+    ],
+    "metadata": [
+        {
+            "key": "totalRows",
+            "value": "12"
+        },
+        {
+            "key": "offset",
+            "value": "0"
+        },
+        {
+            "key": "limit",
+            "value": "10"
+        },
+        {
+            "key": "first",
+            "value": "/loads/products?_offset=0&_limit=10&status=Error&createdAt=2015-04-28T14%3A47%3A38.000-03%3A00%2C2015-04-28T14%3A47%3A38.000-03%3A00"
+        },
+        {
+            "key": "previous",
+            "value": ""
+        },
+        {
+            "key": "next",
+            "value": ""
+        },
+        {
+            "key": "last",
+            "value": "/loads/products?_offset=10&_limit=10&status=Error&createdAt=2015-04-28T14%3A47%3A38.000-03%3A00%2C2015-04-28T14%3A47%3A38.000-03%3A00"
+        }
+    ]
+}

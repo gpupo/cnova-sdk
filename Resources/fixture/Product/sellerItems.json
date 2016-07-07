@@ -1,0 +1,504 @@
+{
+    "sellerItems": [
+        {
+            "skuSellerId": "17871",
+            "skuSiteId": null,
+            "title": "Perfume Baiser Volé EDT Feminino 50ml Cartier",
+            "brand": "NONE",
+            "gtin": null,
+            "status": [
+                {
+                    "active": true,
+                    "site": "EX"
+                }
+            ],
+            "prices": [
+                {
+                    "offer": 425,
+                    "site": "EX",
+                    "default": 425
+                },
+                {
+                    "offer": 425,
+                    "site": "CD",
+                    "default": 425
+                }
+            ],
+            "stocks": [
+                {
+                    "quantity": 0,
+                    "reserved": 0,
+                    "crossDockingTime": 0,
+                    "warehouse": 2273
+                }
+            ],
+            "urls": [
+                {
+                    "href": "http://produto.extra.com.br/null",
+                    "id": null,
+                    "site": "EX"
+                }
+            ],
+            "images": [
+                {
+                    "type": "ggP",
+                    "main": null,
+                    "url": "gg/teste-12345_11398239_21947271.jpg"
+                },
+                {
+                    "type": "gmP",
+                    "main": null,
+                    "url": "gm/teste-12345_11398238_21947271.jpg"
+                },
+                {
+                    "type": "gpP",
+                    "main": null,
+                    "url": "gp/teste-12345_11398237_21947271.jpg"
+                },
+                {
+                    "type": "mggP",
+                    "main": null,
+                    "url": "mgg/teste-12345_11398236_21947271.jpg"
+                },
+                {
+                    "type": "mppP",
+                    "main": null,
+                    "url": "mpp/teste-12345_11398235_21947271.jpg"
+                },
+                {
+                    "type": "pgP",
+                    "main": null,
+                    "url": "pg/teste-12345_11398234_21947271.jpg"
+                },
+                {
+                    "type": "pppP",
+                    "main": null,
+                    "url": "ppp/teste-12345_11398233_21947271.jpg"
+                },
+                {
+                    "type": "SRCP",
+                    "main": null,
+                    "url": "SRC/teste-12345_11398232_21947271.jpg"
+                }
+            ],
+            "product": {
+                "id": "5904215",
+                "href": "/products/5904215"
+            },
+            "dimensions": {
+                "weight": 0.3,
+                "length": 0.01,
+                "width": 0.01,
+                "height": 0.01
+            },
+            "attributes": [],
+            "giftWrap": null
+        },
+        {
+            "skuSellerId": "17872",
+            "skuSiteId": null,
+            "title": "Perfume Baiser Volé EDT Feminino 100ml Cartier",
+            "brand": "NONE",
+            "gtin": null,
+            "status": [
+                {
+                    "active": true,
+                    "site": "EX"
+                }
+            ],
+            "prices": [
+                {
+                    "offer": 620,
+                    "site": "EX",
+                    "default": 620
+                },
+                {
+                    "offer": 620,
+                    "site": "CD",
+                    "default": 620
+                }
+            ],
+            "stocks": [
+                {
+                    "quantity": 0,
+                    "reserved": 0,
+                    "crossDockingTime": 0,
+                    "warehouse": 2273
+                }
+            ],
+            "urls": [
+                {
+                    "href": "http://produto.extra.com.br/null",
+                    "id": null,
+                    "site": "EX"
+                }
+            ],
+            "images": [
+                {
+                    "type": "ggP",
+                    "main": null,
+                    "url": "gg/teste-12345_11398239_21947271.jpg"
+                },
+                {
+                    "type": "gmP",
+                    "main": null,
+                    "url": "gm/teste-12345_11398238_21947271.jpg"
+                },
+                {
+                    "type": "gpP",
+                    "main": null,
+                    "url": "gp/teste-12345_11398237_21947271.jpg"
+                },
+                {
+                    "type": "mggP",
+                    "main": null,
+                    "url": "mgg/teste-12345_11398236_21947271.jpg"
+                },
+                {
+                    "type": "mppP",
+                    "main": null,
+                    "url": "mpp/teste-12345_11398235_21947271.jpg"
+                },
+                {
+                    "type": "pgP",
+                    "main": null,
+                    "url": "pg/teste-12345_11398234_21947271.jpg"
+                },
+                {
+                    "type": "pppP",
+                    "main": null,
+                    "url": "ppp/teste-12345_11398233_21947271.jpg"
+                },
+                {
+                    "type": "SRCP",
+                    "main": null,
+                    "url": "SRC/teste-12345_11398232_21947271.jpg"
+                }
+            ],
+            "product": {
+                "id": "5904216",
+                "href": "/products/5904216"
+            },
+            "dimensions": {
+                "weight": 0.5,
+                "length": 0.01,
+                "width": 0.01,
+                "height": 0.01
+            },
+            "attributes": [],
+            "giftWrap": null
+        },
+        {
+            "skuSellerId": "720",
+            "skuSiteId": null,
+            "title": "Perfume Eternity EDP Feminino 50ml Calvin Klein",
+            "brand": "NONE",
+            "gtin": null,
+            "status": [
+                {
+                    "active": true,
+                    "site": "EX"
+                }
+            ],
+            "prices": [
+                {
+                    "offer": 339,
+                    "site": "EX",
+                    "default": 339
+                },
+                {
+                    "offer": 339,
+                    "site": "CD",
+                    "default": 339
+                }
+            ],
+            "stocks": [
+                {
+                    "quantity": 0,
+                    "reserved": 0,
+                    "crossDockingTime": 0,
+                    "warehouse": 2273
+                }
+            ],
+            "urls": [
+                {
+                    "href": "http://produto.extra.com.br/null",
+                    "id": null,
+                    "site": "EX"
+                }
+            ],
+            "images": [
+                {
+                    "type": "ggP",
+                    "main": null,
+                    "url": "gg/teste-12345_11398239_21947271.jpg"
+                },
+                {
+                    "type": "gmP",
+                    "main": null,
+                    "url": "gm/teste-12345_11398238_21947271.jpg"
+                },
+                {
+                    "type": "gpP",
+                    "main": null,
+                    "url": "gp/teste-12345_11398237_21947271.jpg"
+                },
+                {
+                    "type": "mggP",
+                    "main": null,
+                    "url": "mgg/teste-12345_11398236_21947271.jpg"
+                },
+                {
+                    "type": "mppP",
+                    "main": null,
+                    "url": "mpp/teste-12345_11398235_21947271.jpg"
+                },
+                {
+                    "type": "pgP",
+                    "main": null,
+                    "url": "pg/teste-12345_11398234_21947271.jpg"
+                },
+                {
+                    "type": "pppP",
+                    "main": null,
+                    "url": "ppp/teste-12345_11398233_21947271.jpg"
+                },
+                {
+                    "type": "SRCP",
+                    "main": null,
+                    "url": "SRC/teste-12345_11398232_21947271.jpg"
+                }
+            ],
+            "product": {
+                "id": "5904213",
+                "href": "/products/5904213"
+            },
+            "dimensions": {
+                "weight": 0.3,
+                "length": 0.01,
+                "width": 0.01,
+                "height": 0.01
+            },
+            "attributes": [],
+            "giftWrap": null
+        },
+        {
+            "skuSellerId": "4575",
+            "skuSiteId": null,
+            "title": "Perfume Initial EDT Feminino 50ml Boucheron",
+            "brand": "NONE",
+            "gtin": null,
+            "status": [
+                {
+                    "active": true,
+                    "site": "EX"
+                }
+            ],
+            "prices": [
+                {
+                    "offer": 285.94,
+                    "site": "EX",
+                    "default": 285.94
+                },
+                {
+                    "offer": 285.94,
+                    "site": "CD",
+                    "default": 285.94
+                }
+            ],
+            "stocks": [
+                {
+                    "quantity": 0,
+                    "reserved": 0,
+                    "crossDockingTime": 0,
+                    "warehouse": 2273
+                }
+            ],
+            "urls": [
+                {
+                    "href": "http://produto.extra.com.br/null",
+                    "id": null,
+                    "site": "EX"
+                }
+            ],
+            "images": [
+                {
+                    "type": "ggP",
+                    "main": null,
+                    "url": "gg/teste-12345_11398239_21947271.jpg"
+                },
+                {
+                    "type": "gmP",
+                    "main": null,
+                    "url": "gm/teste-12345_11398238_21947271.jpg"
+                },
+                {
+                    "type": "gpP",
+                    "main": null,
+                    "url": "gp/teste-12345_11398237_21947271.jpg"
+                },
+                {
+                    "type": "mggP",
+                    "main": null,
+                    "url": "mgg/teste-12345_11398236_21947271.jpg"
+                },
+                {
+                    "type": "mppP",
+                    "main": null,
+                    "url": "mpp/teste-12345_11398235_21947271.jpg"
+                },
+                {
+                    "type": "pgP",
+                    "main": null,
+                    "url": "pg/teste-12345_11398234_21947271.jpg"
+                },
+                {
+                    "type": "pppP",
+                    "main": null,
+                    "url": "ppp/teste-12345_11398233_21947271.jpg"
+                },
+                {
+                    "type": "SRCP",
+                    "main": null,
+                    "url": "SRC/teste-12345_11398232_21947271.jpg"
+                }
+            ],
+            "product": {
+                "id": "5904214",
+                "href": "/products/5904214"
+            },
+            "dimensions": {
+                "weight": 0.3,
+                "length": 0.01,
+                "width": 0.01,
+                "height": 0.01
+            },
+            "attributes": [],
+            "giftWrap": null
+        },
+        {
+            "skuSellerId": "719",
+            "skuSiteId": null,
+            "title": "Perfume Eternity EDP Feminino 30ml Calvin Klein",
+            "brand": "NONE",
+            "gtin": null,
+            "status": [
+                {
+                    "active": true,
+                    "site": "EX"
+                }
+            ],
+            "prices": [
+                {
+                    "offer": 219,
+                    "site": "EX",
+                    "default": 219
+                },
+                {
+                    "offer": 219,
+                    "site": "CD",
+                    "default": 219
+                }
+            ],
+            "stocks": [
+                {
+                    "quantity": 0,
+                    "reserved": 0,
+                    "crossDockingTime": 0,
+                    "warehouse": 2273
+                }
+            ],
+            "urls": [
+                {
+                    "href": "http://produto.extra.com.br/null",
+                    "id": null,
+                    "site": "EX"
+                }
+            ],
+            "images": [
+                {
+                    "type": "ggP",
+                    "main": null,
+                    "url": "gg/teste-12345_11398239_21947271.jpg"
+                },
+                {
+                    "type": "gmP",
+                    "main": null,
+                    "url": "gm/teste-12345_11398238_21947271.jpg"
+                },
+                {
+                    "type": "gpP",
+                    "main": null,
+                    "url": "gp/teste-12345_11398237_21947271.jpg"
+                },
+                {
+                    "type": "mggP",
+                    "main": null,
+                    "url": "mgg/teste-12345_11398236_21947271.jpg"
+                },
+                {
+                    "type": "mppP",
+                    "main": null,
+                    "url": "mpp/teste-12345_11398235_21947271.jpg"
+                },
+                {
+                    "type": "pgP",
+                    "main": null,
+                    "url": "pg/teste-12345_11398234_21947271.jpg"
+                },
+                {
+                    "type": "pppP",
+                    "main": null,
+                    "url": "ppp/teste-12345_11398233_21947271.jpg"
+                },
+                {
+                    "type": "SRCP",
+                    "main": null,
+                    "url": "SRC/teste-12345_11398232_21947271.jpg"
+                }
+            ],
+            "product": {
+                "id": "5904212",
+                "href": "/products/5904212"
+            },
+            "dimensions": {
+                "weight": 0.3,
+                "length": 0.01,
+                "width": 0.01,
+                "height": 0.01
+            },
+            "attributes": [],
+            "giftWrap": null
+        }
+    ],
+    "metadata": [
+        {
+            "key": "totalRows",
+            "value": "6273"
+        },
+        {
+            "key": "offset",
+            "value": "0"
+        },
+        {
+            "key": "limit",
+            "value": "5"
+        },
+        {
+            "key": "first",
+            "value": "/sellerItems?_offset=0&_limit=5"
+        },
+        {
+            "key": "previous",
+            "value": ""
+        },
+        {
+            "key": "next",
+            "value": "/sellerItems?_offset=5&_limit=5"
+        },
+        {
+            "key": "last",
+            "value": "/sellerItems?_offset=6270&_limit=5"
+        }
+    ]
+}
