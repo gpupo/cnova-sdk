@@ -1,11 +1,11 @@
 {
     "name": "gpupo/cnova-sdk",
     "description": "SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Cnova Marketplace",
-    "homepage": "http://www.g1mr.com/cnova-sdk/",
+    "homepage": "https://opensource.gpupo.com/cnova-sdk/",
     "authors": [
         {
             "name": "Gilmar Pupo",
-            "email": "g@g1mr.com"
+            "email": "contact@gpupo.com"
         }
     ],
     "keywords": ["cnova","extra", "pontofrio", "casasbahia", "sdk", "api"],

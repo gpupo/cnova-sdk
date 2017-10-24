@@ -8,4 +8,4 @@
 * Aos que [fizeram sugestões importantes](https://github.com/gpupo/cnova-sdk/issues);
 * Aos desenvolvedores que criaram as [bibliotecas utilizadas neste componente](https://github.com/gpupo/cnova-sdk/blob/master/Resources/doc/libraries-list.md).
 
- _- [Gilmar Pupo](http://www.g1mr.com/)_
+ _- [Gilmar Pupo](https://opensource.gpupo.com/)_

@@ -78,7 +78,7 @@ Proibido:
 * Aos que [fizeram sugestões importantes](https://github.com/gpupo/cnova-sdk/issues);
 * Aos desenvolvedores que criaram as [bibliotecas utilizadas neste componente](https://github.com/gpupo/cnova-sdk/blob/master/Resources/doc/libraries-list.md).
 
- _- [Gilmar Pupo](http://www.g1mr.com/)_
+ _- [Gilmar Pupo](https://opensource.gpupo.com/)_
 
 <!-- install -->
 
@@ -193,8 +193,8 @@ Utilize como modelo o arquivo ``app.json.dist``
 
 * [Cnova-sdk Composer Package](https://packagist.org/packages/gpupo/cnova-sdk) no packagist.org
 * [Documentação Oficial da API V2](https://desenvolvedores.cnova.com/api-portal/docs/apilojista/main/getting-started.html)
-* [Marketplace-bundle Composer Package](http://www.g1mr.com/MarkethubBundle/) - Integração deste pacote com Symfony
-* [Outras SDKs para o Ecommerce do Brasil](http://www.g1mr.com/common-sdk/)
+* [Marketplace-bundle Composer Package](https://opensource.gpupo.com/MarkethubBundle/) - Integração deste pacote com Symfony
+* [Outras SDKs para o Ecommerce do Brasil](https://opensource.gpupo.com/common-sdk/)
 
 <!-- links-common -->
 
