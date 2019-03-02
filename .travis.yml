@@ -4,18 +4,7 @@ os:
   - linux
 php:
   - 5.6
-  - 7.0
-  - nightly
-  - hhvm
-matrix:
-  allow_failures:
-    - php: nightly
-    - php: hhvm
-branches:
-  except:
-    - /^psr.*$/
-    - /^dev.*$/
-    - /^topic.*$/
+  - 7.2
 script: ant travis
 notifications:
   email: false
